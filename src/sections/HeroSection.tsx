@@ -2,10 +2,26 @@
 import { FadeIn } from '../components/FadeIn';
 import { Magnet } from '../components/Magnet';
 import { ContactButton } from '../components/ContactButton';
+import { SparklesCore } from '../components/Sparkles';
+import { Typewriter } from '../components/Typewriter';
 
 export const HeroSection = () => {
   return (
     <section className="h-screen flex flex-col relative overflow-x-clip px-5 sm:px-8 md:px-10">
+      
+      {/* Background Sparkles */}
+      <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFD600"
+        />
+      </div>
+
       <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] pt-6 md:pt-8 relative z-20">
         <span className="font-black text-[#FFD600]">PORTFOLIO</span>
         <a href="#about" className="hover:opacity-70 transition-opacity duration-200">About</a>
@@ -22,10 +38,12 @@ export const HeroSection = () => {
       </div>
 
       <div className="flex-1 flex justify-between items-end pb-7 sm:pb-8 md:pb-10 relative z-20">
-        <FadeIn delay={0.35} y={20}>
-          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-[clamp(0.75rem,1.4vw,1.5rem)]">
-            Marketing Designer crafting impactful visual experiences through branding, advertising, app store optimization and AI-powered creativity.
-          </p>
+        <FadeIn delay={0.35} y={20} className="max-w-[260px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px]">
+          <Typewriter 
+            text="Marketing Designer crafting impactful visual experiences through branding, advertising, app store optimization and AI-powered creativity."
+            speed={50}
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-relaxed text-[clamp(0.75rem,1.4vw,1.5rem)]"
+          />
         </FadeIn>
         
         <FadeIn delay={0.5} y={20}>
