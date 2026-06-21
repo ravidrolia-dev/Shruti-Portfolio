@@ -29,9 +29,9 @@ export const HeroSection = () => {
         <a href="#contact" className="hover:opacity-70 transition-opacity duration-200">Contact</a>
       </FadeIn>
 
-      <div className="order-1 sm:order-none overflow-hidden mt-6 mb-3 sm:mb-0 sm:mt-10 md:mt-4 lg:mt-2 relative z-20 flex justify-center sm:block">
+      <div className="order-1 sm:order-none overflow-hidden mt-6 mb-3 sm:mb-0 sm:mt-10 md:mt-4 lg:mt-2 relative z-20 flex justify-center items-center sm:block w-full">
         <FadeIn delay={0.15} y={40} className="w-full">
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-[0.9] sm:leading-none whitespace-nowrap w-full text-[18vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] text-center sm:text-left">
+          <h1 className="hero-heading font-black uppercase tracking-[-0.04em] sm:tracking-tight leading-[0.9] sm:leading-none whitespace-normal sm:whitespace-nowrap break-keep sm:break-normal [overflow-wrap:normal] w-full max-w-full px-4 sm:px-0 text-[clamp(3rem,12vw,5rem)] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] text-center sm:text-left">
             Hi, i&apos;m shruti
           </h1>
         </FadeIn>
