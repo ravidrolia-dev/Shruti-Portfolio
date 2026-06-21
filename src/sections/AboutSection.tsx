@@ -2,6 +2,7 @@
 import { FadeIn } from '../components/FadeIn';
 import { AnimatedText } from '../components/AnimatedText';
 import { ContactButton } from '../components/ContactButton';
+import TrueFocus from '../components/TrueFocus';
 
 export const AboutSection = () => {
   return (
@@ -42,10 +43,16 @@ export const AboutSection = () => {
 
       {/* Main Content */}
       <div className="flex flex-col items-center z-10 relative">
-        <FadeIn delay={0} y={40} className="mb-10 sm:mb-14 md:mb-16">
-          <h2 className="hero-heading font-black uppercase leading-none tracking-tight text-center text-[clamp(3rem,12vw,160px)]">
-            About me
-          </h2>
+        <FadeIn delay={0} y={40} className="mb-10 sm:mb-14 md:mb-16 text-[#D7E2EA]">
+          <TrueFocus 
+            sentence="About me"
+            manualMode={false}
+            blurAmount={4}
+            borderColor="#FFD600"
+            glowColor="rgba(255, 214, 0, 0.6)"
+            animationDuration={1.2}
+            pauseBetweenAnimations={0.2}
+          />
         </FadeIn>
 
         <AnimatedText 

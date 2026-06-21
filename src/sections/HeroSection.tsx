@@ -7,8 +7,9 @@ export const HeroSection = () => {
   return (
     <section className="h-screen flex flex-col relative overflow-x-clip px-5 sm:px-8 md:px-10">
       <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] pt-6 md:pt-8 relative z-20">
+        <span className="font-black text-[#FFD600]">PORTFOLIO</span>
         <a href="#about" className="hover:opacity-70 transition-opacity duration-200">About</a>
-        <a href="#price" className="hover:opacity-70 transition-opacity duration-200">Price</a>
+        <a href="#price" className="hover:opacity-70 transition-opacity duration-200 hidden sm:block">Price</a>
         <a href="#projects" className="hover:opacity-70 transition-opacity duration-200">Projects</a>
         <a href="#contact" className="hover:opacity-70 transition-opacity duration-200">Contact</a>
       </FadeIn>
