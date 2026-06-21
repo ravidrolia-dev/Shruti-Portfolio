@@ -29,7 +29,7 @@ export const HeroSection = () => {
         <a href="#contact" className="hover:opacity-70 transition-opacity duration-200">Contact</a>
       </FadeIn>
 
-      <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-5 relative z-20">
+      <div className="overflow-hidden mt-10 sm:mt-10 md:mt-4 lg:mt-2 relative z-20">
         <FadeIn delay={0.15} y={40}>
           <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw]">
             Hi, i&apos;m shruti
