@@ -1,0 +1,70 @@
+import { useRef, useState, useEffect } from 'react';
+
+interface MagnetProps {
+  children: React.ReactNode;
+  padding?: number;
+  strength?: number;
+  activeTransition?: string;
+  inactiveTransition?: string;
+  className?: string;
+}
+
+export const Magnet: React.FC<MagnetProps> = ({
+  children,
+  padding = 150,
+  strength = 3,
+  activeTransition = "transform 0.3s ease-out",
+  inactiveTransition = "transform 0.6s ease-in-out",
+  className = ''
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [transform, setTransform] = useState('translate3d(0px, 0px, 0px)');
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const distanceX = e.clientX - centerX;
+      const distanceY = e.clientY - centerY;
+      
+      // calculate distance only to check but since we don't use it, we can remove it
+      
+      if (
+        e.clientX >= rect.left - padding &&
+        e.clientX <= rect.right + padding &&
+        e.clientY >= rect.top - padding &&
+        e.clientY <= rect.bottom + padding
+      ) {
+        setIsActive(true);
+        const x = distanceX / strength;
+        const y = distanceY / strength;
+        setTransform(`translate3d(${x}px, ${y}px, 0px)`);
+      } else {
+        setIsActive(false);
+        setTransform('translate3d(0px, 0px, 0px)');
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [padding, strength]);
+
+  return (
+    <div 
+      ref={containerRef}
+      className={className}
+      style={{
+        transform,
+        transition: isActive ? activeTransition : inactiveTransition,
+        willChange: 'transform'
+      }}
+    >
+      {children}
+    </div>
+  );
+};

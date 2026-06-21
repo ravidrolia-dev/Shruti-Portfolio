@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body, #root {
+    background-color: #0C0C0C;
+    color: #D7E2EA;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  /* Prevent horizontal scroll globally */
+  .main-wrapper {
+    overflow-x: clip;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .hero-heading {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFD600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
