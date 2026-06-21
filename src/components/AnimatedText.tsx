@@ -2,45 +2,52 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 interface AnimatedTextProps {
-  text: string;
+  text: string | string[];
   className?: string;
 }
 
 export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '' }) => {
-  const containerRef = useRef<HTMLParagraphElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 0.8', 'end 0.2']
   });
 
-  const words = text.split(" ");
+  const paragraphs = Array.isArray(text) ? text : [text];
   
   // Calculate total length excluding spaces for accurate progress mapping
-  const totalLength = words.join("").length;
+  const totalLength = paragraphs.join("").replace(/\s/g, "").length;
   let charIndex = 0;
 
   return (
-    <p ref={containerRef} className={className}>
-      {words.map((word, i) => {
-        const characters = word.split("");
+    <div ref={containerRef} className="flex flex-col gap-6">
+      {paragraphs.map((para, pIndex) => {
+        const words = para.split(" ");
         return (
-          <span key={i} className="inline-block mr-1 sm:mr-2">
-            {characters.map((char, j) => {
-              const currentIdx = charIndex++;
+          <p key={pIndex} className={className}>
+            {words.map((word, i) => {
+              const characters = word.split("");
               return (
-                <Char 
-                  key={j} 
-                  char={char} 
-                  progress={scrollYProgress} 
-                  index={currentIdx} 
-                  totalLength={totalLength} 
-                />
+                <span key={i} className="inline-block mr-1 sm:mr-2">
+                  {characters.map((char, j) => {
+                    const currentIdx = charIndex++;
+                    return (
+                      <Char 
+                        key={j} 
+                        char={char} 
+                        progress={scrollYProgress} 
+                        index={currentIdx} 
+                        totalLength={totalLength} 
+                      />
+                    );
+                  })}
+                </span>
               );
             })}
-          </span>
+          </p>
         );
       })}
-    </p>
+    </div>
   );
 };
 

@@ -36,14 +36,11 @@ export const AboutSection = () => {
           />
         </FadeIn>
 
-        <div className="flex flex-col gap-6 mb-16">
-          {paragraphs.map((p, i) => (
-            <AnimatedText 
-              key={i}
-              text={p}
-              className="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(1rem,1.5vw,1.35rem)]"
-            />
-          ))}
+        <div className="mb-16 w-full">
+          <AnimatedText 
+            text={paragraphs}
+            className="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(1rem,1.5vw,1.35rem)]"
+          />
         </div>
 
         {/* Education Block */}
