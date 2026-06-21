@@ -7,7 +7,7 @@ import { Typewriter } from '../components/Typewriter';
 
 export const HeroSection = () => {
   return (
-    <section className="h-screen flex flex-col relative overflow-x-clip px-5 sm:px-8 md:px-10">
+    <section className="min-h-[100svh] sm:min-h-0 sm:h-screen flex flex-col relative overflow-x-clip px-5 sm:px-8 md:px-10 pb-10 sm:pb-0">
       
       {/* Background Sparkles */}
       <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
@@ -22,36 +22,36 @@ export const HeroSection = () => {
         />
       </div>
 
-      <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] pt-6 md:pt-8 relative z-20">
+      <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] pt-6 md:pt-8 relative z-20 order-none">
         <span className="font-black text-[#FFD600]">PORTFOLIO</span>
         <a href="#about" className="hover:opacity-70 transition-opacity duration-200">About</a>
         <a href="#projects" className="hover:opacity-70 transition-opacity duration-200">Projects</a>
         <a href="#contact" className="hover:opacity-70 transition-opacity duration-200">Contact</a>
       </FadeIn>
 
-      <div className="overflow-hidden mt-10 sm:mt-10 md:mt-4 lg:mt-2 relative z-20">
-        <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw]">
+      <div className="order-1 sm:order-none overflow-hidden mt-6 mb-3 sm:mb-0 sm:mt-10 md:mt-4 lg:mt-2 relative z-20 flex justify-center sm:block">
+        <FadeIn delay={0.15} y={40} className="w-full">
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-[0.9] sm:leading-none whitespace-nowrap w-full text-[18vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] text-center sm:text-left">
             Hi, i&apos;m shruti
           </h1>
         </FadeIn>
       </div>
 
-      <div className="flex-1 flex justify-between items-end pb-7 sm:pb-8 md:pb-10 relative z-20">
-        <FadeIn delay={0.35} y={20} className="max-w-[260px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px]">
+      <div className="order-3 sm:order-none flex-none sm:flex-1 flex flex-col sm:flex-row items-center sm:items-end justify-center sm:justify-between gap-4 sm:gap-0 pb-0 sm:pb-8 md:pb-10 relative z-20">
+        <FadeIn delay={0.35} y={20} className="max-w-[320px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px] px-5 sm:px-0">
           <Typewriter 
             text="Marketing Designer crafting impactful visual experiences through branding, advertising, app store optimization and AI-powered creativity."
             speed={50}
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-relaxed text-[clamp(0.75rem,1.4vw,1.5rem)]"
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-[1.7] sm:leading-relaxed text-[0.95rem] sm:text-[clamp(0.75rem,1.4vw,1.5rem)] text-center sm:text-left inline-block"
           />
         </FadeIn>
         
-        <FadeIn delay={0.5} y={20}>
+        <FadeIn delay={0.5} y={20} className="mt-3 mb-10 sm:mt-0 sm:mb-0">
           <ContactButton />
         </FadeIn>
       </div>
 
-      <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+      <FadeIn delay={0.6} y={30} className="order-2 sm:order-none relative top-auto left-auto transform-none mx-auto sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 z-10 w-[220px] sm:w-[360px] md:w-[440px] lg:w-[520px] mt-5 mb-6 sm:my-0">
         <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
           <img 
             src="/face.png" 
