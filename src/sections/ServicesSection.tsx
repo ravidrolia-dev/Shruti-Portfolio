@@ -67,7 +67,7 @@ export const ServicesSection = () => {
           {/* Macbook Scroll Demo */}
           <div className="w-full lg:w-[40%] flex justify-center mt-10 lg:mt-0 relative z-20">
             <FadeIn delay={0.2} y={30} className="w-full flex justify-center">
-              <div className="w-full transform scale-90 sm:scale-75 lg:scale-[0.65] xl:scale-[0.8] origin-top opacity-90 hover:opacity-100 transition-opacity duration-500">
+              <div className="w-full transform lg:scale-[0.65] xl:scale-[0.8] origin-top opacity-90 hover:opacity-100 transition-opacity duration-500">
                 <MacbookScrollDemo />
               </div>
             </FadeIn>
