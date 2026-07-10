@@ -31,7 +31,7 @@ export const MacbookScroll = ({
   title,
   badge,
 }: {
-  src?: string;
+  src?: string | string[];
   showGradient?: boolean;
   title?: string | React.ReactNode;
   badge?: React.ReactNode;
@@ -43,6 +43,16 @@ export const MacbookScroll = ({
   });
 
   const [isMobile, setIsMobile] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+  const images = Array.isArray(src) ? src : src ? [src] : [];
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
@@ -165,11 +175,17 @@ export const Lid = ({
         className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
-        <img
-          src={src as string}
-          alt="aceternity logo"
-          className="absolute inset-0 h-full w-full rounded-lg object-contain object-center bg-[#272729]"
-        />
+        {images.map((imgSrc, idx) => (
+          <img
+            key={imgSrc}
+            src={imgSrc}
+            alt="macbook screen"
+            className={cn(
+              "absolute inset-0 h-full w-full rounded-lg object-contain object-center bg-[#272729] transition-opacity duration-1000",
+              activeImage === idx ? "opacity-100" : "opacity-0"
+            )}
+          />
+        ))}
       </motion.div>
     </div>
   );
