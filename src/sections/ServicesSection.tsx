@@ -39,7 +39,7 @@ const services = [
   },
   {
     num: "08",
-    title: "Editorial / Magazine Layou",
+    title: "Editorial / Magazine Layout",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   },
   {
