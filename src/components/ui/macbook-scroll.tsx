@@ -124,6 +124,7 @@ export const Lid = ({
   scaleY,
   rotate,
   translate,
+  scrollYProgress,
   src,
 }: {
   scaleX: MotionValue<number>;
@@ -136,7 +137,7 @@ export const Lid = ({
   const [activeImage, setActiveImage] = useState(0);
   const images = Array.isArray(src) ? src : src ? [src] : [];
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, "change", (latest: number) => {
     if (images.length <= 1) return;
     // The laptop opening animation finishes at around 0.3
     // We divide the remaining scroll progress (0.3 to 1.0) by the number of images
