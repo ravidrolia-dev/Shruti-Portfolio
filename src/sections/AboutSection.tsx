@@ -15,7 +15,7 @@ const paragraphs = [
 
 const skills = [
   "Photoshop", "Illustrator", "Premiere Pro", "Canva", "AI/generative tools", "Midjourney",
-  "Branding", "App Store Optimization (ASO)", "Social Media Design", "Advertising Creatives", "A/B Testing", "Marketing Design"
+  "Branding", "Vector Illustration", "Layout Design", "A/B Testing", "Data-Driven Design"
 ];
 
 export const AboutSection = () => {
@@ -58,7 +58,7 @@ export const AboutSection = () => {
 
         <FadeIn delay={0.4} y={20} className="flex flex-wrap gap-3 sm:gap-4 justify-center">
           <ContactButton />
-          <a 
+          <a
             href="/Shruti_Drolia.pdf"
             target="_blank"
             className="inline-block rounded-full text-[#FFD600] font-black uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none transition-all hover:bg-[#FFD600] hover:text-[#0C0C0C] active:scale-95 whitespace-nowrap border-2 border-[#FFD600] flex items-center justify-center"
