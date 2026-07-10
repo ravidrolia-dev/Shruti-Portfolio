@@ -5,27 +5,26 @@ import { ContactButton } from '../components/ContactButton';
 import TrueFocus from '../components/TrueFocus';
 
 const paragraphs = [
-  "Hi, I'm Shruti Drolia, a Marketing Designer with 4.5+ years of professional experience creating impactful digital experiences that blend creativity, branding and performance marketing.",
-  "I specialize in marketing design, app store optimization (ASO), social media campaigns, branding systems and advertising creatives that help businesses grow and connect with their audiences.",
-  "Over the years, I have designed and delivered 2,000+ high-scale creatives including Meta Ads, Google Ads, story posters, vector illustrations, GIFs and short-form videos while maintaining quality and efficiency in fast-paced environments.",
-  "At Pratilipi, I improved organic app installs by 12% by redesigning Play Store ASO visuals and optimizing listing hierarchies using data-driven design decisions. I have also executed high-frequency A/B testing to improve click-through rates, conversion rates and overall campaign performance.",
-  "I actively leverage AI-powered workflows using Midjourney, ChatGPT and Google Gemini to accelerate ideation, streamline creative execution and reduce turnaround time.",
-  "My work spans the entire creative process — from concept development to final delivery and performance optimization — while collaborating closely with Growth and Marketing teams to build meaningful visual experiences.",
-  "Alongside my professional experience, I have worked as a Freelance Graphic Designer, creating visual identity systems, branding assets, banners, menu systems and marketing collateral that translate business goals into clear, user-focused design solutions."
+  "I design creatives that don’t just look good — they perform.",
+  "I’m Shruti Drolia, a graphic designer with 4.5 years of experience working closely with the growth team at Pratilipi, one of India’s largest storytelling platforms.",
+  "My work sits at the intersection of design and performance — from Play Store visuals that improved organic installs by 12% to creating and managing 2,000+ ad creatives across Meta and Google. I’m used to working at scale, testing quickly, and focusing on what actually drives results.",
+  "With a background in Fashion Merchandising, I naturally think beyond visuals. I consider positioning, audience, and how each design fits into a larger brand and business goal.",
+  "I’ve worked with AI-assisted workflows, A/B testing, and alongside marketing teams to continuously refine creatives based on real performance data.",
+  "I enjoy working with teams that move fast, care about quality, and see design as a tool for growth — not just decoration."
 ];
 
 const skills = [
-  "Photoshop", "Illustrator", "Premiere Pro", "Canva", "ChatGPT", "Midjourney", "Google Gemini", 
+  "Photoshop", "Illustrator", "Premiere Pro", "Canva", "ChatGPT", "Midjourney", "Google Gemini",
   "Branding", "App Store Optimization (ASO)", "Social Media Design", "Advertising Creatives", "A/B Testing", "Marketing Design"
 ];
 
 export const AboutSection = () => {
   return (
     <section id="about" className="min-h-screen relative flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden bg-[#0C0C0C]">
-      
+
       <div className="flex flex-col items-center z-10 relative w-full max-w-4xl mx-auto">
         <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">
-          <TrueFocus 
+          <TrueFocus
             sentence="About Me"
             manualMode={false}
             blurAmount={4}
@@ -37,7 +36,7 @@ export const AboutSection = () => {
         </FadeIn>
 
         <div className="mb-16 w-full">
-          <AnimatedText 
+          <AnimatedText
             text={paragraphs}
             className="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(1rem,1.5vw,1.35rem)]"
           />
@@ -55,8 +54,8 @@ export const AboutSection = () => {
         {/* Visual Skills Block */}
         <FadeIn delay={0.3} y={20} className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 md:mb-24 w-full max-w-3xl">
           {skills.map((skill, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-[#D7E2EA] font-medium text-sm hover:border-[#FFD600] hover:text-[#FFD600] hover:bg-[#FFD600]/10 transition-all cursor-default"
             >
               {skill}
