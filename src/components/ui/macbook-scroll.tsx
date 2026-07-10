@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "motion/react";
+import { MotionValue, motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
 import { cn } from "../../lib/utils";
 import {
   IconBrightnessDown,
@@ -89,6 +89,7 @@ export const MacbookScroll = ({
         scaleY={scaleY}
         rotate={rotate}
         translate={translate}
+        scrollYProgress={scrollYProgress}
       />
       {/* Base area */}
       <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
@@ -129,18 +130,26 @@ export const Lid = ({
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
   translate: MotionValue<number>;
+  scrollYProgress: MotionValue<number>;
   src?: string | string[];
 }) => {
   const [activeImage, setActiveImage] = useState(0);
   const images = Array.isArray(src) ? src : src ? [src] : [];
 
-  useEffect(() => {
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (images.length <= 1) return;
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+    // The laptop opening animation finishes at around 0.3
+    // We divide the remaining scroll progress (0.3 to 1.0) by the number of images
+    let currentIdx = 0;
+    if (latest > 0.3) {
+      const step = 0.7 / images.length;
+      currentIdx = Math.floor((latest - 0.3) / step);
+      if (currentIdx >= images.length) currentIdx = images.length - 1;
+    }
+    if (currentIdx !== activeImage) {
+      setActiveImage(currentIdx);
+    }
+  });
 
   return (
     <div className="relative [perspective:800px]">
