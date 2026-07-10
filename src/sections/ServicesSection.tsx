@@ -31,6 +31,21 @@ const services = [
     num: "06",
     title: "AI Assisted Creative Design",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
+  },
+  {
+    num: "07",
+    title: "AI Assisted Creative Design",
+    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
+  },
+  {
+    num: "08",
+    title: "AI Assisted Creative Design",
+    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
+  },
+  {
+    num: "09",
+    title: "AI Assisted Creative Design",
+    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   }
 ];
 
