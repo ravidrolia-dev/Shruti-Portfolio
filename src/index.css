@@ -13,6 +13,7 @@
     background-color: #0C0C0C;
     color: #D7E2EA;
     font-family: 'Kanit', sans-serif;
+    scroll-behavior: smooth;
   }
 
   /* Prevent horizontal scroll globally */
