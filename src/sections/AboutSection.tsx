@@ -14,7 +14,7 @@ const paragraphs = [
 ];
 
 const skills = [
-  "Photoshop", "Illustrator", "Premiere Pro", "Canva", "ChatGPT", "Midjourney", "Google Gemini",
+  "Photoshop", "Illustrator", "Premiere Pro", "Canva", "AI/generative tools", "Midjourney",
   "Branding", "App Store Optimization (ASO)", "Social Media Design", "Advertising Creatives", "A/B Testing", "Marketing Design"
 ];
 
