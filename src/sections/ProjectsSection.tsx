@@ -14,6 +14,11 @@ export const ProjectsSection = () => {
     offset: ['start start', 'end end']
   });
 
+  const handleProjectClick = (slug: string) => {
+    sessionStorage.setItem('homeScrollPos', window.scrollY.toString());
+    navigate(`/project/${slug}`);
+  };
+
   return (
     <section id="projects" className="bg-transparent rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] relative z-20 -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       
@@ -26,7 +31,6 @@ export const ProjectsSection = () => {
       <div ref={containerRef} className="relative pb-[10vh]">
         {projects.map((project, index) => {
           const targetScale = 1 - (projects.length - 1 - index) * 0.03;
-          const slug = project.name.toLowerCase().replace(/\s+/g, '-');
           
           return (
             <ProjectCard 
@@ -36,7 +40,7 @@ export const ProjectsSection = () => {
               totalCards={projects.length}
               progress={scrollYProgress}
               targetScale={targetScale}
-              onClick={() => navigate(`/project/${slug}`)}
+              onClick={() => handleProjectClick(project.slug)}
             />
           );
         })}
