@@ -43,17 +43,6 @@ export const MacbookScroll = ({
   });
 
   const [isMobile, setIsMobile] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
-  const images = Array.isArray(src) ? src : src ? [src] : [];
-
-  useEffect(() => {
-    if (images.length <= 1) return;
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   useEffect(() => {
     if (window && window.innerWidth < 768) {
       setIsMobile(true);
@@ -140,8 +129,19 @@ export const Lid = ({
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
   translate: MotionValue<number>;
-  src?: string;
+  src?: string | string[];
 }) => {
+  const [activeImage, setActiveImage] = useState(0);
+  const images = Array.isArray(src) ? src : src ? [src] : [];
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="relative [perspective:800px]">
       <div
