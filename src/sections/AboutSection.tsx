@@ -42,14 +42,7 @@ export const AboutSection = () => {
           />
         </div>
 
-        {/* Education Block */}
-        <FadeIn delay={0.2} y={20} className="flex flex-col items-center gap-2 mb-16 text-center">
-          <h3 className="text-[#FFD600] font-bold tracking-widest uppercase text-sm mb-2 opacity-80">Education</h3>
-          <p className="text-[#D7E2EA] font-semibold text-[clamp(1.1rem,2vw,1.4rem)] leading-tight">Bachelor of Fashion and Merchandising (BFM)</p>
-          <p className="text-[#D7E2EA] font-light opacity-80 text-[clamp(0.9rem,1.2vw,1.1rem)]">School of Design, Mody University, Lakshmangarh</p>
-          <p className="text-[#D7E2EA] font-light opacity-60 text-sm">2016 – 2020</p>
-          <p className="text-[#FFD600] font-medium mt-1">CGPA: 8.26 (Topper of the batch)</p>
-        </FadeIn>
+
 
         {/* Visual Skills Block */}
         <FadeIn delay={0.3} y={20} className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 md:mb-24 w-full max-w-3xl">

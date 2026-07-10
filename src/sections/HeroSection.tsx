@@ -49,8 +49,15 @@ export const HeroSection = () => {
           />
         </FadeIn>
 
-        <FadeIn delay={0.5} y={20} className="mt-3 mb-10 sm:mt-0 sm:mb-0">
+        <FadeIn delay={0.5} y={20} className="mt-3 mb-10 sm:mt-0 sm:mb-0 flex flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
           <ContactButton />
+          <a 
+            href="/Shruti_Drolia.pdf"
+            target="_blank"
+            className="inline-block rounded-full text-[#FFD600] font-black uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none transition-all hover:bg-[#FFD600] hover:text-[#0C0C0C] active:scale-95 whitespace-nowrap border-2 border-[#FFD600] flex items-center justify-center"
+          >
+            Resume
+          </a>
         </FadeIn>
       </div>
 
