@@ -1,6 +1,5 @@
 import { FadeIn } from '../components/FadeIn';
 import { ContactButton } from '../components/ContactButton';
-import { SparklesCore } from '../components/Sparkles';
 import { Typewriter } from '../components/Typewriter';
 
 export const HeroSection = () => {
