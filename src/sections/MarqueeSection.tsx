@@ -4,7 +4,7 @@ const images = [
   "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
   "https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif",
   "https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif",
-  "https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif",
+    "https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif",
   "https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif",
   "https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif",
   "https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif",
@@ -22,6 +22,7 @@ const images = [
   "https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif",
   "https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif",
   "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif"
+  
 ];
 
 const row1 = [...images.slice(0, 11), ...images.slice(0, 11), ...images.slice(0, 11)];
