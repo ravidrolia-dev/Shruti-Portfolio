@@ -40,7 +40,7 @@ export const HeroSection = () => {
       <div className="order-3 sm:order-none flex-none sm:flex-1 flex flex-col sm:flex-row items-center sm:items-end justify-center sm:justify-between gap-4 sm:gap-0 pb-0 sm:pb-8 md:pb-10 relative z-20">
         <FadeIn delay={0.35} y={20} className="max-w-[320px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px] px-5 sm:px-0 flex flex-col items-center sm:items-start gap-2 sm:gap-3">
           <h2 className="text-[#FFD600] font-black uppercase tracking-wider text-[1.05rem] sm:text-lg md:text-xl lg:text-2xl text-center sm:text-left">
-            Graphic Designer · <span className="whitespace-nowrap">Performance-Driven Creative</span>
+            Graphic Designer  <span className="whitespace-nowrap">Performance-Driven Creative</span>
           </h2>
           <Typewriter
             text="4.5 years designing for scale — app store growth, creative campaigns, and brand systems. 700+ creatives a month across digital advertising, freelance branding, and product marketing."
