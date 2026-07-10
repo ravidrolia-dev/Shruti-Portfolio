@@ -9,42 +9,42 @@ const services = [
   },
   {
     num: "02",
-    title: "Brand Identity",
+    title: "App Store Optimization (ASO)",
     desc: "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence."
   },
   {
     num: "03",
-    title: "App Store Optimization",
+    title: "Ad Creative Design (Meta & Google)",
     desc: "Designing compelling app icons, screenshots, and promo graphics to maximize conversion and downloads."
   },
   {
     num: "04",
-    title: "Social Media Campaigns",
+    title: "Branding & Logo Design",
     desc: "Dynamic and static creatives tailored for Meta Ads, Google Ads, and organic social media growth."
   },
   {
     num: "05",
-    title: "AI Assisted Creative Design",
+    title: "Social Media Design",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   },
   {
     num: "06",
-    title: "AI Assisted Creative Design",
+    title: "Video Editing",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   },
   {
     num: "07",
-    title: "AI Assisted Creative Design",
+    title: "Event Collateral & Print Design",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   },
   {
     num: "08",
-    title: "AI Assisted Creative Design",
+    title: "Editorial / Magazine Layou",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   },
   {
     num: "09",
-    title: "AI Assisted Creative Design",
+    title: "Illustration",
     desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
   }
 ];
@@ -60,12 +60,12 @@ export const ServicesSection = () => {
         </FadeIn>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 lg:items-start">
-          
+
           <div className="flex flex-col flex-1 lg:w-[60%] w-full relative z-30">
             {services.map((service, i) => (
-              <FadeIn 
-                key={service.num} 
-                delay={i * 0.1} 
+              <FadeIn
+                key={service.num}
+                delay={i * 0.1}
                 y={20}
                 className={`flex flex-col sm:flex-row sm:items-start py-8 sm:py-10 md:py-12 border-b border-[rgba(12,12,12,0.15)] ${i === 0 ? 'border-t' : ''}`}
               >
