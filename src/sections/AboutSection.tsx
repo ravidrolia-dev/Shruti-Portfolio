@@ -20,7 +20,7 @@ const skills = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="min-h-screen relative flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden bg-[#0C0C0C]">
+    <section id="about" className="min-h-screen relative flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden bg-transparent">
 
       <div className="flex flex-col items-center z-10 relative w-full max-w-4xl mx-auto">
         <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">

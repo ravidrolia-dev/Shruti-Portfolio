@@ -5,20 +5,7 @@ import { Typewriter } from '../components/Typewriter';
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[100svh] sm:min-h-screen flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-10 sm:pb-0 bg-[#0C0C0C]">
-      
-      {/* Background Sparkles */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1.2}
-          particleDensity={40}
-          className="w-full h-full"
-          particleColor="#FFD600"
-        />
-      </div>
+    <section className="min-h-[100svh] sm:min-h-screen flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-10 sm:pb-0 bg-[#0C0C0C]/0">
       
       {/* Navigation */}
       <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg pt-8 md:pt-10 pb-6 border-b border-white/10 relative z-20 w-full mb-10 sm:mb-16">

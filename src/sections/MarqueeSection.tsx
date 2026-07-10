@@ -67,7 +67,7 @@ export const MarqueeSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden">
+    <section ref={sectionRef} className="bg-transparent pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden">
       <div className="flex flex-col gap-3">
         <div ref={row1Ref} className="flex gap-3 will-change-transform w-max">
           {row1.map((src, i) => (

@@ -10,7 +10,7 @@ export default function MacbookScrollDemo() {
             <Badge className="h-10 w-10 -rotate-12 transform" />
           </a>
         }
-        src={[`/macbook.jpeg`, `/macbook1.jpeg`, `/shruti-new.jpg`]}
+        src={[`/macbook.jpeg`, `/macbook1.jpeg`]}
         showGradient={false}
       />
     </div>
