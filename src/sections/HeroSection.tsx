@@ -41,7 +41,7 @@ export const HeroSection = () => {
         <FadeIn delay={0.35} y={20} className="max-w-[320px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px] px-5 sm:px-0">
           <Typewriter
             text="4.5 years designing for scale — app store growth creative, brand systems, and campaign design. 2,000+ creatives delivered for Pratilipi, alongside freelance branding for F5, Feronia Fashion Night, and more."
-            speed={50}
+            speed={70}
             className="text-[#D7E2EA] font-light uppercase tracking-wide leading-[1.7] sm:leading-relaxed text-[0.95rem] sm:text-[clamp(0.75rem,1.4vw,1.5rem)] text-center sm:text-left inline-block"
           />
         </FadeIn>
