@@ -34,8 +34,8 @@ export const HeroSection = () => {
               <span>Marketing Designer for</span>
               <Typewriter
                 text={['App Growth', 'Paid Ads', 'Brand Campaigns']}
-                speed={60}
-                deleteSpeed={40}
+                speed={20}
+                deleteSpeed={20}
                 delay={2000}
                 loop={true}
                 className="inline-block"
