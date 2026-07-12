@@ -5,47 +5,32 @@ const services = [
   {
     num: "01",
     title: "Marketing Design",
-    desc: "Creation of highly engaging and conversion-focused visuals for multi-channel marketing efforts."
+    desc: "Campaign creatives, launch assets, banners, and multi-channel visuals built for clear communication and conversion."
   },
   {
     num: "02",
     title: "App Store Optimization (ASO)",
-    desc: "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence."
+    desc: "Play Store and App Store screenshots, feature graphics, listing visuals, and visual hierarchy for better product discovery."
   },
   {
     num: "03",
-    title: "Ad Creative Design (Meta & Google)",
-    desc: "Designing compelling app icons, screenshots, and promo graphics to maximize conversion and downloads."
+    title: "Ad Creative Design",
+    desc: "Meta and Google ad creatives, campaign variants, static ads, story creatives, and visual testing support."
   },
   {
     num: "04",
-    title: "Branding & Logo Design",
-    desc: "Dynamic and static creatives tailored for Meta Ads, Google Ads, and organic social media growth."
+    title: "Brand & Social Design",
+    desc: "Social media systems, brand collateral, posters, packaging, digital banners, and launch communication."
   },
   {
     num: "05",
-    title: "Social Media Design",
-    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
+    title: "AI-assisted Creative Workflows",
+    desc: "Using Midjourney, ChatGPT, Gemini, Photoshop, Illustrator, and Canva to speed up ideation and execution."
   },
   {
     num: "06",
-    title: "Video Editing",
-    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
-  },
-  {
-    num: "07",
-    title: "Event Collateral & Print Design",
-    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
-  },
-  {
-    num: "08",
-    title: "Editorial / Magazine Layout",
-    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
-  },
-  {
-    num: "09",
-    title: "Illustration",
-    desc: "Leveraging tools like Midjourney and Gemini to rapidly ideate and generate cutting-edge visual concepts."
+    title: "Video & Motion Assets",
+    desc: "Short-form video assets, GIFs, reels-style edits, and campaign motion creatives."
   }
 ];
 
