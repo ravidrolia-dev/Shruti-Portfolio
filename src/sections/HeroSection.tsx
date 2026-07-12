@@ -1,6 +1,7 @@
 import { FadeIn } from '../components/FadeIn';
-import { ContactButton } from '../components/ContactButton';
+
 import { Typewriter } from '../components/Typewriter';
+
 
 export const HeroSection = () => {
   return (
@@ -29,9 +30,17 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.2} y={30}>
-            <p className="text-[#FFD600] font-bold tracking-[0.15em] uppercase text-xs sm:text-sm md:text-base mb-4 sm:mb-6">
-              Marketing Designer for App Growth, Paid Ads & Brand Campaigns
-            </p>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#FFD600] font-bold tracking-[0.15em] uppercase text-[10px] sm:text-xs md:text-sm mb-4 sm:mb-6 h-8">
+              <span>Marketing Designer for</span>
+              <Typewriter
+                text={['App Growth', 'Paid Ads', 'Brand Campaigns']}
+                speed={60}
+                deleteSpeed={40}
+                delay={2000}
+                loop={true}
+                className="inline-block"
+              />
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.4} y={30}>
@@ -43,7 +52,18 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.5} y={30} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full">
-            <ContactButton />
+            <a 
+              href="#projects"
+              className="inline-block rounded-full text-[#0C0C0C] font-black uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+              style={{
+                background: '#FFD600',
+                boxShadow: '0px 4px 4px rgba(255, 214, 0, 0.25), inset 4px 4px 12px rgba(255, 255, 255, 0.3)',
+                outline: '2px solid white',
+                outlineOffset: '-3px'
+              }}
+            >
+              View Projects
+            </a>
             <a 
               href="/Shruti_Drolia.pdf"
               target="_blank"
