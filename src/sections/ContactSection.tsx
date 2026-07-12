@@ -1,5 +1,5 @@
 import { FadeIn } from '../components/FadeIn';
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export const ContactSection = () => {
   return (
