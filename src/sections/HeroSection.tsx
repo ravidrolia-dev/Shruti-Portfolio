@@ -30,15 +30,15 @@ export const HeroSection = () => {
 
           <FadeIn delay={0.2} y={30}>
             <p className="text-[#FFD600] font-bold tracking-[0.15em] uppercase text-xs sm:text-sm md:text-base mb-4 sm:mb-6">
-              Performance-Driven Graphic Designer
+              Marketing Designer for App Growth, Paid Ads & Brand Campaigns
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4} y={30}>
             <Typewriter
-              text="With 4.5 years of experience designing for scale — from app store growth and creative campaigns to comprehensive brand systems. I create visuals that don't just look good, they perform."
+              text={"I create performance-led visuals for digital brands — from app store creatives and paid ads to social campaigns, launch assets, and brand systems.\n4.5 years experience · 2,000+ creatives delivered · 12% organic install growth through ASO redesign"}
               speed={20}
-              className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-10 sm:mb-12 inline-block"
+              className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-10 sm:mb-12 inline-block whitespace-pre-wrap"
             />
           </FadeIn>
 
