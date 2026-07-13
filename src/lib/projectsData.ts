@@ -131,5 +131,25 @@ export const projectsData: ProjectDetails[] = [
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
     col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85"
+  },
+  {
+    slug: "Luxury-design",
+    num: "06",
+    client: "LUxury product",
+    name: "Luxury Design",
+    shortDescription: "Layout and art direction for Womanifest, a 90+ page digital lifestyle magazine for women.",
+    role: "Freelance Editorial Designer",
+    problem: "Needed a clean, engaging layout for a massive 90+ page lifestyle magazine focusing on women's topics.",
+    approach: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections.",
+    result: "Successfully delivered a cohesive and highly readable digital magazine experience.",
+    gallery: [
+      "/images/e.jpg",
+      "/images/page-26.jpg",
+      "/images/page-27.jpg",
+      "/images/page-28.jpg"
+    ],
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932287/WhatsApp_Image_2026-07-13_at_2.06.28_PM_piulx5.jpg",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932508/WhatsApp_Image_2026-07-13_at_2.06.28_PM_k5fw8n.jpg",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932543/WhatsApp_Image_2026-07-13_at_2.06.45_PM_loww4r.jpg"
   }
 ];
