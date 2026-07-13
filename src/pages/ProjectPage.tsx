@@ -15,7 +15,7 @@ export const ProjectPage = () => {
   return (
     <div className="min-h-screen relative z-10 bg-transparent text-[#D7E2EA]">
       {/* Header / Navigation */}
-      <nav className="p-5 sm:p-8 md:p-12 border-b border-white/10 flex justify-between items-center relative z-20">
+      <nav className="fixed top-0 left-0 w-full p-5 sm:p-6 md:px-12 md:py-6 border-b border-white/10 flex justify-between items-center z-50 bg-[#0C0C0C]/70 backdrop-blur-md">
         <button 
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-sm uppercase tracking-widest font-medium hover:text-[#FFD600] transition-colors"
@@ -30,7 +30,7 @@ export const ProjectPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="px-5 sm:px-8 md:px-12 py-16 sm:py-24 max-w-7xl mx-auto">
+      <section className="px-5 sm:px-8 md:px-12 pt-32 pb-16 sm:pt-40 sm:pb-24 max-w-7xl mx-auto">
         <FadeIn delay={0.1} y={30}>
           <span className="text-[#FFD600] font-bold uppercase tracking-widest text-sm sm:text-base block mb-4">
             {project.client}
