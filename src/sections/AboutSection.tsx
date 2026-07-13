@@ -114,7 +114,7 @@ export const AboutSection = () => {
                     key={skillIndex}
                     className="group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/10 bg-[#161616] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 transition-all cursor-default"
                   >
-                    <span className="text-[#FFD600] flex items-center justify-center">
+                    <span className="text-white/50 group-hover:text-[#FFD600] transition-colors flex items-center justify-center">
                       {skill.icon}
                     </span>
                     {skill.name}
