@@ -71,10 +71,10 @@ export const HeroSection = () => {
             {/* Desktop Metrics */}
             <div className="hidden md:grid grid-cols-4 gap-x-4 w-full max-w-3xl lg:max-w-2xl mb-10 sm:mb-12 mt-6">
               {/* Row 1: Numbers */}
-              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={4.5} suffix=" Years" /></span></div>
-              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={500} suffix="+" /></span></div>
-              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={12} suffix="% Growth" /></span></div>
-              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric isString stringValue="Meta + Google" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#D7E2EA] whitespace-nowrap"><AnimatedMetric value={4.5} suffix=" Years" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#D7E2EA] whitespace-nowrap"><AnimatedMetric value={500} suffix="+" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#D7E2EA] whitespace-nowrap"><AnimatedMetric value={12} suffix="% Growth" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#D7E2EA] whitespace-nowrap"><AnimatedMetric isString stringValue="Meta + Google" /></span></div>
 
               {/* Line */}
               <div className="col-span-4 h-px bg-white/20"></div>
