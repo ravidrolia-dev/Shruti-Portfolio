@@ -40,8 +40,7 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
         className="relative z-10 text-[22px] text-[#F2E3CF] hover:text-[#FFD600] transition-colors font-['Gochi_Hand',_sans-serif] tracking-wider outline-none"
         style={{ fontFamily: '"Gochi Hand", sans-serif' }}
       >
-        {/* On hover, the text sometimes changed case or text (e.g., 'about' vs 'jackie'), we'll keep it standard for the recreation unless configured */}
-        {isActive && id === 'about' ? 'jackie' : label}
+        {label}
       </a>
 
       {/* Decorative SVGs on Hover */}
