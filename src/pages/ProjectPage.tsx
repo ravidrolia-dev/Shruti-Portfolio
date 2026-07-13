@@ -14,20 +14,17 @@ export const ProjectPage = () => {
   
   return (
     <div className="min-h-screen relative z-10 bg-transparent text-[#D7E2EA]">
-      {/* Header / Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-5 sm:p-6 md:px-12 md:py-6 border-b border-white/10 flex justify-between items-center z-50 bg-[#0C0C0C]/70 backdrop-blur-md">
-        <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-sm uppercase tracking-widest font-medium hover:text-[#FFD600] transition-colors"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Back to Portfolio
-        </button>
-        <div className="text-[#FFD600] font-black tracking-widest uppercase">Project {project.num}</div>
-      </nav>
+      {/* Floating Back Button */}
+      <button 
+        onClick={() => navigate(-1)}
+        className="fixed top-24 left-5 sm:left-8 md:left-12 z-40 flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-[#D7E2EA] bg-[#0C0C0C]/80 backdrop-blur-md px-4 py-2 border border-white/10 rounded-full hover:text-[#FFD600] transition-colors"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back
+      </button>
 
       {/* Hero Section */}
       <section className="px-5 sm:px-8 md:px-12 pt-32 pb-16 sm:pt-40 sm:pb-24 max-w-7xl mx-auto">
