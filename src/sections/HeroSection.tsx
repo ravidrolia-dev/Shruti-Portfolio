@@ -25,7 +25,7 @@ const AnimatedMetric = ({ value, suffix = "", isString = false, stringValue = ""
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[100svh] sm:min-h-screen flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-10 sm:pb-0 bg-[#0C0C0C]/0">
+    <section className="flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-12 md:pb-16 bg-[#0C0C0C]/0">
       
       {/* Navigation */}
       <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg pt-6 md:pt-8 pb-4 border-b border-white/10 relative z-20 w-full mb-4 lg:mb-8">
@@ -38,7 +38,7 @@ export const HeroSection = () => {
       </FadeIn>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-[1400px] mx-auto relative z-20 gap-12 lg:gap-8 xl:gap-20 pb-20 pt-0">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1400px] mx-auto relative z-20 gap-12 lg:gap-8 xl:gap-20 pb-0 pt-4 md:pt-8">
         
         {/* Left Column: Text */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
