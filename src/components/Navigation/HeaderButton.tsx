@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Circle1, Circle2, AnimatedUnderline } from './Decorations';
+import { Circle1, Circle2 } from './Decorations';
 import { HoverDecoration } from './HoverDecoration';
 
 interface HeaderButtonProps {
@@ -24,7 +24,6 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
   onLeave,
   onClick
 }) => {
-  const isActive = activeItem === id;
   const isHovered = hoveredItem === id;
 
   // The Framer component uses Gochi Hand font for the text
