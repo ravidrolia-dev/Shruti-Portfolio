@@ -1,22 +1,21 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ProjectPage } from './pages/ProjectPage';
 import { SparklesCore } from './components/Sparkles';
 import { ScrollToTop } from './components/ScrollToTop';
-import ClickSpark from './components/ClickSpark';
+import { MouseEffects } from './components/MouseEffects';
 import { FloatingContactButton } from './components/FloatingContactButton';
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <ClickSpark
-        sparkColor='#FFD600'
-        sparkSize={12}
-        sparkRadius={20}
-        sparkCount={8}
-        duration={600}
+      <MouseEffects
+        color='#FFD600'
+        interactionMode='wavy'
+        effectSize={80}
+        strokeWidth={3}
+        duration={1.2}
       >
         <main className="main-wrapper bg-[#0C0C0C] min-h-screen relative">
           {/* Global Background Sparkles */}
@@ -39,7 +38,7 @@ function App() {
           
           <FloatingContactButton />
         </main>
-      </ClickSpark>
+      </MouseEffects>
     </BrowserRouter>
   );
 }
