@@ -1,7 +1,27 @@
 import { FadeIn } from '../components/FadeIn';
-
 import { Typewriter } from '../components/Typewriter';
+import { useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 
+const AnimatedMetric = ({ value, suffix = "", isString = false, stringValue = "" }: { value?: number, suffix?: string, isString?: boolean, stringValue?: string }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    if (value === undefined) return "";
+    if (value >= 1000) return Math.round(latest).toLocaleString() + suffix;
+    if (value % 1 !== 0) return latest.toFixed(1) + suffix; // for 4.5
+    return Math.round(latest) + suffix;
+  });
+
+  useEffect(() => {
+    if (value !== undefined) {
+      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [count, value]);
+
+  if (isString) return <span>{stringValue}</span>;
+  return <motion.span>{rounded}</motion.span>;
+};
 
 export const HeroSection = () => {
   return (
@@ -44,15 +64,57 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.4} y={30}>
-            <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-10 sm:mb-12 inline-block whitespace-pre-wrap">
-              {"I create performance-led visuals for digital brands — from app store creatives and paid ads to social campaigns, launch assets, and brand systems.\n4.5 years experience · 2,000+ creatives delivered · 12% organic install growth through ASO redesign"}
+            <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-6 sm:mb-8 inline-block whitespace-pre-wrap">
+              {"I create performance-led visuals for digital brands — from app store creatives and paid ads to social campaigns, launch assets, and brand systems."}
             </p>
+
+            {/* Desktop Metrics */}
+            <div className="hidden md:grid grid-cols-4 gap-x-4 w-full max-w-3xl lg:max-w-2xl mb-10 sm:mb-12 mt-6">
+              {/* Row 1: Numbers */}
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={4.5} suffix=" Years" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={500} suffix="+" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric value={12} suffix="% Growth" /></span></div>
+              <div className="col-span-1 pb-3"><span className="font-semibold text-xl lg:text-2xl text-[#FFD600] whitespace-nowrap"><AnimatedMetric isString stringValue="Meta + Google" /></span></div>
+
+              {/* Line */}
+              <div className="col-span-4 h-px bg-white/20"></div>
+
+              {/* Row 2: Labels */}
+              <div className="col-span-1 pt-3 pr-2"><span className="font-medium text-[11px] lg:text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider leading-tight">Experience</span></div>
+              <div className="col-span-1 pt-3 pr-2"><span className="font-medium text-[11px] lg:text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider leading-tight">Creatives Delivered Monthly</span></div>
+              <div className="col-span-1 pt-3 pr-2"><span className="font-medium text-[11px] lg:text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider leading-tight">ASO Install Growth</span></div>
+              <div className="col-span-1 pt-3 pr-2"><span className="font-medium text-[11px] lg:text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider leading-tight">Ad Creatives</span></div>
+            </div>
+
+            {/* Mobile Metrics */}
+            <div className="grid md:hidden grid-cols-2 gap-y-8 gap-x-6 mb-10 w-full mt-4">
+              <div className="flex flex-col">
+                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={4.5} suffix=" Years" /></span>
+                <div className="h-px bg-white/20 w-full mb-3"></div>
+                <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Experience</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={2000} suffix="+" /></span>
+                <div className="h-px bg-white/20 w-full mb-3"></div>
+                <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Creatives Delivered</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={12} suffix="% Growth" /></span>
+                <div className="h-px bg-white/20 w-full mb-3"></div>
+                <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">ASO Install Growth</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric isString stringValue="Meta + Google" /></span>
+                <div className="h-px bg-white/20 w-full mb-3"></div>
+                <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Ad Creatives</span>
+              </div>
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.5} y={30} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full">
             <a 
               href="#projects"
-              className="inline-block rounded-full text-[#0C0C0C] font-black uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+              className="inline-block rounded-full text-[#0C0C0C] font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 text-[11px] sm:text-xs md:text-sm outline-none transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
               style={{
                 background: '#FFD600',
                 boxShadow: '0px 4px 4px rgba(255, 214, 0, 0.25), inset 4px 4px 12px rgba(255, 255, 255, 0.3)',
@@ -65,7 +127,7 @@ export const HeroSection = () => {
             <a 
               href="/Shruti_Drolia.pdf"
               target="_blank"
-              className="inline-block rounded-full text-[#FFD600] font-black uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none transition-all hover:bg-[#FFD600] hover:text-[#0C0C0C] active:scale-95 whitespace-nowrap border-2 border-[#FFD600] flex items-center justify-center"
+              className="inline-block rounded-full text-[#FFD600] font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 text-[11px] sm:text-xs md:text-sm outline-none transition-all hover:bg-[#FFD600] hover:text-[#0C0C0C] active:scale-95 whitespace-nowrap border-2 border-[#FFD600] flex items-center justify-center"
             >
               Resume
             </a>
