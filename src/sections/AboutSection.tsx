@@ -57,14 +57,12 @@ export const AboutSection = () => {
         <FadeIn delay={0.3} y={20} className="flex flex-col w-full max-w-4xl mb-16 sm:mb-20 md:mb-24 gap-10">
           {skillCategories.map((category, index) => (
             <div key={index} className="flex flex-col w-full">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></div>
-                <h3 className="text-[#FFD600] text-xs sm:text-sm uppercase tracking-[0.15em] font-medium whitespace-nowrap">
+              <div className="flex items-center justify-center mb-5">
+                <h3 className="text-[#FFD600] text-xs sm:text-sm uppercase tracking-[0.15em] font-medium whitespace-nowrap text-center">
                   {category.title}
                 </h3>
-                <div className="flex-1 h-px bg-white/10 ml-2"></div>
               </div>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
