@@ -112,7 +112,7 @@ export const AboutSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/10 bg-[#161616] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 transition-all cursor-default"
+                    className="group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.1)] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 hover:shadow-[0_8px_32px_rgba(255,214,0,0.1)] transition-all duration-300 cursor-default"
                   >
                     <span className="text-white/50 group-hover:text-[#FFD600] transition-colors flex items-center justify-center">
                       {skill.icon}
