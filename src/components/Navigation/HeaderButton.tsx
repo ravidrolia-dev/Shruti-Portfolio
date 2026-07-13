@@ -68,10 +68,7 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
       )}
 
       <HoverDecoration id={id} isHovered={isHovered} />
-      {/* Active Underline */}
-      {isActive && id !== 'contact' && (
-        <AnimatedUnderline className="absolute bottom-1 left-4 right-4" />
-      )}
+      
     </div>
   );
 };
