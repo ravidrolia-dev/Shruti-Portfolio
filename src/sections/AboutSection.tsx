@@ -12,18 +12,64 @@ const paragraphs = [
   "I enjoy working in collaborative teams where design, marketing, and performance goals come together. I like building visuals that are fast, scalable, brand-aware, and performance-focused — designed not just to look good, but to communicate clearly and drive action."
 ];
 
+import {
+  IconBrandAdobePhotoshop,
+  IconBrandAdobeIllustrator,
+  IconBrandAdobePremiere,
+  IconPalette,
+  IconBrandOpenai,
+  IconSparkles,
+  IconWand,
+  IconLayout,
+  IconTypography,
+  IconFingerprint,
+  IconVector,
+  IconSocial,
+  IconPrinter,
+  IconAppWindow,
+  IconChartLine,
+  IconAd,
+  IconSpeakerphone,
+  IconFlask,
+  IconStack2,
+  IconDatabase
+} from '@tabler/icons-react';
+
 const skillCategories = [
   {
     title: "TOOLS",
-    skills: ["Photoshop", "Illustrator", "Premiere Pro", "Canva", "Midjourney", "ChatGPT", "Gemini"]
+    skills: [
+      { name: "Photoshop", icon: <IconBrandAdobePhotoshop size={16} /> },
+      { name: "Illustrator", icon: <IconBrandAdobeIllustrator size={16} /> },
+      { name: "Premiere Pro", icon: <IconBrandAdobePremiere size={16} /> },
+      { name: "Canva", icon: <IconPalette size={16} /> },
+      { name: "Midjourney", icon: <IconWand size={16} /> },
+      { name: "ChatGPT", icon: <IconBrandOpenai size={16} /> },
+      { name: "Gemini", icon: <IconSparkles size={16} /> }
+    ]
   },
   {
     title: "DESIGN SKILLS",
-    skills: ["Layout Design", "Typography", "Brand Identity", "Vector Illustration", "Social Media Design", "Print Collateral"]
+    skills: [
+      { name: "Layout Design", icon: <IconLayout size={16} /> },
+      { name: "Typography", icon: <IconTypography size={16} /> },
+      { name: "Brand Identity", icon: <IconFingerprint size={16} /> },
+      { name: "Vector Illustration", icon: <IconVector size={16} /> },
+      { name: "Social Media Design", icon: <IconSocial size={16} /> },
+      { name: "Print Collateral", icon: <IconPrinter size={16} /> }
+    ]
   },
   {
     title: "GROWTH & MARKETING",
-    skills: ["ASO Visual Design", "Performance Creatives", "Meta & Google Ads", "Campaign Design", "Creative A/B Testing", "High-volume Creative Execution", "Data-Driven Design"]
+    skills: [
+      { name: "ASO Visual Design", icon: <IconAppWindow size={16} /> },
+      { name: "Performance Creatives", icon: <IconChartLine size={16} /> },
+      { name: "Meta & Google Ads", icon: <IconAd size={16} /> },
+      { name: "Campaign Design", icon: <IconSpeakerphone size={16} /> },
+      { name: "Creative A/B Testing", icon: <IconFlask size={16} /> },
+      { name: "High-volume Creative Execution", icon: <IconStack2 size={16} /> },
+      { name: "Data-Driven Design", icon: <IconDatabase size={16} /> }
+    ]
   }
 ];
 
@@ -66,9 +112,12 @@ export const AboutSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-white/10 bg-[#161616] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 transition-all cursor-default"
+                    className="group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/10 bg-[#161616] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 transition-all cursor-default"
                   >
-                    {skill}
+                    <span className="text-[#FFD600] flex items-center justify-center">
+                      {skill.icon}
+                    </span>
+                    {skill.name}
                   </span>
                 ))}
               </div>
