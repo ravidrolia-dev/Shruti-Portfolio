@@ -44,11 +44,9 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.4} y={30}>
-            <Typewriter
-              text={"I create performance-led visuals for digital brands — from app store creatives and paid ads to social campaigns, launch assets, and brand systems.\n4.5 years experience · 2,000+ creatives delivered · 12% organic install growth through ASO redesign"}
-              speed={20}
-              className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-10 sm:mb-12 inline-block whitespace-pre-wrap"
-            />
+            <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl lg:max-w-xl mb-10 sm:mb-12 inline-block whitespace-pre-wrap">
+              {"I create performance-led visuals for digital brands — from app store creatives and paid ads to social campaigns, launch assets, and brand systems.\n4.5 years experience · 2,000+ creatives delivered · 12% organic install growth through ASO redesign"}
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.5} y={30} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full">
