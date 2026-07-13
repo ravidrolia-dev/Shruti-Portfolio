@@ -8,7 +8,7 @@ export const HeroSection = () => {
     <section className="min-h-[100svh] sm:min-h-screen flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-10 sm:pb-0 bg-[#0C0C0C]/0">
       
       {/* Navigation */}
-      <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg pt-8 md:pt-10 pb-6 border-b border-white/10 relative z-20 w-full mb-10 sm:mb-16">
+      <FadeIn delay={0} y={-20} as="nav" className="flex justify-between items-center text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg pt-6 md:pt-8 pb-4 border-b border-white/10 relative z-20 w-full mb-4 lg:mb-8">
         <span className="font-black text-[#FFD600] tracking-widest text-lg sm:text-xl">Portfolio</span>
         <div className="flex gap-4 sm:gap-10">
           <a href="#about" className="hover:text-[#FFD600] transition-colors duration-200">About</a>
@@ -18,7 +18,7 @@ export const HeroSection = () => {
       </FadeIn>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-[1400px] mx-auto relative z-20 gap-12 lg:gap-8 xl:gap-20 pb-10 pt-4">
+      <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-[1400px] mx-auto relative z-20 gap-12 lg:gap-8 xl:gap-20 pb-20 pt-0">
         
         {/* Left Column: Text */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
