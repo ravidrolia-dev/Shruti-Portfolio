@@ -5,7 +5,6 @@ import { SparklesCore } from './components/Sparkles';
 import { ScrollToTop } from './components/ScrollToTop';
 import { MouseEffects } from './components/MouseEffects';
 import { FloatingContactButton } from './components/FloatingContactButton';
-import { Navigation } from './components/Navigation';
 
 function App() {
   return (
@@ -32,7 +31,6 @@ function App() {
             />
           </div>
           
-          <Navigation />
           
           <Routes>
             <Route path="/" element={<Home />} />

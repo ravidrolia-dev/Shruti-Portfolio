@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { HeroSection } from '../sections/HeroSection';
+import { Navigation } from '../components/Navigation';
 import { MarqueeSection } from '../sections/MarqueeSection';
 import { AboutSection } from '../sections/AboutSection';
 import { ServicesSection } from '../sections/ServicesSection';
@@ -20,6 +21,7 @@ export const Home = () => {
 
   return (
     <div className="relative z-10">
+      <Navigation />
       <HeroSection />
       <MarqueeSection />
       <AboutSection />

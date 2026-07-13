@@ -7,19 +7,6 @@ export const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Determine active item based on current route
-  const getActiveItem = () => {
-    if (location.pathname.startsWith('/project')) {
-      return 'projects';
-    }
-    // If we're on the home page, we can use the hash or default to 'about'
-    if (location.hash === '#projects') return 'projects';
-    if (location.hash === '#contact') return 'contact';
-    return 'about';
-  };
-
-  const activeItem = getActiveItem();
-
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (location.pathname !== '/' && href.startsWith('#')) {
@@ -37,7 +24,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full p-5 sm:p-6 md:px-12 md:py-6 border-b border-white/10 flex justify-between items-center z-50 bg-[#0C0C0C]/70 backdrop-blur-md">
+    <nav className="absolute top-0 left-0 w-full py-4 px-6 md:px-10 flex justify-between items-center z-50 bg-transparent">
       <div 
         className="text-[#FFD600] font-black tracking-widest uppercase cursor-pointer"
         onClick={() => navigate('/')}
@@ -50,7 +37,6 @@ export const Navigation = () => {
           id="about" 
           label="About" 
           href="#about"
-          activeItem={activeItem}
           hoveredItem={hoveredItem}
           onHover={setHoveredItem}
           onLeave={() => setHoveredItem(null)}
@@ -60,7 +46,6 @@ export const Navigation = () => {
           id="projects" 
           label="Project" 
           href="#projects"
-          activeItem={activeItem}
           hoveredItem={hoveredItem}
           onHover={setHoveredItem}
           onLeave={() => setHoveredItem(null)}
@@ -70,7 +55,6 @@ export const Navigation = () => {
           id="contact" 
           label="Connect" 
           href="#contact"
-          activeItem={activeItem}
           hoveredItem={hoveredItem}
           onHover={setHoveredItem}
           onLeave={() => setHoveredItem(null)}
