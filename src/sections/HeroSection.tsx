@@ -45,7 +45,7 @@ export const HeroSection = () => {
           
           <FadeIn delay={0.3} y={30}>
             <h1 className="font-bold text-[#D7E2EA] leading-[1.1] text-[clamp(2.5rem,8vw,5.5rem)] tracking-tight mb-6 sm:mb-8">
-              Hi, I'm <br className="hidden lg:block"/> Shruti Drolia.
+              Hi, I'm <br className="hidden lg:block"/> Shruti Drolia
             </h1>
           </FadeIn>
 
