@@ -6,11 +6,10 @@ import TrueFocus from '../components/TrueFocus';
 
 const paragraphs = [
   "I design creatives that don’t just look good — they perform.",
-  "I’m Shruti Drolia, a graphic designer with 4.5 years of experience working closely with the growth team at Pratilipi, one of India’s largest storytelling platforms.",
-  "My work sits at the intersection of design and performance — from Play Store visuals that improved organic installs by 12% to creating and managing 2,000+ ad creatives across Meta and Google. I’m used to working at scale, testing quickly, and focusing on what actually drives results.",
-  "With a background in Fashion Merchandising, I naturally think beyond visuals. I consider positioning, audience, and how each design fits into a larger brand and business goal.",
-  "I’ve worked with AI-assisted workflows, A/B testing, and alongside marketing teams to continuously refine creatives based on real performance data.",
-  "I enjoy working with teams that move fast, care about quality, and see design as a tool for growth — not just decoration."
+  "I’m Shruti Drolia, a marketing designer with 4.5 years of experience creating high-volume digital creatives for app growth, paid ads, ASO, and brand campaigns.",
+  "I have worked closely with growth and marketing teams to design Play Store visuals, Meta and Google ad creatives, story posters, GIFs, short-form videos, and campaign assets — delivering around 500 creatives monthly across multiple formats and campaign needs.",
+  "My work contributed to a 12% increase in organic app installs through ASO visual redesign and listing hierarchy improvements.",
+  "I enjoy working in collaborative teams where design, marketing, and performance goals come together. I like building visuals that are fast, scalable, brand-aware, and performance-focused — designed not just to look good, but to communicate clearly and drive action."
 ];
 
 const skills = [
