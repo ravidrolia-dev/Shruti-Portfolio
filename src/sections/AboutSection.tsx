@@ -12,9 +12,19 @@ const paragraphs = [
   "I enjoy working in collaborative teams where design, marketing, and performance goals come together. I like building visuals that are fast, scalable, brand-aware, and performance-focused — designed not just to look good, but to communicate clearly and drive action."
 ];
 
-const skills = [
-  "Photoshop", "Illustrator", "Premiere Pro", "Canva", "AI/generative tools", "Midjourney",
-  "Branding", "Vector Illustration", "Layout Design", "A/B Testing", "Data-Driven Design"
+const skillCategories = [
+  {
+    title: "TOOLS",
+    skills: ["Photoshop", "Illustrator", "Premiere Pro", "Canva", "Midjourney", "ChatGPT", "Gemini"]
+  },
+  {
+    title: "DESIGN SKILLS",
+    skills: ["Layout Design", "Typography", "Brand Identity", "Vector Illustration", "Social Media Design", "Print Collateral"]
+  },
+  {
+    title: "GROWTH & MARKETING",
+    skills: ["ASO Visual Design", "Performance Creatives", "Meta & Google Ads", "Campaign Design", "Creative A/B Testing", "High-volume Creative Execution", "Data-Driven Design"]
+  }
 ];
 
 export const AboutSection = () => {
@@ -44,14 +54,27 @@ export const AboutSection = () => {
 
 
         {/* Visual Skills Block */}
-        <FadeIn delay={0.3} y={20} className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 md:mb-24 w-full max-w-3xl">
-          {skills.map((skill, index) => (
-            <span
-              key={index}
-              className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-[#D7E2EA] font-medium text-sm hover:border-[#FFD600] hover:text-[#FFD600] hover:bg-[#FFD600]/10 transition-all cursor-default"
-            >
-              {skill}
-            </span>
+        <FadeIn delay={0.3} y={20} className="flex flex-col w-full max-w-4xl mb-16 sm:mb-20 md:mb-24 gap-10">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="flex flex-col w-full">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></div>
+                <h3 className="text-[#FFD600] text-xs sm:text-sm uppercase tracking-[0.15em] font-medium whitespace-nowrap">
+                  {category.title}
+                </h3>
+                <div className="flex-1 h-px bg-white/10 ml-2"></div>
+              </div>
+              <div className="flex flex-wrap gap-3 sm:gap-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-white/10 bg-[#161616] text-[#D7E2EA] font-semibold text-xs sm:text-sm hover:border-[#FFD600]/30 hover:bg-[#FFD600]/10 transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </FadeIn>
 
