@@ -5,6 +5,7 @@ import { ProjectPage } from './pages/ProjectPage';
 import { SparklesCore } from './components/Sparkles';
 import { ScrollToTop } from './components/ScrollToTop';
 import ClickSpark from './components/ClickSpark';
+import { FloatingContactButton } from './components/FloatingContactButton';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/project/:id" element={<ProjectPage />} />
           </Routes>
+          
+          <FloatingContactButton />
         </main>
       </ClickSpark>
     </BrowserRouter>

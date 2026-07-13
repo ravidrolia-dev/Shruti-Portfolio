@@ -1,7 +1,6 @@
 
 import { FadeIn } from '../components/FadeIn';
 import { AnimatedText } from '../components/AnimatedText';
-import { ContactButton } from '../components/ContactButton';
 import TrueFocus from '../components/TrueFocus';
 
 const paragraphs = [
@@ -126,7 +125,6 @@ export const AboutSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.4} y={20} className="flex flex-wrap gap-3 sm:gap-4 justify-center">
-          <ContactButton />
           <a
             href="/Shruti_Drolia.pdf"
             target="_blank"
