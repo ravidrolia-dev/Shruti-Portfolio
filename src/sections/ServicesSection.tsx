@@ -4,33 +4,33 @@ import MacbookScrollDemo from '../components/macbook-scroll-demo';
 const services = [
   {
     num: "01",
-    title: "Marketing Design",
-    desc: "Campaign creatives, launch assets, banners, and multi-channel visuals built for clear communication and conversion."
+    title: "App Store & ASO Visuals",
+    desc: "Play Store screenshots, feature graphics, app listing creatives, and product communication visuals built for clarity and discovery."
   },
   {
     num: "02",
-    title: "App Store Optimization (ASO)",
-    desc: "Play Store and App Store screenshots, feature graphics, listing visuals, and visual hierarchy for better product discovery."
+    title: "Performance Marketing Creatives",
+    desc: "Meta ads, Google ads, campaign banners, ad variations, and testing-focused creatives designed for performance campaigns."
   },
   {
     num: "03",
-    title: "Ad Creative Design",
-    desc: "Meta and Google ad creatives, campaign variants, static ads, story creatives, and visual testing support."
+    title: "Social Media & Campaign Design",
+    desc: "Instagram posts, stories, launch creatives, festival campaigns, and content-led visual systems for digital platforms."
   },
   {
     num: "04",
-    title: "Brand & Social Design",
-    desc: "Social media systems, brand collateral, posters, packaging, digital banners, and launch communication."
+    title: "Brand & Marketing Collateral",
+    desc: "Menus, brochures, business cards, letterheads, posters, packaging, and offline marketing assets for consistent brand communication."
   },
   {
     num: "05",
-    title: "AI-assisted Creative Workflows",
-    desc: "Using Midjourney, ChatGPT, Gemini, Photoshop, Illustrator, and Canva to speed up ideation and execution."
+    title: "AI-assisted Visual Exploration",
+    desc: "AI-generated images, concept visuals, campaign directions, and video/image experiments refined through design tools."
   },
   {
     num: "06",
-    title: "Video & Motion Assets",
-    desc: "Short-form video assets, GIFs, reels-style edits, and campaign motion creatives."
+    title: "Video & Motion Creatives",
+    desc: "Short-form video ads, GIFs, reels-style edits, and motion-led campaign assets for social and performance channels."
   }
 ];
 
