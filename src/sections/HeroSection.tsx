@@ -30,7 +30,7 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.2} y={30}>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#FFD600] font-bold tracking-[0.15em] uppercase text-[10px] sm:text-xs md:text-sm mb-4 sm:mb-6 h-8">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#FFD600] font-bold tracking-[0.15em] uppercase text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 min-h-[3rem] lg:min-h-[3.5rem]">
               <span>Marketing Designer for</span>
               <Typewriter
                 text={['App Growth', 'Paid Ads', 'Brand Campaigns']}
