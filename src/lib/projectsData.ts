@@ -137,7 +137,7 @@ export const projectsData: ProjectDetails[] = [
     num: "06",
     client: "LUxury product",
     name: "Luxury Fragrance Showcase Invite",
-    shortDescription: "Layout and art direction for Womanifest, a 90+ page digital lifestyle magazine for women.",
+    shortDescription: "A premium event invite designed through product-led composition, quiet luxury styling, and Indian heritage-inspired visual direction.",
     role: "Freelance Editorial Designer",
     problem: "Needed a clean, engaging layout for a massive 90+ page lifestyle magazine focusing on women's topics.",
     approach: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections.",
