@@ -93,10 +93,10 @@ export const ProjectPage = () => {
 
           {/* Dynamic Gallery */}
           {project.gallery && project.gallery.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-16 items-start">
               {project.gallery.map((imgUrl, idx) => (
-                <div key={idx} className={`bg-white/5 border border-white/10 rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2 aspect-video' : 'aspect-square'}`}>
-                  <img src={imgUrl} alt={`${project.name} gallery image ${idx + 1}`} className="w-full h-full object-cover" />
+                <div key={idx} className={`bg-white/5 border border-white/10 rounded-[30px] overflow-hidden w-full ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
+                  <img src={imgUrl} alt={`${project.name} gallery image ${idx + 1}`} className="w-full h-auto block" />
                 </div>
               ))}
             </div>
