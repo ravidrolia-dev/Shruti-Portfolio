@@ -122,7 +122,7 @@ export const ProjectPage = () => {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0, ease: [0.16, 1, 0.3, 1] }}
                         className={`w-full ${hasImages ? 'md:w-[40%] relative z-20' : 'max-w-3xl mx-auto text-center'} ${hasText && hasImages ? (idx % 2 === 0 ? 'md:-mr-12 md:pr-4' : 'md:-ml-12 md:pl-4') : ''}`}
                       >
                         <div className={`${hasImages ? 'bg-[#0C0C0C]/80 backdrop-blur-xl border border-white/10 p-8 sm:p-10 rounded-[30px] shadow-2xl' : 'py-4'}`}>
@@ -154,10 +154,10 @@ export const ProjectPage = () => {
                           {block.images!.map((imgUrl, imgIdx) => (
                             <motion.div 
                               key={imgIdx} 
-                              initial={{ opacity: 0, y: 100, scale: 0.95 }}
+                              initial={{ opacity: 0, y: 40, scale: 0.95 }}
                               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                              viewport={{ once: true, margin: "-50px" }}
-                              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: imgIdx * 0.15 }}
+                              viewport={{ once: true, margin: "-100px" }}
+                              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: imgIdx * 0.15 }}
                               className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] cursor-pointer ${imgIdx % 3 === 0 || block.images!.length === 1 ? 'sm:col-span-2' : ''}`}
                               onClick={() => setSelectedImage(imgUrl)}
                             >
