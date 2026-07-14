@@ -52,6 +52,13 @@ export const ProjectPage = () => {
             {project.shortDescription}
           </p>
 
+          {/* First Dynamic Gallery Image */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="bg-white/5 border border-white/10 rounded-[30px] overflow-hidden mb-16">
+              <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             {project.problem && (
               <div>
@@ -91,12 +98,12 @@ export const ProjectPage = () => {
             </div>
           )}
 
-          {/* Dynamic Gallery */}
-          {project.gallery && project.gallery.length > 0 && (
+          {/* Remaining Dynamic Gallery */}
+          {project.gallery && project.gallery.length > 1 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-16">
-              {project.gallery.map((imgUrl, idx) => (
+              {project.gallery.slice(1).map((imgUrl, idx) => (
                 <div key={idx} className={`bg-white/5 border border-white/10 rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
-                  <img src={imgUrl} alt={`${project.name} gallery image ${idx + 1}`} className="w-full h-auto block" />
+                  <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block" />
                 </div>
               ))}
             </div>
