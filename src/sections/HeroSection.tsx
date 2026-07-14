@@ -1,5 +1,6 @@
 import { FadeIn } from '../components/FadeIn';
 import { Typewriter } from '../components/Typewriter';
+import { HoverPopText } from '../components/HoverPopText';
 import { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 
@@ -40,7 +41,7 @@ export const HeroSection = () => {
 
           <FadeIn delay={0.2} y={30}>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[#FFD600] font-bold tracking-[0.15em] uppercase text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 min-h-[3rem] lg:min-h-[3.5rem]">
-              <span>Marketing Designer for</span>
+              <span className="flex"><HoverPopText text="Marketing Designer" />&nbsp;for</span>
               <Typewriter
                 text={['App Growth', 'Paid Ads', 'Brand Campaigns']}
                 speed={20}

@@ -1,4 +1,5 @@
-
+import { useRef } from 'react';
+import { useScroll } from 'framer-motion';
 import { FadeIn } from '../components/FadeIn';
 import { AnimatedText } from '../components/AnimatedText';
 import TrueFocus from '../components/TrueFocus';
@@ -73,30 +74,45 @@ const skillCategories = [
 ];
 
 export const AboutSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start center', 'end end']
+  });
+
   return (
-    <section id="about" className="min-h-screen relative flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden bg-transparent">
+    <section id="about" className="relative w-full bg-transparent">
+      {/* Tall Scroll Track for the Scrubbing Text */}
+      <div ref={containerRef} className="w-full min-h-[150vh] relative pt-20">
+        
+        {/* Sticky Container */}
+        <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
+          
+          <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">
+            <TrueFocus
+              sentence="About Me"
+              manualMode={false}
+              blurAmount={4}
+              borderColor="#FFD600"
+              glowColor="rgba(255, 214, 0, 0.6)"
+              animationDuration={1.2}
+              pauseBetweenAnimations={0.2}
+            />
+          </FadeIn>
 
-      <div className="flex flex-col items-center z-10 relative w-full max-w-[1400px] mx-auto">
-        <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">
-          <TrueFocus
-            sentence="About Me"
-            manualMode={false}
-            blurAmount={4}
-            borderColor="#FFD600"
-            glowColor="rgba(255, 214, 0, 0.6)"
-            animationDuration={1.2}
-            pauseBetweenAnimations={0.2}
-          />
-        </FadeIn>
+          <div className="w-full max-w-4xl">
+            <AnimatedText
+              text={paragraphs}
+              progress={scrollYProgress}
+              className="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(1rem,1.5vw,1.35rem)]"
+            />
+          </div>
 
-        <div className="mb-16 w-full max-w-4xl">
-          <AnimatedText
-            text={paragraphs}
-            className="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(1rem,1.5vw,1.35rem)]"
-          />
         </div>
+      </div>
 
-
+      {/* Skills & Resume - comes naturally after scrolling the 150vh */}
+      <div className="flex flex-col items-center z-10 relative w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10 pb-20">
 
         {/* Visual Skills Block */}
         <FadeIn delay={0.3} y={20} className="flex flex-col w-full max-w-6xl mb-16 sm:mb-20 md:mb-24 gap-10">

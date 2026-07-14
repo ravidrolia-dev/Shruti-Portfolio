@@ -4,14 +4,17 @@ import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 interface AnimatedTextProps {
   text: string | string[];
   className?: string;
+  progress?: MotionValue<number>;
 }
 
-export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '' }) => {
+export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '', progress }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 0.8', 'end 0.2']
   });
+
+  const activeProgress = progress || scrollYProgress;
 
   const paragraphs = Array.isArray(text) ? text : [text];
   
@@ -35,7 +38,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = ''
                       <Char 
                         key={j} 
                         char={char} 
-                        progress={scrollYProgress} 
+                        progress={activeProgress} 
                         index={currentIdx} 
                         totalLength={totalLength} 
                       />
