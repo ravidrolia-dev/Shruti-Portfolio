@@ -1,10 +1,22 @@
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export const ProjectPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const heroRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const project = projectsData.find(p => p.slug === id);
 
@@ -27,86 +39,198 @@ export const ProjectPage = () => {
       </button>
 
       {/* Hero Section */}
-      <section className="px-5 sm:px-8 md:px-12 pt-32 pb-16 sm:pt-40 sm:pb-24 max-w-7xl mx-auto">
-        <FadeIn delay={0.1} y={30}>
-          <span className="text-[#FFD600] font-bold uppercase tracking-widest text-sm sm:text-base block mb-4">
-            {project.client}
-          </span>
-          <h1 className="font-black uppercase text-[clamp(3rem,8vw,100px)] leading-[0.9] tracking-tight mb-8">
-            {project.name}
-          </h1>
-          <div className="font-mono text-sm sm:text-base text-white/50 tracking-widest uppercase mb-12">
-            {project.role}
-          </div>
-        </FadeIn>
+      <section ref={heroRef} className="relative w-full h-[80vh] sm:h-[90vh] flex items-center justify-center overflow-hidden mb-24">
+        {/* Parallax Background Image */}
+        <motion.div 
+          style={{ y: imageY }}
+          className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0C0C0C]/80 via-[#0C0C0C]/30 to-[#0C0C0C] z-10" />
+          <img src={project.col2img} alt={project.name} className="w-full h-full object-cover opacity-60" />
+        </motion.div>
 
-        <FadeIn delay={0.2} y={30} className="w-full aspect-video bg-white/5 border border-white/10 rounded-[30px] sm:rounded-[40px] overflow-hidden">
-          <img src={project.col2img} alt={project.name} className="w-full h-full object-cover" />
-        </FadeIn>
+        {/* Hero Text Content */}
+        <motion.div 
+          style={{ y: textY, opacity: textOpacity }}
+          className="relative z-20 px-5 sm:px-8 md:px-12 max-w-7xl mx-auto w-full text-center mt-20"
+        >
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[#FFD600] font-mono uppercase tracking-[0.2em] text-xs sm:text-sm block mb-6"
+          >
+            {project.client}
+          </motion.span>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif italic text-[clamp(3.5rem,8vw,120px)] leading-[0.9] tracking-tight mb-8 text-white drop-shadow-2xl"
+          >
+            {project.name}
+          </motion.h1>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="font-mono text-xs sm:text-sm text-white/50 tracking-widest uppercase"
+          >
+            {project.role}
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Content Section */}
       <section className="px-5 sm:px-8 md:px-12 pb-24 max-w-5xl mx-auto">
         <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
-          <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-16 border-l-2 border-[#FFD600] pl-6">
+          <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
           </p>
 
-          {/* First Dynamic Gallery Image */}
-          {project.gallery && project.gallery.length > 0 && (
-            <div className="bg-white/5 border border-white/10 rounded-[30px] overflow-hidden mb-16">
-              <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
+          {project.servicesUsed && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Services Used:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.servicesUsed}</p>
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            {project.problem && (
-              <div>
-                <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Problem</h4>
-                <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                  {project.problem}
-                </p>
-              </div>
-            )}
-            {project.approach && (
-              <div>
-                <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Approach</h4>
-                <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                  {project.approach}
-                </p>
-              </div>
-            )}
-          </div>
+          {project.skillsUsed && (
+            <div className="mb-16">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
+            </div>
+          )}
 
-          {project.stats && project.stats.length > 0 && (
-            <div className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 mb-16">
-              {project.stats.map((stat, i) => (
-                <div key={i} className="flex-1 min-w-[200px]">
-                  <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
-                  <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
+          {project.contentBlocks && project.contentBlocks.length > 0 ? (
+            <div className="flex flex-col gap-24 sm:gap-32 md:gap-40">
+              {project.contentBlocks.map((block, idx) => {
+                const hasText = block.title || block.copy || block.list;
+                const hasImages = block.images && block.images.length > 0;
+                
+                return (
+                  <div 
+                    key={idx} 
+                    className={`flex flex-col ${hasText && hasImages ? (idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse') : ''} items-center gap-12 md:gap-0 relative`}
+                  >
+                    {/* Block Text Content */}
+                    {hasText && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 60 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        className={`w-full ${hasImages ? 'md:w-[55%] relative z-20' : 'max-w-3xl'} ${hasText && hasImages ? (idx % 2 === 0 ? 'md:-mr-16 md:pr-8' : 'md:-ml-16 md:pl-8') : ''}`}
+                      >
+                        <div className={`${hasImages ? 'bg-[#0C0C0C]/80 backdrop-blur-xl border border-white/10 p-8 sm:p-12 md:p-16 rounded-[30px] shadow-2xl' : ''}`}>
+                          {block.title && (
+                            <h3 className="font-serif italic text-[#FFD600] text-3xl sm:text-4xl md:text-5xl mb-6">
+                              {block.title}
+                            </h3>
+                          )}
+                          {block.copy && (
+                            <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-wrap mb-6">
+                              {block.copy}
+                            </p>
+                          )}
+                          {block.list && block.list.length > 0 && (
+                            <ul className="list-none pl-0 text-[#D7E2EA]/80 font-light text-base sm:text-lg space-y-4 border-l border-white/20 ml-4 pl-6">
+                              {block.list.map((item, i) => (
+                                <li key={i} className="relative before:content-[''] before:absolute before:-left-[29px] before:top-[10px] before:w-2 before:h-2 before:rounded-full before:bg-[#FFD600]">{item}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {/* Block Images */}
+                    {hasImages && (
+                      <div className={`w-full ${hasText ? 'md:w-[65%] relative z-10' : 'max-w-5xl mx-auto'}`}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                          {block.images!.map((imgUrl, imgIdx) => (
+                            <motion.div 
+                              key={imgIdx} 
+                              initial={{ opacity: 0, y: 100, scale: 0.95 }}
+                              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                              viewport={{ once: true, margin: "-50px" }}
+                              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: imgIdx * 0.15 }}
+                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${imgIdx % 3 === 0 || block.images!.length === 1 ? 'sm:col-span-2' : ''}`}
+                            >
+                              <img src={imgUrl} alt={`${project.name} context image ${idx}-${imgIdx}`} className="w-full h-auto block hover:scale-105 transition-transform duration-700 ease-out" />
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            // Legacy Layout Fallback
+            <>
+              {/* First Dynamic Gallery Image */}
+              {project.gallery && project.gallery.length > 0 && (
+                <div className="w-full max-w-4xl mx-auto mb-16 bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden">
+                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
                 </div>
-              ))}
-            </div>
-          )}
+              )}
 
-          {project.result && (
-            <div className="mb-20">
-              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Result</h4>
-              <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                {project.result}
-              </p>
-            </div>
-          )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                {project.problem && (
+                  <div>
+                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Challenge</h4>
+                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+                )}
+                {project.approach && (
+                  <div>
+                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Approach</h4>
+                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
+                      {project.approach}
+                    </p>
+                  </div>
+                )}
+              </div>
 
-          {/* Remaining Dynamic Gallery */}
-          {project.gallery && project.gallery.length > 1 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-16">
-              {project.gallery.slice(1).map((imgUrl, idx) => (
-                <div key={idx} className={`bg-white/5 border border-white/10 rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
-                  <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block" />
+              {project.stats && project.stats.length > 0 && (
+                <div className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 mb-16">
+                  {project.stats.map((stat, i) => (
+                    <div key={i} className="flex-1 min-w-[200px]">
+                      <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
+                      <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              )}
+
+              {project.result && (
+                <div className="mb-20">
+                  <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Result</h4>
+                  <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
+                    {project.result}
+                  </p>
+                </div>
+              )}
+
+              {/* Remaining Dynamic Gallery */}
+              {project.gallery && project.gallery.length > 1 && (
+                <div className="w-full max-w-4xl mx-auto my-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    {project.gallery.slice(1).map((imgUrl, idx) => (
+                      <div key={idx} className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
+                        <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </FadeIn>
       </section>

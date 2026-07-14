@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Kanit', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'serif'],
       },
       colors: {
         background: '#0C0C0C',

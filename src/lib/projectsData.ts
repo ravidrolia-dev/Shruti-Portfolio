@@ -3,12 +3,21 @@ export interface ProjectStat {
   label: string;
 }
 
+export interface ContentBlock {
+  title?: string;
+  copy?: string;
+  list?: string[];
+  images?: string[];
+}
+
 export interface ProjectDetails {
   slug: string;
   num: string;
   client: string;
   name: string;
   shortDescription: string;
+  servicesUsed?: string;
+  skillsUsed?: string;
   role: string;
   problem?: string;
   approach?: string;
@@ -18,6 +27,7 @@ export interface ProjectDetails {
   col1img1: string;
   col1img2: string;
   col2img: string;
+  contentBlocks?: ContentBlock[];
 }
 
 export const projectsData: ProjectDetails[] = [
@@ -137,19 +147,52 @@ export const projectsData: ProjectDetails[] = [
     num: "06",
     client: "LUxury product",
     name: "Luxury Fragrance Showcase Invite",
-    shortDescription: "A premium event invite designed through product-led composition, quiet luxury styling, and Indian heritage-inspired visual direction.",
+    shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
+    servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
+    skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
     role: "Freelance Editorial Designer",
-    problem: "Needed a clean, engaging layout for a massive 90+ page lifestyle magazine focusing on women's topics.",
-    approach: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections.",
-    result: "Successfully delivered a cohesive and highly readable digital magazine experience.",
-    gallery: [
-      "/images/Untitled-1Artboard 1 copy.jpg",
-      "/images/page-26.jpg",
-      "/images/page-27.jpg",
-      "/images/page-28.jpg"
-    ],
-    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932287/WhatsApp_Image_2026-07-13_at_2.06.28_PM_piulx5.jpg",
-    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932508/WhatsApp_Image_2026-07-13_at_2.06.28_PM_k5fw8n.jpg",
-    col2img: "/images/Untitled-1Artboard 1.jpg"
+    // We will clear problem/approach/result because we are using contentBlocks
+    gallery: [], // Handled in contentBlocks
+    col1img1: "/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
+    col1img2: "/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
+    col2img: "/images/Untitled-1Artboard 1.jpg", // Hero image
+    contentBlocks: [
+      {
+        title: "Context",
+        copy: "The invite was created for a private fragrance showcase under the “Experiences with The House of Angadi” umbrella, featuring Maison de Fauzdar. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
+        images: ["/images/Untitled-1Artboard 1 copy.jpg"]
+      },
+      {
+        title: "Objective",
+        copy: "To design a luxury fragrance showcase invite that felt refined, intimate, and premium while clearly communicating the event details.\n\nThe challenge was to translate The House of Angadi’s heritage-inspired luxury language into a modern visual system without making it feel overly decorative, festive, or cluttered.\n\nDesign goal:\nCreate an invite that feels soft, elegant, product-led, and suitable for a high-end fragrance experience.",
+        images: ["/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
+      },
+      {
+        title: "Visual Direction",
+        copy: "The moodboard focused on quiet Indian luxury — ivory silk, soft florals, heritage details, warm gold accents, editorial typography, and tactile textures. These references helped shape the invite’s calm, premium, and intimate mood.",
+        images: ["/images/5c17d31f-4e9e-47ae-b9c5-a35a64c59de6 (1).png"]
+      },
+      {
+        title: "Typography & Visual System",
+        copy: "The type direction uses elegant serif typography for the headline, refined spacing for supporting text, and warm muted tones to create a luxury editorial feel. The palette was kept soft and restrained so the fragrance bottle could remain the hero.",
+        images: ["/images/df60c48c-abb0-4600-87d7-d51a8561395c.png"]
+      },
+      {
+        title: "Final Invite",
+        copy: "The final design uses a vertical hierarchy that moves from host brand to event title, featured fragrance house, story-led tagline, product hero, partner credits, and event details. The composition was designed to be premium but still highly readable for digital sharing.",
+        list: [
+          "Top: Host brand and event title",
+          "Middle: Featured fragrance and tagline",
+          "Hero: Perfume bottle with floral styling",
+          "Bottom: Partners, date, time, and venue"
+        ],
+        images: ["/images/Fragrance_Final_2 (1).jpg"]
+      },
+      {
+        title: "Digital & Print Application",
+        copy: "The invite was adapted into formats suitable for WhatsApp, mobile viewing, and printed event communication while maintaining the same premium visual language.",
+        images: ["/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png"]
+      }
+    ]
   }
 ];
