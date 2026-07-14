@@ -136,7 +136,7 @@ export const projectsData: ProjectDetails[] = [
     slug: "Luxury-design",
     num: "06",
     client: "LUxury product",
-    name: "Luxury Design",
+    name: "Luxury Fragrance Showcase Invite",
     shortDescription: "Layout and art direction for Womanifest, a 90+ page digital lifestyle magazine for women.",
     role: "Freelance Editorial Designer",
     problem: "Needed a clean, engaging layout for a massive 90+ page lifestyle magazine focusing on women's topics.",
