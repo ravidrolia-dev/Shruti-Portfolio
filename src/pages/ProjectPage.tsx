@@ -1,10 +1,11 @@
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 export const ProjectPage = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { id } = useParams();
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
@@ -118,25 +119,25 @@ export const ProjectPage = () => {
                     {/* Block Text Content */}
                     {hasText && (
                       <motion.div 
-                        initial={{ opacity: 0, y: 60 }}
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className={`w-full ${hasImages ? 'md:w-[55%] relative z-20' : 'max-w-3xl'} ${hasText && hasImages ? (idx % 2 === 0 ? 'md:-mr-16 md:pr-8' : 'md:-ml-16 md:pl-8') : ''}`}
+                        className={`w-full ${hasImages ? 'md:w-[40%] relative z-20' : 'max-w-3xl mx-auto text-center'} ${hasText && hasImages ? (idx % 2 === 0 ? 'md:-mr-12 md:pr-4' : 'md:-ml-12 md:pl-4') : ''}`}
                       >
-                        <div className={`${hasImages ? 'bg-[#0C0C0C]/80 backdrop-blur-xl border border-white/10 p-8 sm:p-12 md:p-16 rounded-[30px] shadow-2xl' : ''}`}>
+                        <div className={`${hasImages ? 'bg-[#0C0C0C]/80 backdrop-blur-xl border border-white/10 p-8 sm:p-10 rounded-[30px] shadow-2xl' : 'py-4'}`}>
                           {block.title && (
-                            <h3 className="font-serif italic text-[#FFD600] text-3xl sm:text-4xl md:text-5xl mb-6">
+                            <h3 className={`font-serif italic text-[#FFD600] text-3xl sm:text-4xl md:text-4xl mb-6 ${!hasImages ? 'mx-auto' : ''}`}>
                               {block.title}
                             </h3>
                           )}
                           {block.copy && (
-                            <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-wrap mb-6">
+                            <p className={`text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6 ${!hasImages ? 'mx-auto max-w-2xl' : ''}`}>
                               {block.copy}
                             </p>
                           )}
                           {block.list && block.list.length > 0 && (
-                            <ul className="list-none pl-0 text-[#D7E2EA]/80 font-light text-base sm:text-lg space-y-4 border-l border-white/20 ml-4 pl-6">
+                            <ul className={`list-none pl-0 text-[#D7E2EA]/80 font-light text-base sm:text-lg space-y-4 border-l border-white/20 ml-4 pl-6 ${!hasImages ? 'mx-auto text-left max-w-md' : ''}`}>
                               {block.list.map((item, i) => (
                                 <li key={i} className="relative before:content-[''] before:absolute before:-left-[29px] before:top-[10px] before:w-2 before:h-2 before:rounded-full before:bg-[#FFD600]">{item}</li>
                               ))}
@@ -157,7 +158,8 @@ export const ProjectPage = () => {
                               whileInView={{ opacity: 1, y: 0, scale: 1 }}
                               viewport={{ once: true, margin: "-50px" }}
                               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: imgIdx * 0.15 }}
-                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${imgIdx % 3 === 0 || block.images!.length === 1 ? 'sm:col-span-2' : ''}`}
+                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] cursor-pointer ${imgIdx % 3 === 0 || block.images!.length === 1 ? 'sm:col-span-2' : ''}`}
+                              onClick={() => setSelectedImage(imgUrl)}
                             >
                               <img src={imgUrl} alt={`${project.name} context image ${idx}-${imgIdx}`} className="w-full h-auto block hover:scale-105 transition-transform duration-700 ease-out" />
                             </motion.div>
@@ -174,8 +176,11 @@ export const ProjectPage = () => {
             <>
               {/* First Dynamic Gallery Image */}
               {project.gallery && project.gallery.length > 0 && (
-                <div className="w-full max-w-4xl mx-auto mb-16 bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden">
-                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
+                <div 
+                  className="w-full max-w-4xl mx-auto mb-16 bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedImage(project.gallery[0])}
+                >
+                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
               )}
 
@@ -223,8 +228,12 @@ export const ProjectPage = () => {
                 <div className="w-full max-w-4xl mx-auto my-16">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     {project.gallery.slice(1).map((imgUrl, idx) => (
-                      <div key={idx} className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
-                        <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block" />
+                      <div 
+                        key={idx} 
+                        className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden cursor-pointer ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}
+                        onClick={() => setSelectedImage(imgUrl)}
+                      >
+                        <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block hover:scale-105 transition-transform duration-700 ease-out" />
                       </div>
                     ))}
                   </div>
@@ -234,6 +243,39 @@ export const ProjectPage = () => {
           )}
         </FadeIn>
       </section>
+
+      {/* Lightbox Overlay */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-8 cursor-zoom-out backdrop-blur-sm"
+          >
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              src={selectedImage}
+              alt="Fullscreen view"
+              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 sm:top-10 sm:right-10 text-white/50 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

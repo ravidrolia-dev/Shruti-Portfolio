@@ -191,7 +191,7 @@ export const projectsData: ProjectDetails[] = [
       {
         title: "Digital & Print Application",
         copy: "The invite was adapted into formats suitable for WhatsApp, mobile viewing, and printed event communication while maintaining the same premium visual language.",
-        images: ["/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png"]
+        images: ["/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png","/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
       }
     ]
   }
