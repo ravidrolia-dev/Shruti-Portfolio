@@ -143,7 +143,7 @@ export const projectsData: ProjectDetails[] = [
     approach: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections.",
     result: "Successfully delivered a cohesive and highly readable digital magazine experience.",
     gallery: [
-      "/images/Untitled-1Artboard 1.jpg",
+      "/images/Untitled-1Artboard 1 copy.jpg",
       "/images/page-26.jpg",
       "/images/page-27.jpg",
       "/images/page-28.jpg"
