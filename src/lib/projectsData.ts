@@ -143,13 +143,13 @@ export const projectsData: ProjectDetails[] = [
     approach: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections.",
     result: "Successfully delivered a cohesive and highly readable digital magazine experience.",
     gallery: [
-      "/images/e.jpg",
+      "/images/Untitled-1Artboard 1.jpg",
       "/images/page-26.jpg",
       "/images/page-27.jpg",
       "/images/page-28.jpg"
     ],
     col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932287/WhatsApp_Image_2026-07-13_at_2.06.28_PM_piulx5.jpg",
     col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932508/WhatsApp_Image_2026-07-13_at_2.06.28_PM_k5fw8n.jpg",
-    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1783932543/WhatsApp_Image_2026-07-13_at_2.06.45_PM_loww4r.jpg"
+    col2img: "/images/Untitled-1Artboard 1.jpg"
   }
 ];
