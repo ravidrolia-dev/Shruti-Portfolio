@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles } from 'lucide-react';
 
 export const ProjectPage = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { id } = useParams();
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
@@ -169,6 +171,13 @@ export const ProjectPage = () => {
                       </div>
                     )}
                   </div>
+                ) : block.type === 'quote' ? (
+                  <div key={idx} className="w-full flex flex-col items-center justify-center py-16 sm:py-24 mt-8 sm:mt-12 mb-8">
+                    <div className="w-32 sm:w-48 h-[1px] bg-gradient-to-r from-transparent via-[#FFD600] to-transparent mb-12 opacity-70"></div>
+                    <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white text-center tracking-wide leading-tight px-4">
+                      {block.copy}
+                    </h2>
+                  </div>
                 ) : (
                   <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full">
                   {/* Sticky Title Column */}
@@ -212,14 +221,15 @@ export const ProjectPage = () => {
                               viewport={{ once: true, margin: "-10%" }}
                               transition={{ duration: 0.6 }}
                               key={imgIdx} 
-                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group ${imgIdx % 3 === 0 || block.images!.length === 1 ? 'sm:col-span-2' : ''}`}
+                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group flex items-center justify-center ${block.images!.length === 1 || (block.images!.length > 2 && imgIdx % 3 === 0) ? 'sm:col-span-2' : ''}`}
                             >
                               <motion.img 
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.4 }}
                                 src={imgUrl} 
                                 alt={`${project.name} context image ${idx}-${imgIdx}`} 
-                                className="w-full h-auto block" 
+                                className="w-full h-auto block cursor-zoom-in" 
+                                onClick={() => setSelectedImage(imgUrl)}
                               />
                             </motion.div>
                           ))}
@@ -296,6 +306,42 @@ export const ProjectPage = () => {
           )}
         </FadeIn>
       </section>
+
+      {/* Fullscreen Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8 cursor-zoom-out"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={selectedImage} 
+              alt="Fullscreen view" 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl" 
+            />
+            
+            <button 
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
