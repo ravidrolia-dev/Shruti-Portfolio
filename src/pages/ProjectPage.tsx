@@ -117,9 +117,12 @@ export const ProjectPage = () => {
 
               <div className="relative">
                 {/* Horizontal Connecting Line */}
-                <div className="absolute top-[24px] left-[10%] right-[10%] h-[1px] bg-white/10 hidden md:block" />
+                <div 
+                  className="absolute top-[24px] h-[1px] bg-white/10 hidden md:block" 
+                  style={{ left: `${100 / (2 * project.creativeProcess.steps.length)}%`, right: `${100 / (2 * project.creativeProcess.steps.length)}%` }}
+                />
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+                <div className={`grid grid-cols-1 ${project.creativeProcess.steps.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'} gap-12 md:gap-6 relative z-10`}>
                   {project.creativeProcess.steps.map((step, idx) => {
                     const ProcessIcons = [Compass, Lightbulb, Sparkles, Target];
                     const Icon = ProcessIcons[idx % ProcessIcons.length];

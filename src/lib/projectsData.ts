@@ -171,10 +171,9 @@ export const projectsData: ProjectDetails[] = [
     creativeProcess: {
       title: "OUR CREATIVE PROCESS",
       steps: [
-        { id: "01", title: "Challenge", description: "Understanding the brand, audience & emotional goal behind the invite." },
-        { id: "02", title: "Approach", description: "Research, mood boards & concept direction with storytelling." },
-        { id: "03", title: "Outcome", description: "A refined invite that speaks luxury, heritage & exclusivity." },
-        { id: "04", title: "Impact", description: "Stronger connections, higher engagement & brand recall." },
+        { id: "01", title: "Challenge", description: "The challenge was to translate The House of Angadi’s heritage-inspired luxury language into a modern visual system without making it feel overly decorative, festive, or cluttered." },
+        { id: "02", title: "Approach", description: "Built the visual direction around ivory silk textures, white florals, warm gold accents, restrained heritage cues, editorial typography, and product-led composition." },
+        { id: "03", title: "Outcome", description: "A refined invite direction that balances luxury styling, event clarity, and fragrance-led storytelling across mobile, social, and print-style applications." }
       ]
     },
     contentBlocks: [
