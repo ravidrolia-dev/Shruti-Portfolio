@@ -181,12 +181,12 @@ export const ProjectPage = () => {
                   )}
 
                   {/* Content Column */}
-                  <div className={`flex flex-col gap-8 w-full ${block.title ? 'lg:w-2/3' : ''}`}>
+                  <div className={`flex flex-col gap-8 w-full ${block.title ? 'lg:w-2/3' : ''} ${block.align === 'center' ? 'items-center text-center' : ''}`}>
                     {/* Block Text Content */}
                     {(block.copy || block.list) && (
                       <div className="max-w-3xl">
                         {block.copy && (
-                          <p className="text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6">
+                          <p className={`text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6 ${block.align === 'center' ? 'mx-auto text-center' : ''}`}>
                             {block.copy}
                           </p>
                         )}
