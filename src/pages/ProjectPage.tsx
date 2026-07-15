@@ -126,7 +126,7 @@ export const ProjectPage = () => {
             </FadeIn>
           )}
 
-          {project.contentBlocks && project.contentBlocks.length > 0 ? (
+          {project.contentBlocks && project.contentBlocks.length > 0 && (
             <div className="flex flex-col gap-24 sm:gap-32 w-full">
               {project.contentBlocks.map((block, idx) => (
                 block.type === 'process' ? (
@@ -177,6 +177,15 @@ export const ProjectPage = () => {
                     <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white text-center tracking-wide leading-tight px-4">
                       {block.copy}
                     </h2>
+                  </div>
+                ) : block.type === 'stats' && block.stats ? (
+                  <div key={idx} className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 my-8">
+                    {block.stats.map((stat, i) => (
+                      <div key={i} className="flex-1 min-w-[200px]">
+                        <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
+                        <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
                 ) : (
                   <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full">
@@ -241,68 +250,6 @@ export const ProjectPage = () => {
                 )
               ))}
             </div>
-          ) : (
-            // Legacy Layout Fallback
-            <>
-              {/* First Dynamic Gallery Image */}
-              {project.gallery && project.gallery.length > 0 && (
-                <div className="w-full max-w-4xl mx-auto mb-16 bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden">
-                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                {project.problem && (
-                  <div>
-                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Challenge</h4>
-                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                      {project.problem}
-                    </p>
-                  </div>
-                )}
-                {project.approach && (
-                  <div>
-                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Approach</h4>
-                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                      {project.approach}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              {project.stats && project.stats.length > 0 && (
-                <div className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 mb-16">
-                  {project.stats.map((stat, i) => (
-                    <div key={i} className="flex-1 min-w-[200px]">
-                      <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
-                      <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {project.result && (
-                <div className="mb-20">
-                  <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Result</h4>
-                  <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
-                    {project.result}
-                  </p>
-                </div>
-              )}
-
-              {/* Remaining Dynamic Gallery */}
-              {project.gallery && project.gallery.length > 1 && (
-                <div className="w-full max-w-4xl mx-auto my-16">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    {project.gallery.slice(1).map((imgUrl, idx) => (
-                      <div key={idx} className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden ${idx % 3 === 0 ? 'sm:col-span-2' : ''}`}>
-                        <img src={imgUrl} alt={`${project.name} gallery image ${idx + 2}`} className="w-full h-auto block" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
           )}
         </FadeIn>
       </section>
