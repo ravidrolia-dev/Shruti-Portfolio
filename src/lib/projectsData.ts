@@ -171,9 +171,9 @@ export const projectsData: ProjectDetails[] = [
     col2img: "/images/Untitled-1Artboard 1.png", // Hero image
     contentBlocks: [
       {
-        title: "Context",
-        copy: "The invite was created for a private fragrance showcase under the “Experiences with The House of Angadi” umbrella, featuring Maison de Fauzdar. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
-        images: ["/images/Untitled-1Artboard 1 copy.jpg"]
+        
+        copy: "The invite was created for a private fragrance showcase under the “Experiences with The House of Angadi” umbrella, featuring Maison de Fouzdar. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
+        
       },
       {
         type: "process",
