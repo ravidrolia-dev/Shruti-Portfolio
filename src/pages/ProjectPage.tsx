@@ -76,7 +76,7 @@ export const ProjectPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="px-5 sm:px-8 md:px-12 pb-24 max-w-5xl mx-auto">
+      <section className="px-5 sm:px-8 md:px-12 lg:px-16 pb-24 max-w-7xl mx-auto">
         <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
