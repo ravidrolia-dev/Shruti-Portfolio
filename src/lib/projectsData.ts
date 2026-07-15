@@ -26,6 +26,7 @@ export interface ProjectDetails {
   servicesUsed?: string;
   skillsUsed?: string;
   skillsImage?: string;
+  skillsHoverImage?: string;
   role: string;
   problem?: string;
   approach?: string;
@@ -159,6 +160,7 @@ export const projectsData: ProjectDetails[] = [
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
     skillsImage: "/images/Untitled-1Artboard 1 copy.jpg",
+    skillsHoverImage: "/navbar/BCO.e974dc7e-7718-4dc0-8f23-319bd4ec8ea7.png",
     role: "Freelance Editorial Designer",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
@@ -166,11 +168,6 @@ export const projectsData: ProjectDetails[] = [
     col1img2: "/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
     col2img: "/images/Untitled-1Artboard 1.png", // Hero image
     contentBlocks: [
-      {
-        title: "Context",
-        copy: "The invite was created for a private fragrance showcase under the “Experiences with The House of Angadi” umbrella, featuring Maison de Fauzdar. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
-        images: ["/images/Untitled-1Artboard 1 copy.jpg"]
-      },
       {
         type: "process",
         title: "Our Creative Process",
