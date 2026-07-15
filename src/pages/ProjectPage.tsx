@@ -4,7 +4,6 @@ import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles } from 'lucide-react';
-import { UnfoldingImage } from '../components/UnfoldingImage';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -76,8 +75,8 @@ export const ProjectPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-24 pb-16 w-full">
-        <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none lg:w-[75%]">
+      <section className="px-5 sm:px-8 md:px-12 pb-24 max-w-5xl mx-auto">
+        <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
           </p>
@@ -90,29 +89,26 @@ export const ProjectPage = () => {
           )}
 
           {project.skillsUsed && (
-            <div className="mb-8">
+            <div className="mb-16">
               <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
               <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
             </div>
           )}
-        </FadeIn>
-      </section>
 
-      {/* Full Width Image Section */}
-      {project.skillsImage !== undefined && (
-        <section className="w-full overflow-x-hidden mb-24">
-          <FadeIn delay={0.4} y={20}>
-            {/* Remove max-w and mx-auto so it aligns completely to the left padding */}
-            <div className="w-full px-5 sm:px-8 md:px-12 lg:px-24">
-              <UnfoldingImage mainImage={project.skillsImage} hoverImage={project.skillsHoverImage} />
-            </div>
-          </FadeIn>
-        </section>
-      )}
+          {project.skillsImage !== undefined && (
+            <FadeIn delay={0.4} y={20} className="w-full mb-24">
+              <div className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
+                {project.skillsImage ? (
+                  <img src={project.skillsImage} alt="Skills Overview" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
+                    Add image path to skillsImage in projectsData.ts
+                  </div>
+                )}
+              </div>
+            </FadeIn>
+          )}
 
-      {/* Content Blocks Section */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-24 pb-24 w-full">
-        <FadeIn delay={0.5} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
           {project.contentBlocks && project.contentBlocks.length > 0 ? (
             <div className="flex flex-col gap-24 sm:gap-32 w-full">
               {project.contentBlocks.map((block, idx) => (
@@ -224,33 +220,28 @@ export const ProjectPage = () => {
             <>
               {/* First Dynamic Gallery Image */}
               {project.gallery && project.gallery.length > 0 && (
-                <div className="w-full">
-                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto rounded-[20px] sm:rounded-[30px]" />
+                <div className="w-full max-w-4xl mx-auto mb-16 bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden">
+                  <img src={project.gallery[0]} alt={`${project.name} main showcase`} className="w-full h-auto block" />
                 </div>
               )}
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3">
-                  <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-2">The Problem</h3>
-                </div>
-                <div className="md:w-2/3">
-                  <p className="text-[#D7E2EA]/80 font-light leading-relaxed text-sm sm:text-base">{project.problem}</p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3">
-                  <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-2">The Approach</h3>
-                </div>
-                <div className="md:w-2/3">
-                  <p className="text-[#D7E2EA]/80 font-light leading-relaxed text-sm sm:text-base">{project.approach}</p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3">
-                  <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-2">The Result</h3>
-                </div>
-                <div className="md:w-2/3">
-                  <p className="text-[#D7E2EA]/80 font-light leading-relaxed text-sm sm:text-base">{project.result}</p>
-                </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                {project.problem && (
+                  <div>
+                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Challenge</h4>
+                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+                )}
+                {project.approach && (
+                  <div>
+                    <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-sm mb-4">Approach</h4>
+                    <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed">
+                      {project.approach}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {project.stats && project.stats.length > 0 && (
