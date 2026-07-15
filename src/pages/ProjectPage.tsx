@@ -170,10 +170,10 @@ export const ProjectPage = () => {
                     )}
                   </div>
                 ) : (
-                  <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                  <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full">
                   {/* Sticky Title Column */}
                   {block.title && (
-                    <div className="lg:w-1/3 lg:sticky lg:top-32 shrink-0">
+                    <div className="lg:w-1/4 lg:sticky lg:top-32 shrink-0">
                       <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-lg sm:text-xl mb-4">
                         {block.title}
                       </h3>
@@ -181,10 +181,10 @@ export const ProjectPage = () => {
                   )}
 
                   {/* Content Column */}
-                  <div className={`flex flex-col gap-8 w-full ${block.title ? 'lg:w-2/3' : ''} ${block.align === 'center' ? 'items-center text-center' : ''}`}>
+                  <div className={`flex flex-col gap-8 w-full ${block.title ? 'lg:w-3/4' : ''} ${block.align === 'center' ? 'items-center text-center' : ''}`}>
                     {/* Block Text Content */}
                     {(block.copy || block.list) && (
-                      <div className="max-w-3xl">
+                      <div className="w-full">
                         {block.copy && (
                           <p 
                             className={`text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6 ${block.align === 'center' ? 'mx-auto text-center' : ''}`}
