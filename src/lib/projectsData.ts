@@ -10,6 +10,17 @@ export interface ContentBlock {
   images?: string[];
 }
 
+export interface ProcessStep {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface CreativeProcess {
+  title?: string;
+  steps: ProcessStep[];
+}
+
 export interface ProjectDetails {
   slug: string;
   num: string;
@@ -28,6 +39,7 @@ export interface ProjectDetails {
   col1img2: string;
   col2img: string;
   contentBlocks?: ContentBlock[];
+  creativeProcess?: CreativeProcess;
 }
 
 export const projectsData: ProjectDetails[] = [
@@ -155,7 +167,16 @@ export const projectsData: ProjectDetails[] = [
     gallery: [], // Handled in contentBlocks
     col1img1: "/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
     col1img2: "/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
-    col2img: "/images/Untitled-1Artboard 1.jpg", // Hero image
+    col2img: "/images/Untitled-1Artboard 1.png", // Hero image
+    creativeProcess: {
+      title: "OUR CREATIVE PROCESS",
+      steps: [
+        { id: "01", title: "Challenge", description: "Understanding the brand, audience & emotional goal behind the invite." },
+        { id: "02", title: "Approach", description: "Research, mood boards & concept direction with storytelling." },
+        { id: "03", title: "Outcome", description: "A refined invite that speaks luxury, heritage & exclusivity." },
+        { id: "04", title: "Impact", description: "Stronger connections, higher engagement & brand recall." },
+      ]
+    },
     contentBlocks: [
       {
         title: "Context",

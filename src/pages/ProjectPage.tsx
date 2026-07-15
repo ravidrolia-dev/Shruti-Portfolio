@@ -3,6 +3,7 @@ import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Compass, Lightbulb, Sparkles, Target } from 'lucide-react';
 
 export const ProjectPage = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -102,6 +103,56 @@ export const ProjectPage = () => {
             <div className="mb-16">
               <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
               <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
+            </div>
+          )}
+
+          {/* Creative Process Timeline */}
+          {project.creativeProcess && (
+            <div className="w-full max-w-6xl mx-auto mb-24 md:mb-32 relative py-12 px-6 sm:px-12 bg-[#0C0C0C]/40 backdrop-blur-md border border-white/5 rounded-[40px] shadow-2xl">
+              <h3 className="text-center font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-16 flex items-center justify-center gap-4">
+                <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
+                {project.creativeProcess.title || "Our Creative Process"}
+                <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
+              </h3>
+
+              <div className="relative">
+                {/* Horizontal Connecting Line */}
+                <div className="absolute top-[24px] left-[10%] right-[10%] h-[1px] bg-white/10 hidden md:block" />
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+                  {project.creativeProcess.steps.map((step, idx) => {
+                    const ProcessIcons = [Compass, Lightbulb, Sparkles, Target];
+                    const Icon = ProcessIcons[idx % ProcessIcons.length];
+                    
+                    return (
+                      <motion.div 
+                        key={step.id}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.8, delay: idx * 0.15, ease: "easeOut" }}
+                        className="relative flex flex-col items-center text-center group"
+                      >
+                        {/* Step Number Circle */}
+                        <div className="w-12 h-12 rounded-full bg-[#0F0F0F] border border-[#FFD600]/30 text-[#D7E2EA] flex items-center justify-center font-serif text-lg z-10 mb-6 shadow-[0_0_15px_rgba(255,214,0,0.1)] group-hover:bg-[#FFD600]/10 transition-colors duration-500">
+                          {step.id}
+                        </div>
+
+                        {/* Content */}
+                        <h4 className="font-serif italic text-white text-xl sm:text-2xl mb-3">{step.title}</h4>
+                        <p className="text-[#D7E2EA]/60 font-light text-sm sm:text-base leading-relaxed px-2 flex-grow mb-6">
+                          {step.description}
+                        </p>
+
+                        {/* Icon */}
+                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FFD600]/60 group-hover:text-[#FFD600] group-hover:scale-110 transition-all duration-300">
+                          <Icon size={18} strokeWidth={1.5} />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           )}
 
