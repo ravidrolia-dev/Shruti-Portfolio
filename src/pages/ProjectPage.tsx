@@ -81,7 +81,19 @@ export const ProjectPage = () => {
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
           </p>
+          {project.roleDetails && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Role:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.roleDetails}</p>
+            </div>
+          )}
 
+          {project.deliverables && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Deliverables:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.deliverables}</p>
+            </div>
+          )}
           {project.servicesUsed && (
             <div className="mb-4">
               <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Services Used:</h4>
@@ -95,6 +107,8 @@ export const ProjectPage = () => {
               <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
             </div>
           )}
+
+          
 
           {project.skillsImage !== undefined && (
             <FadeIn delay={0.4} y={20} className="w-full mb-24">

@@ -27,6 +27,8 @@ export interface ProjectDetails {
   skillsUsed?: string;
   skillsImage?: string;
   role: string;
+  roleDetails?: string;
+  deliverables?: string;
   problem?: string;
   approach?: string;
   result?: string;
@@ -160,6 +162,8 @@ export const projectsData: ProjectDetails[] = [
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
     skillsImage: "/images/Untitled-1Artboard 1 copy.jpg",
     role: "Freelance Editorial Designer",
+    roleDetails: "Visual Designer",
+    deliverables: "Digital invite",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
     col1img1: "/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
