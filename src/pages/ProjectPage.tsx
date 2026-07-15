@@ -57,12 +57,13 @@ export const ProjectPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 pointer-events-none" />
 
         {/* Content */}
-        <div className="relative z-10 text-center px-5 max-w-5xl mx-auto flex flex-col items-center">
-          <FadeIn delay={0.1} y={30} className="w-full flex flex-col items-center justify-center">
+        {/* Content */}
+        <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col justify-center h-full">
+          <FadeIn delay={0.1} y={30} className="w-full max-w-4xl flex flex-col items-start text-left">
             <span className="text-[#FFD600] font-bold uppercase tracking-[0.3em] text-xs sm:text-sm block mb-8">
               {project.client}
             </span>
-            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2.5rem,6vw,90px)] leading-[1.1] tracking-tight mb-12 flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2.5rem,6vw,90px)] leading-[1.1] tracking-tight mb-12 flex flex-wrap gap-x-4 gap-y-2">
               {titleWords.map((word, i) => (
                 <motion.span key={i} variants={wordVariants} className="inline-block">{word}</motion.span>
               ))}
