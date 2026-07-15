@@ -158,7 +158,7 @@ export const projectsData: ProjectDetails[] = [
     shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
-    skillsImage: "/images/Untitled-1.png",
+    skillsImage: "/images/Untitled-1Artboard 1 copy.jpg",
     role: "Freelance Editorial Designer",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks

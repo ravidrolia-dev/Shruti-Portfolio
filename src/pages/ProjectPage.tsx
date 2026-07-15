@@ -4,7 +4,6 @@ import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles } from 'lucide-react';
-import Silk from '../components/Silk';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -99,15 +98,13 @@ export const ProjectPage = () => {
           {project.skillsImage !== undefined && (
             <FadeIn delay={0.4} y={20} className="w-full mb-24">
               <div className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
-                {/* Background Silk animation */}
-                <div className="absolute inset-0 z-0">
-                  <Silk color="#f1dbbb" speed={2} />
-                </div>
-                
-                {/* Foreground Image (if provided) */}
                 {project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="relative z-10 w-full h-full object-cover" />
-                ) : null}
+                  <img src={project.skillsImage} alt="Skills Overview" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
+                    Add image path to skillsImage in projectsData.ts
+                  </div>
+                )}
               </div>
             </FadeIn>
           )}
