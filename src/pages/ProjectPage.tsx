@@ -2,7 +2,7 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Compass, Lightbulb, Sparkles, Target } from 'lucide-react';
 
 export const ProjectPage = () => {
@@ -25,6 +25,63 @@ export const ProjectPage = () => {
   if (!project) {
     return <Navigate to="/" replace />;
   }
+  
+  const hasContextBlock = project.contentBlocks?.some(b => b.title === 'Context');
+
+  const renderCreativeProcess = () => {
+    if (!project.creativeProcess) return null;
+    return (
+      <div className="w-full mb-24 md:mb-32 relative py-12 px-6 sm:px-12 lg:px-20 bg-[#0C0C0C]/40 backdrop-blur-md border border-white/5 rounded-[40px] shadow-2xl">
+        <h3 className="text-center font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-16 flex items-center justify-center gap-4">
+          <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
+          {project.creativeProcess.title || "Our Creative Process"}
+          <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
+        </h3>
+
+        <div className="relative">
+          {/* Horizontal Connecting Line */}
+          <div 
+            className="absolute top-[24px] h-[1px] bg-white/10 hidden md:block" 
+            style={{ left: `${100 / (2 * project.creativeProcess.steps.length)}%`, right: `${100 / (2 * project.creativeProcess.steps.length)}%` }}
+          />
+
+          <div className={`grid grid-cols-1 ${project.creativeProcess.steps.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'} gap-12 md:gap-6 relative z-10`}>
+            {project.creativeProcess.steps.map((step, idx) => {
+              const ProcessIcons = [Compass, Lightbulb, Sparkles, Target];
+              const Icon = ProcessIcons[idx % ProcessIcons.length];
+              
+              return (
+                <motion.div 
+                  key={step.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: idx * 0.15, ease: "easeOut" }}
+                  className="relative flex flex-col items-center text-center group"
+                >
+                  {/* Step Number Circle */}
+                  <div className="w-12 h-12 rounded-full bg-[#0F0F0F] border border-[#FFD600]/30 text-[#D7E2EA] flex items-center justify-center font-serif text-lg z-10 mb-6 shadow-[0_0_15px_rgba(255,214,0,0.1)] group-hover:bg-[#FFD600]/10 transition-colors duration-500">
+                    {step.id}
+                  </div>
+
+                  {/* Content */}
+                  <h4 className="font-serif italic text-white text-xl sm:text-2xl mb-3">{step.title}</h4>
+                  <p className="text-[#D7E2EA]/60 font-light text-sm sm:text-base leading-relaxed px-2 flex-grow mb-6">
+                    {step.description}
+                  </p>
+
+                  {/* Icon */}
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FFD600]/60 group-hover:text-[#FFD600] group-hover:scale-110 transition-all duration-300">
+                    <Icon size={18} strokeWidth={1.5} />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
   
   return (
     <div className="min-h-screen relative z-10 bg-transparent text-[#D7E2EA]">
@@ -108,58 +165,8 @@ export const ProjectPage = () => {
             )}
           </div>
 
-          {/* Creative Process Timeline */}
-          {project.creativeProcess && (
-            <div className="w-full mb-24 md:mb-32 relative py-12 px-6 sm:px-12 lg:px-20 bg-[#0C0C0C]/40 backdrop-blur-md border border-white/5 rounded-[40px] shadow-2xl">
-              <h3 className="text-center font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-16 flex items-center justify-center gap-4">
-                <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
-                {project.creativeProcess.title || "Our Creative Process"}
-                <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
-              </h3>
-
-              <div className="relative">
-                {/* Horizontal Connecting Line */}
-                <div 
-                  className="absolute top-[24px] h-[1px] bg-white/10 hidden md:block" 
-                  style={{ left: `${100 / (2 * project.creativeProcess.steps.length)}%`, right: `${100 / (2 * project.creativeProcess.steps.length)}%` }}
-                />
-
-                <div className={`grid grid-cols-1 ${project.creativeProcess.steps.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'} gap-12 md:gap-6 relative z-10`}>
-                  {project.creativeProcess.steps.map((step, idx) => {
-                    const ProcessIcons = [Compass, Lightbulb, Sparkles, Target];
-                    const Icon = ProcessIcons[idx % ProcessIcons.length];
-                    
-                    return (
-                      <motion.div 
-                        key={step.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.8, delay: idx * 0.15, ease: "easeOut" }}
-                        className="relative flex flex-col items-center text-center group"
-                      >
-                        {/* Step Number Circle */}
-                        <div className="w-12 h-12 rounded-full bg-[#0F0F0F] border border-[#FFD600]/30 text-[#D7E2EA] flex items-center justify-center font-serif text-lg z-10 mb-6 shadow-[0_0_15px_rgba(255,214,0,0.1)] group-hover:bg-[#FFD600]/10 transition-colors duration-500">
-                          {step.id}
-                        </div>
-
-                        {/* Content */}
-                        <h4 className="font-serif italic text-white text-xl sm:text-2xl mb-3">{step.title}</h4>
-                        <p className="text-[#D7E2EA]/60 font-light text-sm sm:text-base leading-relaxed px-2 flex-grow mb-6">
-                          {step.description}
-                        </p>
-
-                        {/* Icon */}
-                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FFD600]/60 group-hover:text-[#FFD600] group-hover:scale-110 transition-all duration-300">
-                          <Icon size={18} strokeWidth={1.5} />
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )}
+          {/* Creative Process Timeline (Fallback if no Context block) */}
+          {!hasContextBlock && renderCreativeProcess()}
 
           {project.contentBlocks && project.contentBlocks.length > 0 ? (
             <div className="flex flex-col gap-24 sm:gap-32 md:gap-40">
@@ -168,10 +175,10 @@ export const ProjectPage = () => {
                 const hasImages = block.images && block.images.length > 0;
                 
                 return (
-                  <div 
-                    key={idx} 
-                    className={`flex flex-col ${hasText && hasImages ? (idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse') : ''} items-center gap-12 md:gap-0 relative`}
-                  >
+                  <React.Fragment key={idx}>
+                    <div 
+                      className={`flex flex-col ${hasText && hasImages ? (idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse') : ''} items-center gap-12 md:gap-0 relative`}
+                    >
                     {/* Block Text Content */}
                     {hasText && (
                       <motion.div 
@@ -224,7 +231,11 @@ export const ProjectPage = () => {
                       </div>
                     )}
                   </div>
-                );
+
+                  {/* Inject Creative Process Timeline after Context block */}
+                  {hasContextBlock && block.title === 'Context' && renderCreativeProcess()}
+                </React.Fragment>
+              );
               })}
             </div>
           ) : (
@@ -296,6 +307,16 @@ export const ProjectPage = () => {
                 </div>
               )}
             </>
+          )}
+
+          {/* Closing Quote */}
+          {project.closingQuote && (
+            <div className="w-full max-w-4xl mx-auto text-center mt-32 mb-8 px-4">
+              <div className="w-32 sm:w-48 h-[1px] bg-gradient-to-r from-transparent via-[#FFD600]/80 to-transparent mx-auto mb-12" />
+              <h2 className="font-serif italic text-white text-3xl sm:text-4xl md:text-5xl leading-tight drop-shadow-2xl">
+                {project.closingQuote}
+              </h2>
+            </div>
           )}
         </FadeIn>
       </section>

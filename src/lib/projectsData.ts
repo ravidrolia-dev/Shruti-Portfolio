@@ -40,6 +40,7 @@ export interface ProjectDetails {
   col2img: string;
   contentBlocks?: ContentBlock[];
   creativeProcess?: CreativeProcess;
+  closingQuote?: string;
 }
 
 export const projectsData: ProjectDetails[] = [
@@ -176,6 +177,7 @@ export const projectsData: ProjectDetails[] = [
         { id: "03", title: "Outcome", description: "A refined invite direction that balances luxury styling, event clarity, and fragrance-led storytelling across mobile, social, and print-style applications." }
       ]
     },
+    closingQuote: "Where scent becomes story.",
     contentBlocks: [
       {
         title: "Context",
