@@ -186,9 +186,10 @@ export const ProjectPage = () => {
                     {(block.copy || block.list) && (
                       <div className="max-w-3xl">
                         {block.copy && (
-                          <p className={`text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6 ${block.align === 'center' ? 'mx-auto text-center' : ''}`}>
-                            {block.copy}
-                          </p>
+                          <p 
+                            className={`text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap mb-6 ${block.align === 'center' ? 'mx-auto text-center' : ''}`}
+                            dangerouslySetInnerHTML={{ __html: block.copy }}
+                          />
                         )}
                         {block.list && block.list.length > 0 && (
                           <ul className="list-disc pl-5 text-[#D7E2EA]/90 font-light text-base sm:text-lg space-y-2">
