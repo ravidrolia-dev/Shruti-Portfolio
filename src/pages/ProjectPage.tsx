@@ -3,6 +3,8 @@ import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import { Compass, Lightbulb, Sparkles } from 'lucide-react';
+import Silk from '../components/Silk';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -94,10 +96,69 @@ export const ProjectPage = () => {
             </div>
           )}
 
+          {project.skillsImage !== undefined && (
+            <FadeIn delay={0.4} y={20} className="w-full mb-24">
+              <div className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
+                {/* Background Silk animation */}
+                <div className="absolute inset-0 z-0">
+                  <Silk color="#f1dbbb" speed={2} />
+                </div>
+                
+                {/* Foreground Image (if provided) */}
+                {project.skillsImage ? (
+                  <img src={project.skillsImage} alt="Skills Overview" className="relative z-10 w-full h-full object-cover" />
+                ) : null}
+              </div>
+            </FadeIn>
+          )}
+
           {project.contentBlocks && project.contentBlocks.length > 0 ? (
-            <div className="flex flex-col gap-24 sm:gap-32">
+            <div className="flex flex-col gap-24 sm:gap-32 w-full">
               {project.contentBlocks.map((block, idx) => (
-                <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                block.type === 'process' ? (
+                  <div key={idx} className="w-full flex flex-col items-center py-16 bg-[#090909] rounded-[40px] px-8 border border-white/5 relative overflow-hidden">
+                    {/* Background glow */}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFD600]/5 via-black/0 to-black/0 pointer-events-none" />
+                    
+                    {block.title && (
+                      <div className="flex items-center gap-4 mb-20 text-[#FFD600] font-mono text-xs sm:text-sm tracking-widest uppercase relative z-10">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></span>
+                        {block.title}
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></span>
+                      </div>
+                    )}
+                    
+                    {block.processSteps && (
+                      <div className="relative w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-4 z-10">
+                        {/* Connecting horizontal line (desktop only) */}
+                        <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-[1px] bg-white/10 z-0"></div>
+                        
+                        {block.processSteps.map((step, stepIdx) => (
+                          <div key={stepIdx} className="relative z-10 flex-1 flex flex-col items-center text-center">
+                            {/* Top Number Circle */}
+                            <div className="w-16 h-16 rounded-full border border-[#FFD600]/30 bg-[#0C0C0C] flex items-center justify-center text-white/80 font-mono text-sm mb-10 mx-auto shadow-[0_0_15px_rgba(255,214,0,0.1)]">
+                              0{stepIdx + 1}
+                            </div>
+                            
+                            <h4 className="font-serif italic font-medium text-2xl text-white mb-6">{step.title}</h4>
+                            
+                            <p className="text-[#D7E2EA]/60 text-sm sm:text-base leading-relaxed mb-10 max-w-xs mx-auto">
+                              {step.copy}
+                            </p>
+                            
+                            {/* Bottom Icon Circle */}
+                            <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#FFD600] mt-auto">
+                              {stepIdx === 0 && <Compass size={16} />}
+                              {stepIdx === 1 && <Lightbulb size={16} />}
+                              {stepIdx === 2 && <Sparkles size={16} />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                   {/* Sticky Title Column */}
                   {block.title && (
                     <div className="lg:w-1/3 lg:sticky lg:top-32 shrink-0">
@@ -154,6 +215,7 @@ export const ProjectPage = () => {
                     )}
                   </div>
                 </div>
+                )
               ))}
             </div>
           ) : (

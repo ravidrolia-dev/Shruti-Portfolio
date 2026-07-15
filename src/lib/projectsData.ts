@@ -3,11 +3,18 @@ export interface ProjectStat {
   label: string;
 }
 
+export interface ProcessStep {
+  title: string;
+  copy: string;
+}
+
 export interface ContentBlock {
+  type?: 'default' | 'process';
   title?: string;
   copy?: string;
   list?: string[];
   images?: string[];
+  processSteps?: ProcessStep[];
 }
 
 export interface ProjectDetails {
@@ -18,6 +25,7 @@ export interface ProjectDetails {
   shortDescription: string;
   servicesUsed?: string;
   skillsUsed?: string;
+  skillsImage?: string;
   role: string;
   problem?: string;
   approach?: string;
@@ -150,6 +158,7 @@ export const projectsData: ProjectDetails[] = [
     shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
+    skillsImage: "/images/Untitled-1.png",
     role: "Freelance Editorial Designer",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
@@ -163,9 +172,22 @@ export const projectsData: ProjectDetails[] = [
         images: ["/images/Untitled-1Artboard 1 copy.jpg"]
       },
       {
-        title: "Objective",
-        copy: "To design a luxury fragrance showcase invite that felt refined, intimate, and premium while clearly communicating the event details.\n\nThe challenge was to translate The House of Angadi’s heritage-inspired luxury language into a modern visual system without making it feel overly decorative, festive, or cluttered.\n\nDesign goal:\nCreate an invite that feels soft, elegant, product-led, and suitable for a high-end fragrance experience.",
-        images: ["/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
+        type: "process",
+        title: "Our Creative Process",
+        processSteps: [
+          {
+            title: "Challenge",
+            copy: "The challenge was to translate The House of Angadi's heritage-inspired luxury language into a modern visual system without making it feel overly decorative, festive, or cluttered."
+          },
+          {
+            title: "Approach",
+            copy: "Built the visual direction around ivory silk textures, white florals, warm gold accents, restrained heritage cues, editorial typography, and product-led composition."
+          },
+          {
+            title: "Outcome",
+            copy: "A refined invite direction that balances luxury styling, event clarity, and fragrance-led storytelling across mobile, social, and print-style applications."
+          }
+        ]
       },
       {
         title: "Visual Direction",
