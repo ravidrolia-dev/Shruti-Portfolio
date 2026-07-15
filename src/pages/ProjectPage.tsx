@@ -86,8 +86,9 @@ export const ProjectPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="px-5 sm:px-8 md:px-12 pb-24 max-w-5xl mx-auto">
+      <section className="px-5 sm:px-8 md:px-12 lg:px-16 pb-24 max-w-[1400px] mx-auto">
         <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
+          <div className="max-w-4xl mx-auto md:mx-0">
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
           </p>
@@ -99,16 +100,17 @@ export const ProjectPage = () => {
             </div>
           )}
 
-          {project.skillsUsed && (
-            <div className="mb-16">
-              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
-              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
-            </div>
-          )}
+            {project.skillsUsed && (
+              <div className="mb-16">
+                <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
+                <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
+              </div>
+            )}
+          </div>
 
           {/* Creative Process Timeline */}
           {project.creativeProcess && (
-            <div className="w-full max-w-6xl mx-auto mb-24 md:mb-32 relative py-12 px-6 sm:px-12 bg-[#0C0C0C]/40 backdrop-blur-md border border-white/5 rounded-[40px] shadow-2xl">
+            <div className="w-full mb-24 md:mb-32 relative py-12 px-6 sm:px-12 lg:px-20 bg-[#0C0C0C]/40 backdrop-blur-md border border-white/5 rounded-[40px] shadow-2xl">
               <h3 className="text-center font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-16 flex items-center justify-center gap-4">
                 <span className="w-2 h-2 rounded-full bg-[#FFD600]/30" />
                 {project.creativeProcess.title || "Our Creative Process"}
