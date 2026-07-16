@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { projectsData } from '../lib/projectsData';
@@ -7,13 +7,24 @@ import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles } from 'lucide-react';
 
 export const ProjectPage = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { id } = useParams();
+  const project = projectsData.find(p => p.slug === id);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showIntro, setShowIntro] = useState<boolean>(!!project?.introVideo);
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, 250]);
 
-  const project = projectsData.find(p => p.slug === id);
+  useEffect(() => {
+    if (showIntro) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showIntro]);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -30,7 +41,33 @@ export const ProjectPage = () => {
   };
   
   return (
-    <div className="min-h-screen relative z-10 bg-transparent text-[#D7E2EA]">
+    <>
+      <AnimatePresence>
+        {showIntro && project.introVideo && (
+          <motion.div 
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="fixed inset-0 z-[200] bg-black flex items-center justify-center"
+          >
+            <video 
+              src={project.introVideo} 
+              className="w-full h-full object-cover" 
+              autoPlay 
+              playsInline
+              onEnded={() => setShowIntro(false)}
+            />
+            <button 
+              onClick={() => setShowIntro(false)}
+              className="absolute bottom-10 right-10 z-[210] text-white/50 hover:text-white uppercase tracking-widest text-xs font-mono px-4 py-2 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
+            >
+              Skip Intro
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="min-h-screen relative z-10 bg-transparent text-[#D7E2EA]">
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-[#FFD600] origin-left z-50"
@@ -297,5 +334,6 @@ export const ProjectPage = () => {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
