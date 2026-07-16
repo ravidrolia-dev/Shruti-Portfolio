@@ -101,12 +101,13 @@ export const projectsData: ProjectDetails[] = [
     slug: "fitparty",
     num: "02",
     client: "Mobile App Branding",
-    name: "FitParty",
-    shortDescription: "App store creative for a family fitness-challenge app — badges, streaks, and social step tracking.",
-    role: "Freelance Graphic Designer",
+    name: "FitParty — App Store Visuals",
+    shortDescription: "First app store creatives designed for a US-based fitness startup to communicate product features clearly and create a polished first impression for early users.",
+    role: "Visual Designer",
     roleDetails: "Visual Designer",
-    servicesUsed: "App Branding · Illustration · Gamification",
-    skillsUsed: "Illustration · Badge Design · UI/UX Visuals",
+    deliverables: "App Store Screenshot Creatives",
+    servicesUsed: "App Store & ASO Visuals",
+    skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
     skillsVideo: "/videos/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
     introVideo: "/videos/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
     gallery: [],
@@ -115,20 +116,24 @@ export const projectsData: ProjectDetails[] = [
     col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85",
     contentBlocks: [
       {
+        align: 'center',
+        copy: "FitParty is a US-based early-stage fitness startup built around simple fitness challenges with family and friends. I created its first set of app store creatives to help users quickly understand the product, its features, and its social fitness experience.",
+      },
+      {
         type: "process",
         title: "The Project Journey",
         processSteps: [
           {
             title: "Challenge",
-            copy: "Needed engaging and competitive visual language for a fitness-challenge app aimed at families."
+            copy: "Create the first app store creatives for a new US-based fitness startup with no existing store visual direction."
           },
           {
             title: "Approach",
-            copy: "Designed dynamic badges, streak graphics, and app store creatives to gamify the fitness experience and encourage social sharing."
+            copy: "Use bright gradients, app UI mockups, clear feature-led headlines, and consistent layouts to explain each product benefit quickly."
           },
           {
             title: "Outcome",
-            copy: "Delivered a fun, gamified identity that enhanced user retention and social step tracking."
+            copy: "A polished set of app store visuals that gave FitParty a clear and credible first product-facing presence."
           }
         ]
       },
