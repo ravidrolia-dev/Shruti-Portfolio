@@ -28,6 +28,7 @@ export interface ProjectDetails {
   servicesUsed?: string;
   skillsUsed?: string;
   skillsImage?: string;
+  skillsVideo?: string;
   role: string;
   roleDetails?: string;
   deliverables?: string;
@@ -105,7 +106,7 @@ export const projectsData: ProjectDetails[] = [
     roleDetails: "Visual Designer",
     servicesUsed: "App Branding · Illustration · Gamification",
     skillsUsed: "Illustration · Badge Design · UI/UX Visuals",
-    skillsImage: "/images/page-13.jpg",
+    skillsVideo: "/videos/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
