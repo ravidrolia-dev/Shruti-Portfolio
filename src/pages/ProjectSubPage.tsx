@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, X, Compass, Lightbulb, Sparkles } from 'lucide-react';
 import { projectsData } from '../lib/projectsData';
+import type { SubPageSection, ContentBlock } from '../lib/projectsData';
 
 const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => {
   return (
@@ -35,9 +36,10 @@ export const ProjectSubPage = () => {
 
   if (!project || !subData) return null;
 
-  const renderSections = subData.sections || [];
-  const legacySection = subData.contentBlocks && subData.contentBlocks.length > 0 ? [{
+  const renderSections: SubPageSection[] = subData.sections || [];
+  const legacySection: SubPageSection[] = subData.contentBlocks && subData.contentBlocks.length > 0 ? [{
     contentHeading: subData.contentHeading,
+    contentSubHeading: undefined,
     skillimage: subData.skillimage,
     contentBlocks: subData.contentBlocks
   }] : [];
@@ -135,12 +137,19 @@ export const ProjectSubPage = () => {
       {allSections.map((section, sIdx) => (
         <div key={sIdx} className="w-full flex flex-col mb-24 sm:mb-32">
           {/* Content Heading */}
-          {section.contentHeading && (
+          {(section.contentHeading || section.contentSubHeading) && (
             <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
               <FadeIn delay={0.2} className="mb-12 sm:mb-16">
-                <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white tracking-wide">
-                  {section.contentHeading}
-                </h2>
+                {section.contentHeading && (
+                  <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white tracking-wide">
+                    {section.contentHeading}
+                  </h2>
+                )}
+                {section.contentSubHeading && (
+                  <h3 className={`font-mono text-[#FFD600] uppercase tracking-widest text-lg sm:text-xl ${section.contentHeading ? 'mt-4' : ''}`}>
+                    {section.contentSubHeading}
+                  </h3>
+                )}
               </FadeIn>
             </section>
           )}
@@ -159,7 +168,7 @@ export const ProjectSubPage = () => {
           {/* Content Blocks */}
           <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
             <div className="flex flex-col gap-16 sm:gap-24 md:gap-32 w-full">
-              {section.contentBlocks.map((cblock, idx) => (
+              {section.contentBlocks && section.contentBlocks.map((cblock: ContentBlock, idx: number) => (
             cblock.type === 'process' ? (
               <div key={idx} className="w-full flex flex-col items-center py-12 sm:py-16 bg-[#090909] rounded-[30px] sm:rounded-[40px] px-5 sm:px-8 md:px-12 border border-white/5 relative overflow-hidden">
                 {/* Background glow */}
@@ -251,20 +260,16 @@ export const ProjectSubPage = () => {
 
                   {/* Block Images */}
                   {cblock.images && cblock.images.length > 0 && (
-                    <div className={`w-full grid gap-4 sm:gap-6 ${
-                      cblock.images.length === 1 ? 'grid-cols-1' :
-                      cblock.images.length === 2 ? 'grid-cols-1 sm:grid-cols-2' :
-                      'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-                    }`}>
+                    <div className="w-full flex flex-wrap gap-4 sm:gap-6 items-start">
                       {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
-                          className="w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl"
+                          className="w-auto max-w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl"
                         >
                           <img 
                             src={imgUrl} 
                             alt={`${subData.title} image ${idx}-${imgIdx}`} 
-                            className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
+                            className="w-auto h-auto max-w-full block group-hover:scale-[1.03] transition-transform duration-700" 
                             onClick={() => setSelectedImage(imgUrl)}
                           />
                         </div>

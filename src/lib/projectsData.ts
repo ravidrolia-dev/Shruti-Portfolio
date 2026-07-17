@@ -10,6 +10,7 @@ export interface ProcessStep {
 
 export interface SubPageSection {
   contentHeading?: string;
+  contentSubHeading?: string;
   skillimage?: string;
   contentBlocks: ContentBlock[];
 }
@@ -175,6 +176,18 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title: "Feature Graphic ",
                   images: ["/images/pratilipi/fg 12.jpg.jpeg"]
+                }
+              ]
+            },
+            {
+              contentSubHeading: "Gallery",
+              contentBlocks: [
+                {
+                  images: [
+                    "/images/pratilipi/your-gallery-image-1.jpg",
+                    "/images/pratilipi/your-gallery-image-2.jpg",
+                    "/images/pratilipi/your-gallery-image-3.jpg"
+                  ]
                 }
               ]
             },
