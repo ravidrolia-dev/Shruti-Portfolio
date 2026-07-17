@@ -153,17 +153,17 @@ export const ProjectPage = () => {
           
 
           {(project.skillsImage !== undefined || project.skillsVideo !== undefined) && (
-            <FadeIn delay={0.4} y={20} className="w-full mb-16 lg:mb-24">
-              <div ref={skillsVideoContainerRef} className="w-full min-h-[300px] lg:min-h-0 lg:aspect-video bg-[#0C0C0C] lg:bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative flex justify-center items-center lg:block">
+            <FadeIn delay={0.4} y={20} className="w-full mb-16 lg:mb-24 flex justify-center">
+              <div ref={skillsVideoContainerRef} className="w-full flex justify-center">
                 {project.skillsVideo ? (
                   <video 
                     ref={skillsVideoRef}
                     src={project.skillsVideo} 
-                    className="w-full max-h-[80vh] lg:max-h-none lg:h-full object-contain lg:object-cover bg-black/20 lg:bg-transparent" 
+                    className="w-full max-h-[80vh] object-contain rounded-[20px] sm:rounded-[40px]" 
                     playsInline 
                   />
                 ) : project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] lg:max-h-none lg:h-full object-contain lg:object-cover bg-black/20 lg:bg-transparent" />
+                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] object-contain rounded-[20px] sm:rounded-[40px]" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
                     Add image or video path in projectsData.ts
