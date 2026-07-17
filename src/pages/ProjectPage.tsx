@@ -5,6 +5,7 @@ import { projectsData } from '../lib/projectsData';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles } from 'lucide-react';
+import { useVideoIntersection } from '../hooks/useVideoIntersection';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -14,6 +15,8 @@ export const ProjectPage = () => {
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, 250]);
+  
+  const { containerRef: skillsVideoContainerRef, videoRef: skillsVideoRef } = useVideoIntersection(0.4);
 
   useEffect(() => {
     if (showIntro) {
@@ -151,12 +154,12 @@ export const ProjectPage = () => {
 
           {(project.skillsImage !== undefined || project.skillsVideo !== undefined) && (
             <FadeIn delay={0.4} y={20} className="w-full mb-24">
-              <div className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
+              <div ref={skillsVideoContainerRef} className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
                 {project.skillsVideo ? (
                   <video 
+                    ref={skillsVideoRef}
                     src={project.skillsVideo} 
                     className="w-full h-full object-cover" 
-                    autoPlay 
                     playsInline 
                   />
                 ) : project.skillsImage ? (

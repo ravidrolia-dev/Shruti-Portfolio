@@ -49,7 +49,7 @@ export const projectsData: ProjectDetails[] = [
     slug: "pratilipi",
     num: "01",
     client: "App Marketing & ASO",
-    name: "Pratilipi",
+    name: "Pratilipi — Marketing Design Across Platforms",
     shortDescription: "App store & growth creative for India's largest storytelling platform — 6M+ stories, 12 Indian languages.",
     role: "Marketing Designer",
     roleDetails: "Pratilipi (FULL-TIME · 4.5 YEARS)",
@@ -111,8 +111,8 @@ export const projectsData: ProjectDetails[] = [
     skillsVideo: "/videos/fitparty/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
     introVideo: "",
     gallery: [],
-    col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
-    col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
+    col1img1: "/images/fitparty/7dc1bc-93af-42ed-986c-2c5a3f3c77ac1.png",
+    col1img2: "/images/fitparty/857ffe14-35a3-4c57-9472-61970c1ec560.png",
     col2img: "/images/fitparty/b92379f1-a5d1-46e3-9ed4-48726dfec11c.png",
     contentBlocks: [
       {
@@ -303,7 +303,7 @@ export const projectsData: ProjectDetails[] = [
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
     col1img1: "/images/luxury/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
-    col1img2: "/images/luxury/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
+    col1img2: "/images/luxury/Untitled-1Artboard 1 copy.jpg",
     col2img: "/images/luxury/Untitled-1Artboard 1.png", // Hero image
     contentBlocks: [
       {

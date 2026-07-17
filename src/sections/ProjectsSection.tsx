@@ -46,6 +46,7 @@ export const ProjectsSection = () => {
         })}
       </div>
 
+      <div className="h-[15vh] sm:h-[20vh] md:h-[25vh] w-full pointer-events-none" aria-hidden="true" />
     </section>
   );
 };
@@ -73,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards, p
     <div ref={containerRef} className="h-[85vh] flex items-center justify-center sticky top-24 md:top-32" style={{ marginTop: index === 0 ? 0 : '10vh' }}>
       <motion.div 
         style={{ scale: cardProgress, top: `calc(10vh + ${index * 28}px)` }}
-        className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col h-full transform-origin-top cursor-pointer group"
+        className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col relative transform-origin-top cursor-pointer group"
         onClick={onClick}
       >
         
@@ -96,17 +97,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards, p
         </div>
 
         {/* Bottom Row - Images Grid */}
-        <div className="flex-1 flex flex-col md:flex-row gap-4 sm:gap-6 min-h-0 relative pointer-events-none">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 relative pointer-events-none">
           <div className="w-full md:w-[40%] flex flex-col gap-4 sm:gap-6">
-            <div className="w-full h-[clamp(130px,16vw,230px)] rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden">
+            <div className="w-full h-[200px] md:h-[240px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
               <img src={project.col1img1} alt={`${project.name} preview 1`} className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-[clamp(160px,22vw,340px)] flex-1 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden">
+            <div className="w-full h-[250px] md:h-[320px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
               <img src={project.col1img2} alt={`${project.name} preview 2`} className="w-full h-full object-cover" />
             </div>
           </div>
 
-          <div className="w-full md:w-[60%] flex-1 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] overflow-hidden">
+          <div className="w-full md:w-[60%] h-[300px] md:h-[584px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
             <img src={project.col2img} alt={`${project.name} main view`} className="w-full h-full object-cover" />
           </div>
         </div>
