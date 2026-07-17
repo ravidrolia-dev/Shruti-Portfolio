@@ -167,6 +167,14 @@ export const projectsData: ProjectDetails[] = [
                       copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
                     }
                   ]
+                },
+                {
+                  title: "Typography & Visual System",
+                  images: ["/images/pratilipi/f56928a3-b2b8-4e1f-98b6-ebe5bc9d7e85.png"]
+                },
+                {
+                  title: "Feature Graphic ",
+                  images: ["/images/pratilipi/fg 12.jpg.jpeg"]
                 }
               ]
             },

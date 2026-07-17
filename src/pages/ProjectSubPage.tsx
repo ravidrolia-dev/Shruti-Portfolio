@@ -48,7 +48,7 @@ export const ProjectSubPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-transparent text-white pt-24 sm:pt-32 pb-24 relative overflow-hidden"
+      className="min-h-screen bg-transparent text-white pt-24 sm:pt-32 pb-24 relative"
     >
       {/* Background glow for sub-page */}
       <div className="fixed top-0 inset-x-0 h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFD600]/5 via-[#0C0C0C]/0 to-[#0C0C0C]/0 pointer-events-none" />
@@ -259,17 +259,12 @@ export const ProjectSubPage = () => {
                       {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
-                          className={`w-full rounded-[20px] lg:rounded-[30px] overflow-hidden bg-[#1A1A1A] border border-white/5 relative group ${
-                            cblock.images!.length === 1 ? 'aspect-video' : 'aspect-square sm:aspect-[4/5]'
-                          }`}
+                          className="w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl"
                         >
-                          <motion.img 
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ duration: 0.4 }}
+                          <img 
                             src={imgUrl} 
                             alt={`${subData.title} image ${idx}-${imgIdx}`} 
-                            className="w-full h-full object-cover block cursor-zoom-in" 
+                            className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
                             onClick={() => setSelectedImage(imgUrl)}
                           />
                         </div>
