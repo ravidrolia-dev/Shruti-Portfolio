@@ -88,12 +88,24 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
-        title: "Campaign Visuals",
-        images: ["/images/page-07.jpg", "/images/page-08.jpg", "/images/page-09.jpg"]
+        title: "Performance & Paid Advertising",
+        copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
+        images: ["/images/page-07.jpg"]
       },
       {
-        title: "Growth Assets",
-        images: ["/images/page-10.jpg", "/images/page-11.jpg", "/images/page-12.jpg"]
+        title: "App Store & ASO",
+        copy: "Store-listing visuals created for Indian and US markets, designed to communicate the product, improve feature clarity and support organic discovery.",
+        images: ["/images/page-10.jpg"]
+      },
+      {
+        title: "Stories, Covers & Content Promotion",
+        copy: "Covers and promotional systems developed to translate stories, genres and characters into visually compelling content experiences.",
+        images: ["/images/page-10.jpg"]
+      },
+      {
+        title: "Video ads & Engagement Creatives",
+        copy: "Paid video ads, GIFs, notifications and in-app creatives created to support user acquisition, content discovery and recurring reader communication.",
+        images: ["/images/page-10.jpg"]
       }
     ]
   },

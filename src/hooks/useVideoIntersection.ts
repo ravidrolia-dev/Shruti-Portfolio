@@ -46,7 +46,7 @@ export const useVideoIntersection = (threshold = 0.5, fadeDurationMs = 500) => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry) => { console.log('Intersection:', entry.isIntersecting, entry.intersectionRatio);
           if (entry.isIntersecting) {
             if (video.paused) {
               video.volume = 0;

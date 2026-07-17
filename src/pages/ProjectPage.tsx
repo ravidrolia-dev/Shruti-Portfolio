@@ -62,7 +62,7 @@ export const ProjectPage = () => {
             />
             <button 
               onClick={() => setShowIntro(false)}
-              className="absolute bottom-10 right-10 z-[210] text-white/50 hover:text-white uppercase tracking-widest text-xs font-mono px-4 py-2 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
+              className="absolute bottom-10 right-5 sm:right-10 z-[210] text-white/50 hover:text-white uppercase tracking-widest text-xs font-mono px-6 py-3 lg:px-4 lg:py-2 border border-white/20 rounded-full hover:bg-white/10 transition-all active:scale-95"
             >
               Skip Intro
             </button>
@@ -79,7 +79,7 @@ export const ProjectPage = () => {
       {/* Floating Back Button */}
       <button 
         onClick={() => navigate(-1)}
-        className="fixed top-8 left-5 sm:left-8 md:left-12 z-50 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white bg-[#1A1A1A] hover:bg-[#2A2A2A] px-5 py-2.5 rounded-full transition-colors"
+        className="fixed top-10 lg:top-8 left-5 sm:left-8 md:left-12 z-50 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white bg-[#1A1A1A] hover:bg-[#2A2A2A] px-6 py-3.5 lg:px-5 lg:py-2.5 rounded-full transition-all active:scale-95"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -89,7 +89,7 @@ export const ProjectPage = () => {
       </button>
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden mb-24">
+      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden mb-16 lg:mb-24">
         {/* Background Image with Parallax */}
         <motion.div className="absolute inset-0 w-full h-[120%]" style={{ y: yParallax }}>
           <img src={project.col2img} alt={project.name} className="w-full h-full object-cover" />
@@ -105,12 +105,12 @@ export const ProjectPage = () => {
             <span className="text-[#FFD600] font-bold uppercase tracking-[0.3em] text-xs sm:text-sm block mb-6 sm:mb-8">
               {project.client}
             </span>
-            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2rem,7vw,90px)] leading-[1.15] sm:leading-[1.1] tracking-tight mb-8 sm:mb-12">
+            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2rem,7vw,90px)] leading-[1.25] sm:leading-[1.2] lg:leading-[1.1] tracking-tight mb-8 sm:mb-12">
               {titleWords.map((word, i) => (
                 <motion.span key={i} variants={wordVariants} className="inline-block mr-[0.25em] mb-1 sm:mb-2">{word}</motion.span>
               ))}
             </motion.h1>
-            <div className="font-mono text-[10px] sm:text-sm text-white/50 tracking-[0.2em] uppercase">
+            <div className="font-mono text-xs sm:text-sm text-white/50 tracking-[0.2em] uppercase">
               {project.role}
             </div>
           </FadeIn>
@@ -118,7 +118,7 @@ export const ProjectPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-16 pb-24 max-w-7xl mx-auto">
+      <section className="px-5 sm:px-8 md:px-12 lg:px-16 pb-16 lg:pb-24 max-w-7xl mx-auto">
         <FadeIn delay={0.3} y={30} className="prose prose-invert prose-lg sm:prose-xl max-w-none">
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
@@ -153,17 +153,17 @@ export const ProjectPage = () => {
           
 
           {(project.skillsImage !== undefined || project.skillsVideo !== undefined) && (
-            <FadeIn delay={0.4} y={20} className="w-full mb-16 sm:mb-24">
-              <div ref={skillsVideoContainerRef} className="w-full bg-[#0C0C0C] border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative flex justify-center items-center">
+            <FadeIn delay={0.4} y={20} className="w-full mb-16 lg:mb-24">
+              <div ref={skillsVideoContainerRef} className="w-full min-h-[300px] lg:min-h-0 lg:aspect-video bg-[#0C0C0C] lg:bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative flex justify-center items-center lg:block">
                 {project.skillsVideo ? (
                   <video 
                     ref={skillsVideoRef}
                     src={project.skillsVideo} 
-                    className="w-full max-h-[80vh] object-contain bg-black/20" 
+                    className="w-full max-h-[80vh] lg:max-h-none lg:h-full object-contain lg:object-cover bg-black/20 lg:bg-transparent" 
                     playsInline 
                   />
                 ) : project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] object-contain bg-black/20" />
+                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] lg:max-h-none lg:h-full object-contain lg:object-cover bg-black/20 lg:bg-transparent" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
                     Add image or video path in projectsData.ts
@@ -228,7 +228,7 @@ export const ProjectPage = () => {
                 ) : block.type === 'stats' && block.stats ? (
                   <div key={idx} className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 my-8">
                     {block.stats.map((stat, i) => (
-                      <div key={i} className="flex-1 min-w-[200px]">
+                      <div key={i} className="flex-1 min-w-[140px] sm:min-w-[200px]">
                         <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
                         <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
                       </div>
@@ -257,7 +257,7 @@ export const ProjectPage = () => {
                           />
                         )}
                         {block.list && block.list.length > 0 && (
-                          <ul className="list-disc pl-5 text-[#D7E2EA]/90 font-light text-base sm:text-lg space-y-2">
+                          <ul className="list-disc pl-5 text-[#D7E2EA]/90 font-light text-base sm:text-lg space-y-3 lg:space-y-2">
                             {block.list.map((item, i) => (
                               <li key={i}>{item}</li>
                             ))}
@@ -281,6 +281,7 @@ export const ProjectPage = () => {
                             >
                               <motion.img 
                                 whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                                 transition={{ duration: 0.4 }}
                                 src={imgUrl} 
                                 alt={`${project.name} context image ${idx}-${imgIdx}`} 
@@ -322,7 +323,7 @@ export const ProjectPage = () => {
             />
             
             <button 
-              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2"
+              className="absolute top-4 right-4 lg:top-6 lg:right-6 text-white/50 hover:text-white transition-colors p-4 lg:p-2 bg-white/5 lg:bg-transparent rounded-full backdrop-blur-sm lg:backdrop-blur-none"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedImage(null);
