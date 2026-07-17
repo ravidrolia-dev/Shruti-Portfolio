@@ -203,11 +203,11 @@ export const projectsData: ProjectDetails[] = [
                     },
                     {
                       title: "Approach",
-                      copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
+                      copy: "Built the visual direction from scratch by exploring different content styles, messaging, layouts, and screenshot sequences through multiple iterations."
                     },
                     {
                       title: "Outcome",
-                      copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                      copy: "Created a clear and cohesive US store listing that introduced the product and its content offering to a new audience."
                     }
                   ]
                 },
@@ -226,9 +226,20 @@ export const projectsData: ProjectDetails[] = [
               contentBlocks: [
                 {
                   images: [
+                    "/images/pratilipi/7e43dd71-0af1-44ff-9748-15178c7d1bce.jpg.jpeg",
                     "/images/pratilipi/72124508-b360-4f4c-afb2-5985170f6639.jpg.jpeg",
-                    "/images/pratilipi/11dfd6ee-125b-4105-b62b-dc6bb03a8d90.png",
-                    "/images/pratilipi/7e43dd71-0af1-44ff-9748-15178c7d1bce.jpg.jpeg"
+                    "/images/pratilipi/11dfd6ee-125b-4105-b62b-dc6bb03a8d90.png"
+                  ]
+                }
+              ]
+            },
+            {
+              contentSubHeading: "App Store (IOS) Screenshots",
+              contentBlocks: [
+                {
+                  images: [
+                    "/images/pratilipi/82a8eab8-c6ca-40c3-a00e-ed48124b7b65.png",
+                    "/images/pratilipi/b3f13313-59f0-44d3-a595-8be58bd80cc6.png"
                   ]
                 }
               ]
