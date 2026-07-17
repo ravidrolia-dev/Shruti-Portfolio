@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ProjectPage } from './pages/ProjectPage';
+import { ProjectSubPage } from './pages/ProjectSubPage';
 import { SparklesCore } from './components/Sparkles';
 import { ScrollToTop } from './components/ScrollToTop';
 import { MouseEffects } from './components/MouseEffects';
@@ -35,6 +36,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project/:id" element={<ProjectPage />} />
+            <Route path="/project/:id/:subId" element={<ProjectSubPage />} />
           </Routes>
           
           <FloatingContactButton />

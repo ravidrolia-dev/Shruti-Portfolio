@@ -8,8 +8,19 @@ export interface ProcessStep {
   copy: string;
 }
 
+export interface SubPageData {
+  title: string;
+  description: string;
+  role?: string;
+  deliverables?: string;
+  servicesUsed?: string;
+  skillsUsed?: string;
+  heroImage?: string;
+  contentBlocks: ContentBlock[];
+}
+
 export interface ContentBlock {
-  type?: 'default' | 'process' | 'quote' | 'stats';
+  type?: 'default' | 'process' | 'quote' | 'stats' | 'zigzag';
   align?: 'left' | 'center';
   title?: string;
   copy?: string;
@@ -17,6 +28,8 @@ export interface ContentBlock {
   images?: string[];
   processSteps?: ProcessStep[];
   stats?: ProjectStat[];
+  subPageSlug?: string;
+  subPageData?: SubPageData;
 }
 
 export interface ProjectDetails {
@@ -50,35 +63,15 @@ export const projectsData: ProjectDetails[] = [
     num: "01",
     client: "App Marketing & ASO",
     name: "Pratilipi — Marketing Design Across Platforms",
-    shortDescription: "App store & growth creative for India's largest storytelling platform — 6M+ stories, 12 Indian languages.",
+    shortDescription: "Pratilipi is a digital storytelling platform that connects readers and writers across multiple languages and content formats.",
     role: "Marketing Designer",
     roleDetails: "Pratilipi (FULL-TIME · 4.5 YEARS)",
-    servicesUsed: "App Marketing · ASO · Growth Creative",
-    skillsUsed: "Art Direction · Vector Illustration · AI-assisted Ideation · Performance Design",
     skillsImage: "/images/page-06.jpg",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85",
     col2img: "/images/pratilipi/1bc65d71-691c-4577-94a6-c60bb92632f8.jpg.jpeg",
     contentBlocks: [
-      {
-        type: "process",
-        title: "The Project Journey",
-        processSteps: [
-          {
-            title: "Challenge",
-            copy: "Pratilipi needed to grow organic installs across 12 Indian languages and a competitive US romance-fiction market, while keeping creative output high enough to support constant A/B testing."
-          },
-          {
-            title: "Approach",
-            copy: "Redesigned Play Store ASO visuals and listing hierarchy using data-driven decisions. Owned end-to-end creative execution across Meta and Google Ads — story posters, vector illustrations, GIFs, and short-form video. Used AI tools to accelerate ideation without sacrificing volume."
-          },
-          {
-            title: "Outcome",
-            copy: "Improved CTR and conversion rate through high-frequency A/B testing, with design owned end-to-end from concept to performance review."
-          }
-        ]
-      },
       {
         type: "stats",
         stats: [
@@ -88,24 +81,165 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
+        type: "zigzag",
         title: "Performance & Paid Advertising",
         copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
-        images: ["/images/page-07.jpg"]
+        images: ["/images/page-07.jpg"],
+        subPageSlug: "performance-advertising",
+        subPageData: {
+          title: "Performance & Paid Advertising",
+          description: "A deep dive into acquisition-focused campaigns.",
+          deliverables: "App Store Screenshot Creatives",
+          servicesUsed: "App Store & ASO Visuals",
+          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
+          contentBlocks: [
+            {
+              type: "process",
+              title: "The Project Journey",
+              processSteps: [
+                {
+                  title: "Challenge",
+                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+                },
+                {
+                  title: "Approach",
+                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+                },
+                {
+                  title: "Outcome",
+                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                }
+              ]
+            },
+            {
+              title: "Final Screens",
+              copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
+              images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
+            },
+            {
+              title: "Final Screens",
+              copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
+              images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
+            }
+          ]
+        } 
       },
       {
+        type: "zigzag",
         title: "App Store & ASO",
         copy: "Store-listing visuals created for Indian and US markets, designed to communicate the product, improve feature clarity and support organic discovery.",
-        images: ["/images/page-10.jpg"]
+        images: ["/images/page-10.jpg"],
+        subPageSlug: "app-store-aso",
+        subPageData: {
+          title: "App Store & ASO",
+          description: "A deep dive into App Store optimization strategies.",
+          deliverables: "App Store Screenshot Creatives",
+          servicesUsed: "App Store & ASO Visuals",
+          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
+          contentBlocks: [
+            {
+              type: "process",
+              title: "The Project Journey",
+              processSteps: [
+                {
+                  title: "Challenge",
+                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+                },
+                {
+                  title: "Approach",
+                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+                },
+                {
+                  title: "Outcome",
+                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                }
+              ]
+            },
+            {
+              type: "default",
+              title: "Overview",
+              copy: "Detailed placeholder content for App Store & ASO."
+            }
+          ]
+        }
       },
       {
+        type: "zigzag",
         title: "Stories, Covers & Content Promotion",
         copy: "Covers and promotional systems developed to translate stories, genres and characters into visually compelling content experiences.",
-        images: ["/images/page-10.jpg"]
+        images: ["/images/page-10.jpg"],
+        subPageSlug: "stories-covers",
+        subPageData: {
+          title: "Stories, Covers & Content Promotion",
+          description: "A deep dive into content promotion and cover designs.",
+          deliverables: "App Store Screenshot Creatives",
+          servicesUsed: "App Store & ASO Visuals",
+          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
+          contentBlocks: [
+            {
+              type: "process",
+              title: "The Project Journey",
+              processSteps: [
+                {
+                  title: "Challenge",
+                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+                },
+                {
+                  title: "Approach",
+                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+                },
+                {
+                  title: "Outcome",
+                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                }
+              ]
+            },
+            {
+              type: "default",
+              title: "Overview",
+              copy: "Detailed placeholder content for Stories, Covers & Content Promotion."
+            }
+          ]
+        }
       },
       {
+        type: "zigzag",
         title: "Video ads & Engagement Creatives",
         copy: "Paid video ads, GIFs, notifications and in-app creatives created to support user acquisition, content discovery and recurring reader communication.",
-        images: ["/images/page-10.jpg"]
+        images: ["/images/page-10.jpg"],
+        subPageSlug: "video-ads",
+        subPageData: {
+          title: "Video ads & Engagement Creatives",
+          description: "A deep dive into video ads and engagement.",
+          deliverables: "App Store Screenshot Creatives",
+          servicesUsed: "App Store & ASO Visuals",
+          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
+          contentBlocks: [
+            {
+              type: "process",
+              title: "The Project Journey",
+              processSteps: [
+                {
+                  title: "Challenge",
+                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+                },
+                {
+                  title: "Approach",
+                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+                },
+                {
+                  title: "Outcome",
+                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                }
+              ]
+            },
+            {
+              type: "default",
+              title: "Overview",
+              copy: "Detailed placeholder content for Video ads & Engagement Creatives."
+            }
+          ]
+        }
       }
     ]
   },
