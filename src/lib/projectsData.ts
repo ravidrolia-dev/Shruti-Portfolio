@@ -108,12 +108,12 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "App Store Screenshot Creatives",
     servicesUsed: "App Store & ASO Visuals",
     skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-    skillsVideo: "/videos/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
-    introVideo: "/videos/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
+    skillsVideo: "/videos/fitparty/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
+    introVideo: "",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
-    col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85",
+    col2img: "/images/fitparty/b92379f1-a5d1-46e3-9ed4-48726dfec11c.png",
     contentBlocks: [
       {
         align: 'center',
@@ -279,15 +279,15 @@ export const projectsData: ProjectDetails[] = [
     shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
-    skillsImage: "/images/Untitled-1Artboard 1 copy.jpg",
+    skillsImage: "/images/luxury/Untitled-1Artboard 1 copy.jpg",
     role: "Freelance Editorial Designer",
     roleDetails: "Visual Designer",
     deliverables: "Digital invite",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
-    col1img1: "/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
-    col1img2: "/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
-    col2img: "/images/Untitled-1Artboard 1.png", // Hero image
+    col1img1: "/images/luxury/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
+    col1img2: "/images/luxury/1f6940be-8aea-488e-8183-28f6eb7e56b1.png",
+    col2img: "/images/luxury/Untitled-1Artboard 1.png", // Hero image
     contentBlocks: [
       {
         align: 'center',
@@ -314,11 +314,11 @@ export const projectsData: ProjectDetails[] = [
       {
         title: "Visual Direction",
         copy: "The moodboard focused on quiet Indian luxury — ivory silk, soft florals, heritage details, warm gold accents, editorial typography, and tactile textures. These references helped shape the invite’s calm, premium, and intimate mood.",
-        images: ["/images/5c17d31f-4e9e-47ae-b9c5-a35a64c59de6 (1).jpeg"]
+        images: ["/images/luxury/5c17d31f-4e9e-47ae-b9c5-a35a64c59de6 (1).jpeg"]
       },
       {
         title: "Typography & Visual System",
-        images: ["/images/df60c48c-abb0-4600-87d7-d51a8561395c.png"]
+        images: ["/images/luxury/df60c48c-abb0-4600-87d7-d51a8561395c.png"]
       },
       {
         title: "Final Invite",
@@ -329,11 +329,11 @@ export const projectsData: ProjectDetails[] = [
           "Hero: Perfume bottle with floral styling",
           "Bottom: Partners, date, time, and venue"
         ],
-        images: ["/images/Fragrance_Final_2 (1).jpg"]
+        images: ["/images/luxury/Fragrance_Final_2 (1).jpg"]
       },
       {
         title: "Digital & Print Application",
-        images: ["/images/1f6940be-8aea-488e-8183-28f6eb7e56b1.png","/images/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
+        images: ["/images/luxury/1f6940be-8aea-488e-8183-28f6eb7e56b1.png","/images/luxury/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
       },
       {
         type: "quote",
