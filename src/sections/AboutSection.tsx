@@ -77,13 +77,13 @@ export const AboutSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start center', 'end end']
+    offset: ['15% start', '85% end']
   });
 
   return (
     <section id="about" className="relative w-full bg-transparent">
       {/* Tall Scroll Track for the Scrubbing Text */}
-      <div ref={containerRef} className="w-full min-h-[150vh] relative pt-20">
+      <div ref={containerRef} className="w-full min-h-[400vh] relative pt-20">
         
         {/* Sticky Container */}
         <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
@@ -112,7 +112,7 @@ export const AboutSection = () => {
       </div>
 
       {/* Skills & Resume - comes naturally after scrolling the 150vh */}
-      <div className="flex flex-col items-center z-10 relative w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10 pb-20">
+      <div className="flex flex-col items-center z-10 relative w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10 pb-20 mt-16 sm:mt-24 md:mt-32">
 
         {/* Visual Skills Block */}
         <FadeIn delay={0.3} y={20} className="flex flex-col w-full max-w-6xl mb-16 sm:mb-20 md:mb-24 gap-10">

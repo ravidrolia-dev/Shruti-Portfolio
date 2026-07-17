@@ -56,7 +56,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = ''
 
 const Char = ({ char, progress, index, totalLength }: { char: string, progress: MotionValue<number>, index: number, totalLength: number }) => {
   const start = index / totalLength;
-  const end = start + 0.1;
+  const end = start + (3 / totalLength); // Fade over 3 characters distance instead of 10% of total
   const opacity = useTransform(progress, [start, end], [0.2, 1]);
 
   return (

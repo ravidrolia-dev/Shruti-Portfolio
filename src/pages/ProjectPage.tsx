@@ -78,7 +78,7 @@ export const ProjectPage = () => {
       />
       {/* Floating Back Button */}
       <button 
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/')}
         className="fixed top-10 lg:top-8 left-5 sm:left-8 md:left-12 z-50 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white bg-[#1A1A1A] hover:bg-[#2A2A2A] px-6 py-3.5 lg:px-5 lg:py-2.5 rounded-full transition-all active:scale-95"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
