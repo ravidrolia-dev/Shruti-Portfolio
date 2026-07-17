@@ -79,22 +79,22 @@ export const HeroSection = () => {
             {/* Mobile Metrics */}
             <div className="grid md:hidden grid-cols-2 gap-y-8 gap-x-6 mb-10 w-full mt-4">
               <div className="flex flex-col">
-                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={4.5} suffix=" Years" /></span>
+                <span className="font-semibold text-2xl text-[#D7E2EA] pb-2"><AnimatedMetric value={4.5} suffix=" Years" /></span>
                 <div className="h-px bg-white/20 w-full mb-3"></div>
                 <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Experience</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={2000} suffix="+" /></span>
+                <span className="font-semibold text-2xl text-[#D7E2EA] pb-2"><AnimatedMetric value={500} suffix="+" /></span>
                 <div className="h-px bg-white/20 w-full mb-3"></div>
                 <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Creatives Delivered</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric value={12} suffix="% Growth" /></span>
+                <span className="font-semibold text-2xl text-[#D7E2EA] pb-2"><AnimatedMetric value={12} suffix="% Growth" /></span>
                 <div className="h-px bg-white/20 w-full mb-3"></div>
                 <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">ASO Install Growth</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-semibold text-2xl text-[#FFD600] pb-2"><AnimatedMetric isString stringValue="Meta + Google" /></span>
+                <span className="font-semibold text-2xl text-[#D7E2EA] pb-2"><AnimatedMetric isString stringValue="Meta + Google" /></span>
                 <div className="h-px bg-white/20 w-full mb-3"></div>
                 <span className="font-medium text-xs text-[#D7E2EA] opacity-80 uppercase tracking-wider">Ad Creatives</span>
               </div>
