@@ -54,7 +54,6 @@ export const ProjectPage = () => {
               src={project.introVideo} 
               className="w-full h-full object-cover" 
               autoPlay 
-              muted
               playsInline
               onEnded={() => setShowIntro(false)}
             />
@@ -97,6 +96,7 @@ export const ProjectPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 pointer-events-none" />
 
         {/* Content */}
+        {/* Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col justify-center h-full">
           <FadeIn delay={0.1} y={30} className="w-full max-w-4xl flex flex-col items-start text-left">
             <span className="text-[#FFD600] font-bold uppercase tracking-[0.3em] text-xs sm:text-sm block mb-8">
@@ -120,22 +120,34 @@ export const ProjectPage = () => {
           <p className="text-[#D7E2EA] font-medium text-xl sm:text-2xl leading-relaxed mb-8 border-l-2 border-[#FFD600] pl-6">
             {project.shortDescription}
           </p>
+          {project.roleDetails && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Role:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.roleDetails}</p>
+            </div>
+          )}
+
+          {project.deliverables && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Deliverables:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.deliverables}</p>
+            </div>
+          )}
+          {project.servicesUsed && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Services Used:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.servicesUsed}</p>
+            </div>
+          )}
+
+          {project.skillsUsed && (
+            <div className="mb-16">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
+            </div>
+          )}
+
           
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-16 text-sm font-mono tracking-widest text-[#D7E2EA]/40 uppercase">
-            {project.roleDetails && <span>{project.roleDetails}</span>}
-            {project.servicesUsed && (
-              <>
-                <span className="w-1 h-1 rounded-full bg-[#FFD600]"></span>
-                <span>{project.servicesUsed}</span>
-              </>
-            )}
-            {project.skillsUsed && (
-              <>
-                <span className="w-1 h-1 rounded-full bg-[#FFD600]"></span>
-                <span>{project.skillsUsed}</span>
-              </>
-            )}
-          </div>
 
           {(project.skillsImage !== undefined || project.skillsVideo !== undefined) && (
             <FadeIn delay={0.4} y={20} className="w-full mb-24">
@@ -145,7 +157,6 @@ export const ProjectPage = () => {
                     src={project.skillsVideo} 
                     className="w-full h-full object-cover" 
                     autoPlay 
-                    muted
                     playsInline 
                   />
                 ) : project.skillsImage ? (
