@@ -32,20 +32,24 @@ export const ContactSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.4} y={20} className="flex flex-col gap-4 justify-center">
-          <form className="flex flex-col gap-5 w-full bg-white/5 p-6 sm:p-8 rounded-[24px] border border-white/10 shadow-xl" onSubmit={(e) => { e.preventDefault(); alert("Message sending functionality would go here!"); }}>
+          <form 
+            action="https://formspree.io/f/xjgnyowr" 
+            method="POST"
+            className="flex flex-col gap-5 w-full bg-white/5 p-6 sm:p-8 rounded-[24px] border border-white/10 shadow-xl"
+          >
             <div className="flex flex-col gap-1.5">
               <label htmlFor="name" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Name</label>
-              <input type="text" id="name" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="Your name" required />
+              <input type="text" name="name" id="name" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="Your name" required />
             </div>
             
             <div className="flex flex-col gap-1.5">
               <label htmlFor="email" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Email</label>
-              <input type="email" id="email" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="your@email.com" required />
+              <input type="email" name="email" id="email" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="your@email.com" required />
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label htmlFor="message" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Message</label>
-              <textarea id="message" rows={4} className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all resize-none placeholder-white/20" placeholder="Tell me about your project..." required></textarea>
+              <textarea name="message" id="message" rows={4} className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all resize-none placeholder-white/20" placeholder="Tell me about your project..." required></textarea>
             </div>
 
             <button type="submit" className="mt-2 w-full inline-flex justify-center items-center gap-2 rounded-full border-2 border-[#FFD600] bg-[#FFD600] text-black font-bold uppercase tracking-widest px-8 py-4 text-sm hover:bg-transparent hover:text-[#FFD600] transition-colors">
