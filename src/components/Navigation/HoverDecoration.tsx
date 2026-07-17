@@ -38,12 +38,6 @@ const workImages = [
 
 const connectImages = [
   {
-    src: '/navbar/kZimamADdUc1StlgrvwXr6WaZRc.png', // Twixxer
-    className: 'absolute w-[30px] aspect-square',
-    targetX: 55, targetY: 165,
-    href: 'https://twitter.com'
-  },
-  {
     src: '/navbar/sQTVrMmvyy0ZAP9a11y78iBE0o.png', // LinkedIn
     className: 'absolute w-[30px] aspect-square',
     targetX: 25, targetY: 55,

@@ -102,15 +102,15 @@ export const ProjectPage = () => {
         {/* Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col justify-center h-full">
           <FadeIn delay={0.1} y={30} className="w-full max-w-4xl flex flex-col items-start text-left">
-            <span className="text-[#FFD600] font-bold uppercase tracking-[0.3em] text-xs sm:text-sm block mb-8">
+            <span className="text-[#FFD600] font-bold uppercase tracking-[0.3em] text-xs sm:text-sm block mb-6 sm:mb-8">
               {project.client}
             </span>
-            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2.5rem,6vw,90px)] leading-[1.1] tracking-tight mb-12 flex flex-wrap gap-x-4 gap-y-2">
+            <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2rem,7vw,90px)] leading-[1.15] sm:leading-[1.1] tracking-tight mb-8 sm:mb-12">
               {titleWords.map((word, i) => (
-                <motion.span key={i} variants={wordVariants} className="inline-block">{word}</motion.span>
+                <motion.span key={i} variants={wordVariants} className="inline-block mr-[0.25em] mb-1 sm:mb-2">{word}</motion.span>
               ))}
             </motion.h1>
-            <div className="font-mono text-xs sm:text-sm text-white/50 tracking-[0.2em] uppercase">
+            <div className="font-mono text-[10px] sm:text-sm text-white/50 tracking-[0.2em] uppercase">
               {project.role}
             </div>
           </FadeIn>
@@ -153,17 +153,17 @@ export const ProjectPage = () => {
           
 
           {(project.skillsImage !== undefined || project.skillsVideo !== undefined) && (
-            <FadeIn delay={0.4} y={20} className="w-full mb-24">
-              <div ref={skillsVideoContainerRef} className="w-full aspect-video bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative">
+            <FadeIn delay={0.4} y={20} className="w-full mb-16 sm:mb-24">
+              <div ref={skillsVideoContainerRef} className="w-full bg-[#0C0C0C] border border-white/10 rounded-[20px] sm:rounded-[40px] overflow-hidden relative flex justify-center items-center">
                 {project.skillsVideo ? (
                   <video 
                     ref={skillsVideoRef}
                     src={project.skillsVideo} 
-                    className="w-full h-full object-cover" 
+                    className="w-full max-h-[80vh] object-contain bg-black/20" 
                     playsInline 
                   />
                 ) : project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="w-full h-full object-cover" />
+                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] object-contain bg-black/20" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
                     Add image or video path in projectsData.ts
@@ -174,10 +174,10 @@ export const ProjectPage = () => {
           )}
 
           {project.contentBlocks && project.contentBlocks.length > 0 && (
-            <div className="flex flex-col gap-24 sm:gap-32 w-full">
+            <div className="flex flex-col gap-16 sm:gap-24 md:gap-32 w-full">
               {project.contentBlocks.map((block, idx) => (
                 block.type === 'process' ? (
-                  <div key={idx} className="w-full flex flex-col items-center py-16 bg-[#090909] rounded-[40px] px-8 border border-white/5 relative overflow-hidden">
+                  <div key={idx} className="w-full flex flex-col items-center py-12 sm:py-16 bg-[#090909] rounded-[30px] sm:rounded-[40px] px-5 sm:px-8 md:px-12 border border-white/5 relative overflow-hidden">
                     {/* Background glow */}
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFD600]/5 via-black/0 to-black/0 pointer-events-none" />
                     
