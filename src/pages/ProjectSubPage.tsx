@@ -260,16 +260,20 @@ export const ProjectSubPage = () => {
 
                   {/* Block Images */}
                   {cblock.images && cblock.images.length > 0 && (
-                    <div className="w-full flex flex-wrap gap-4 sm:gap-6 items-start">
+                    <div className={`w-full grid gap-4 sm:gap-6 ${
+                      cblock.images.length === 1 ? 'grid-cols-1' :
+                      cblock.images.length === 2 ? 'grid-cols-1 sm:grid-cols-2' :
+                      'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                    }`}>
                       {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
-                          className="w-auto max-w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl"
+                          className="w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl"
                         >
                           <img 
                             src={imgUrl} 
                             alt={`${subData.title} image ${idx}-${imgIdx}`} 
-                            className="w-auto h-auto max-w-full block group-hover:scale-[1.03] transition-transform duration-700" 
+                            className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
                             onClick={() => setSelectedImage(imgUrl)}
                           />
                         </div>

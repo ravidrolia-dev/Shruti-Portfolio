@@ -148,12 +148,11 @@ export const projectsData: ProjectDetails[] = [
           skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
           sections: [
             {
-              contentHeading: "Play Store",
+              contentHeading: "Play Store - India",
               skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).jpeg",
               contentBlocks: [
                 {
                   type: "process",
-                  title: "Indian App Store",
                   processSteps: [
                     {
                       title: "Challenge",
@@ -180,24 +179,23 @@ export const projectsData: ProjectDetails[] = [
               ]
             },
             {
-              contentSubHeading: "Gallery",
+              contentSubHeading: "Final App Screenshots",
               contentBlocks: [
                 {
                   images: [
-                    "/images/pratilipi/your-gallery-image-1.jpg",
-                    "/images/pratilipi/your-gallery-image-2.jpg",
-                    "/images/pratilipi/your-gallery-image-3.jpg"
+                    "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
+                    "/images/pratilipi/9eaadb63-ce70-4dc7-b465-b3ced70098eb.png",
+                    "/images/pratilipi/034cb516-ae23-4184-a9d1-5973eb731554.png"
                   ]
                 }
               ]
             },
             {
-              contentHeading: "App Store - US",
-              skillimage: "", // You can add the US app store image here!
+              contentHeading: "Play Store & App Store - US",
+              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).jpeg",
               contentBlocks: [
                 {
                   type: "process",
-                  title: "US App Store",
                   processSteps: [
                     {
                       title: "Challenge",
@@ -205,12 +203,32 @@ export const projectsData: ProjectDetails[] = [
                     },
                     {
                       title: "Approach",
-                      copy: "Built the visual direction from scratch by exploring different content styles, messaging, layouts, and screenshot sequences through multiple iterations."
+                      copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
                     },
                     {
                       title: "Outcome",
-                      copy: "Created a clear and cohesive US store listing that introduced the product and its content offering to a new audience."
+                      copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
                     }
+                  ]
+                },
+                {
+                  title: "Typography & Visual System",
+                  images: ["/images/pratilipi/22e6718d-0fca-41e5-94c1-9a36fd9f1356.png"]
+                },
+                {
+                  title: "Feature Graphic ",
+                  images: ["/images/pratilipi/fg usArtboard 1 copy 2.jpg.jpeg"]
+                }
+              ]
+            },
+            {
+              contentSubHeading: "Play Store Screenshots",
+              contentBlocks: [
+                {
+                  images: [
+                    "/images/pratilipi/72124508-b360-4f4c-afb2-5985170f6639.jpg.jpeg",
+                    "/images/pratilipi/11dfd6ee-125b-4105-b62b-dc6bb03a8d90.png",
+                    "/images/pratilipi/7e43dd71-0af1-44ff-9748-15178c7d1bce.jpg.jpeg"
                   ]
                 }
               ]
