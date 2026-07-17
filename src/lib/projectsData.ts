@@ -192,7 +192,7 @@ export const projectsData: ProjectDetails[] = [
             },
             {
               contentHeading: "Play Store & App Store - US",
-              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).jpeg",
+              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1) (1).jpg.jpeg",
               contentBlocks: [
                 {
                   type: "process",
