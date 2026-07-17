@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, ChevronRight, X, Compass, Lightbulb, Sparkles } from 'lucide-react';
 import { projectsData } from '../lib/projectsData';
 
 const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => {
@@ -34,6 +34,14 @@ export const ProjectSubPage = () => {
   }, [project, subData, navigate]);
 
   if (!project || !subData) return null;
+
+  const renderSections = subData.sections || [];
+  const legacySection = subData.contentBlocks && subData.contentBlocks.length > 0 ? [{
+    contentHeading: subData.contentHeading,
+    skillimage: subData.skillimage,
+    contentBlocks: subData.contentBlocks
+  }] : [];
+  const allSections = [...legacySection, ...renderSections];
 
   return (
     <motion.div 
@@ -124,75 +132,77 @@ export const ProjectSubPage = () => {
         )}
       </section>
 
-      {/* Content Blocks */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col gap-16 sm:gap-24 md:gap-32 w-full">
-          {(() => {
-            const groupedBlocks: any[] = [];
-            let i = 0;
-            while (i < subData.contentBlocks.length) {
-              const cblock = subData.contentBlocks[i];
-              if (cblock.type === 'process') {
-                const group = [cblock];
-                while (i + 1 < subData.contentBlocks.length && subData.contentBlocks[i + 1].type === 'process') {
-                  group.push(subData.contentBlocks[i + 1]);
-                  i++;
-                }
-                groupedBlocks.push({ type: 'process-group', blocks: group });
-              } else {
-                groupedBlocks.push({ type: 'single', block: cblock });
-              }
-              i++;
-            }
+      {allSections.map((section, sIdx) => (
+        <div key={sIdx} className="w-full flex flex-col mb-24 sm:mb-32">
+          {/* Content Heading */}
+          {section.contentHeading && (
+            <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
+              <FadeIn delay={0.2} className="mb-12 sm:mb-16">
+                <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white tracking-wide">
+                  {section.contentHeading}
+                </h2>
+              </FadeIn>
+            </section>
+          )}
 
-            return groupedBlocks.map((group, groupIdx) => {
-              if (group.type === 'process-group') {
-                return (
-                  <div key={groupIdx} className={`grid grid-cols-1 ${group.blocks.length > 1 ? 'xl:grid-cols-2' : ''} gap-8 w-full`}>
-                    {group.blocks.map((cblock: any, blockIdx: number) => (
-                      <div key={blockIdx} className="w-full flex flex-col items-center py-12 sm:py-16 bg-[#090909] rounded-[30px] sm:rounded-[40px] px-5 sm:px-8 md:px-12 border border-white/5 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFD600]/5 via-black/0 to-black/0 pointer-events-none" />
+          {/* Skill Image */}
+          {section.skillimage && (
+            <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
+              <FadeIn delay={0.4} y={20} className="w-full mb-16 lg:mb-24 flex justify-center">
+                <div className="w-full flex justify-center">
+                  <img src={section.skillimage} alt="Skills Overview" className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" />
+                </div>
+              </FadeIn>
+            </section>
+          )}
+
+          {/* Content Blocks */}
+          <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
+            <div className="flex flex-col gap-16 sm:gap-24 md:gap-32 w-full">
+              {section.contentBlocks.map((cblock, idx) => (
+            cblock.type === 'process' ? (
+              <div key={idx} className="w-full flex flex-col items-center py-12 sm:py-16 bg-[#090909] rounded-[30px] sm:rounded-[40px] px-5 sm:px-8 md:px-12 border border-white/5 relative overflow-hidden">
+                {/* Background glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFD600]/5 via-black/0 to-black/0 pointer-events-none" />
+                
+                {cblock.title && (
+                  <div className="flex items-center gap-4 mb-20 text-[#FFD600] font-mono text-xs sm:text-sm tracking-widest uppercase relative z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></span>
+                    {cblock.title}
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600]"></span>
+                  </div>
+                )}
+                
+                {cblock.processSteps && (
+                  <div className="relative w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-4 z-10">
+                    {/* Connecting horizontal line (desktop only) */}
+                    <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-[1px] bg-white/10 z-0"></div>
+                    
+                    {cblock.processSteps.map((step, stepIdx) => (
+                      <div key={stepIdx} className="relative z-10 flex-1 flex flex-col items-center text-center">
+                        {/* Top Number Circle */}
+                        <div className="w-16 h-16 rounded-full border border-[#FFD600]/30 bg-[#0C0C0C] flex items-center justify-center text-white/80 font-mono text-sm mb-10 mx-auto shadow-[0_0_15px_rgba(255,214,0,0.1)]">
+                          0{stepIdx + 1}
+                        </div>
                         
-                        {cblock.title && (
-                          <div className="flex items-center gap-4 mb-20 text-[#FFD600] font-mono text-xs sm:text-sm tracking-widest uppercase relative z-10 text-center">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600] shrink-0"></span>
-                            {cblock.title}
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD600] shrink-0"></span>
-                          </div>
-                        )}
+                        <h4 className="font-serif italic font-medium text-2xl text-white mb-6">{step.title}</h4>
                         
-                        {cblock.processSteps && (
-                          <div className={`relative w-full max-w-5xl mx-auto flex flex-col ${group.blocks.length > 1 ? 'md:flex-col' : 'md:flex-row'} justify-between gap-12 ${group.blocks.length === 1 ? 'md:gap-4' : ''} z-10`}>
-                            {group.blocks.length === 1 && (
-                              <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-[1px] bg-white/10 z-0"></div>
-                            )}
-                            
-                            {cblock.processSteps.map((step: any, stepIdx: number) => (
-                              <div key={stepIdx} className="relative z-10 flex-1 flex flex-col items-center text-center">
-                                <div className="w-16 h-16 rounded-full border border-[#FFD600]/30 bg-[#0C0C0C] flex items-center justify-center text-white/80 font-mono text-sm mb-10 mx-auto shadow-[0_0_15px_rgba(255,214,0,0.1)] shrink-0">
-                                  0{stepIdx + 1}
-                                </div>
-                                
-                                <h4 className="font-serif italic font-medium text-2xl text-white mb-6">{step.title}</h4>
-                                
-                                <p className="text-[#D7E2EA]/60 text-sm sm:text-base leading-relaxed mb-10 max-w-xs mx-auto">
-                                  {step.copy}
-                                </p>
-                                
-                               
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                        <p className="text-[#D7E2EA]/60 text-sm sm:text-base leading-relaxed mb-10 max-w-xs mx-auto">
+                          {step.copy}
+                        </p>
+                        
+                        {/* Bottom Icon Circle */}
+                        <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#FFD600] mt-auto">
+                          {stepIdx === 0 && <Compass size={16} />}
+                          {stepIdx === 1 && <Lightbulb size={16} />}
+                          {stepIdx === 2 && <Sparkles size={16} />}
+                        </div>
                       </div>
                     ))}
                   </div>
-                );
-              } else {
-                const cblock = group.block;
-                const idx = groupIdx;
-                return (
-                  cblock.type === 'quote' ? (
+                )}
+              </div>
+            ) : cblock.type === 'quote' ? (
               <div key={idx} className="w-full flex flex-col items-center justify-center py-16 sm:py-24 mt-8 sm:mt-12 mb-8">
                 <div className="w-32 sm:w-48 h-[1px] bg-gradient-to-r from-transparent via-[#FFD600] to-transparent mb-12 opacity-70"></div>
                 <h2 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl text-white text-center tracking-wide leading-tight px-4">
@@ -201,7 +211,7 @@ export const ProjectSubPage = () => {
               </div>
             ) : cblock.type === 'stats' && cblock.stats ? (
               <div key={idx} className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 my-8">
-                {cblock.stats.map((stat: any, i: number) => (
+                {cblock.stats.map((stat, i) => (
                   <div key={i} className="flex-1 min-w-[140px] sm:min-w-[200px]">
                     <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
                     <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
@@ -231,7 +241,7 @@ export const ProjectSubPage = () => {
                       )}
                       {cblock.list && cblock.list.length > 0 && (
                         <ul className="list-disc pl-5 text-[#D7E2EA]/90 font-light text-base sm:text-lg space-y-3 lg:space-y-2">
-                          {cblock.list.map((item: string, i: number) => (
+                          {cblock.list.map((item, i) => (
                             <li key={i}>{item}</li>
                           ))}
                         </ul>
@@ -246,7 +256,7 @@ export const ProjectSubPage = () => {
                       cblock.images.length === 2 ? 'grid-cols-1 sm:grid-cols-2' :
                       'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
                     }`}>
-                      {cblock.images.map((imgUrl: string, imgIdx: number) => (
+                      {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
                           className={`w-full rounded-[20px] lg:rounded-[30px] overflow-hidden bg-[#1A1A1A] border border-white/5 relative group ${
@@ -269,12 +279,11 @@ export const ProjectSubPage = () => {
                 </div>
               </div>
             )
-          );
-        }
-      });
-    })()}
+            ))}
+            </div>
+          </section>
         </div>
-      </section>
+      ))}
 
       {/* Fullscreen Image Modal */}
       {selectedImage && (

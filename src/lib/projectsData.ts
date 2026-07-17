@@ -8,6 +8,12 @@ export interface ProcessStep {
   copy: string;
 }
 
+export interface SubPageSection {
+  contentHeading?: string;
+  skillimage?: string;
+  contentBlocks: ContentBlock[];
+}
+
 export interface SubPageData {
   title: string;
   description: string;
@@ -16,7 +22,10 @@ export interface SubPageData {
   servicesUsed?: string;
   skillsUsed?: string;
   heroImage?: string;
-  contentBlocks: ContentBlock[];
+  skillimage?: string;
+  contentHeading?: string;
+  contentBlocks?: ContentBlock[];
+  sections?: SubPageSection[];
 }
 
 export interface ContentBlock {
@@ -136,47 +145,54 @@ export const projectsData: ProjectDetails[] = [
           deliverables: "App Store Screenshot Creatives and Feature Graphic",
           servicesUsed: "App Store & ASO Visuals",
           skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-          contentBlocks: [
+          sections: [
             {
-              type: "process",
-              title: "Indian App Store",
-              processSteps: [
+              contentHeading: "Play Store",
+              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).png",
+              contentBlocks: [
                 {
-                  title: "Challenge",
-                  copy: "Pratilipi already had a strong Play Store presence, so the new screenshots needed to outperform the existing set. Multiple revisions were required to reach the right direction."
-                },
-                {
-                  title: "Approach",
-                  copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
-                },
-                {
-                  title: "Outcome",
-                  copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                  type: "process",
+                  title: "Indian App Store",
+                  processSteps: [
+                    {
+                      title: "Challenge",
+                      copy: "Pratilipi already had a strong Play Store presence, so the new screenshots needed to outperform the existing set. Multiple revisions were required to reach the right direction."
+                    },
+                    {
+                      title: "Approach",
+                      copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
+                    },
+                    {
+                      title: "Outcome",
+                      copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                    }
+                  ]
                 }
               ]
             },
             {
-              type: "process",
-              title: "US App Store",
-              processSteps: [
+              contentHeading: "App Store - US",
+              skillimage: "", // You can add the US app store image here!
+              contentBlocks: [
                 {
-                  title: "Challenge",
-                  copy: "The US market was completely new, with no previous store visuals or established direction to build from."
-                },
-                {
-                  title: "Approach",
-                  copy: "Built the visual direction from scratch by exploring different content styles, messaging, layouts, and screenshot sequences through multiple iterations."
-                },
-                {
-                  title: "Outcome",
-                  copy: "Created a clear and cohesive US store listing that introduced the product and its content offering to a new audience."
+                  type: "process",
+                  title: "US App Store",
+                  processSteps: [
+                    {
+                      title: "Challenge",
+                      copy: "The US market was completely new, with no previous store visuals or established direction to build from."
+                    },
+                    {
+                      title: "Approach",
+                      copy: "Built the visual direction from scratch by exploring different content styles, messaging, layouts, and screenshot sequences through multiple iterations."
+                    },
+                    {
+                      title: "Outcome",
+                      copy: "Created a clear and cohesive US store listing that introduced the product and its content offering to a new audience."
+                    }
+                  ]
                 }
               ]
-            },
-            {
-              type: "default",
-              title: "Overview",
-              copy: "Detailed placeholder content for App Store & ASO."
             }
           ]
         }
