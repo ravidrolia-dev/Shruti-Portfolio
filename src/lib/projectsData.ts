@@ -133,25 +133,43 @@ export const projectsData: ProjectDetails[] = [
         subPageData: {
           title: "App Store & ASO",
           description: "A deep dive into App Store optimization strategies.",
-          deliverables: "App Store Screenshot Creatives",
+          deliverables: "App Store Screenshot Creatives and Feature Graphic",
           servicesUsed: "App Store & ASO Visuals",
           skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
           contentBlocks: [
             {
               type: "process",
-              title: "The Project Journey",
+              title: "Indian App Store",
               processSteps: [
                 {
                   title: "Challenge",
-                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+                  copy: "Pratilipi already had a strong Play Store presence, so the new screenshots needed to outperform the existing set. Multiple revisions were required to reach the right direction."
                 },
                 {
                   title: "Approach",
-                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+                  copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
                 },
                 {
                   title: "Outcome",
-                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                  copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                }
+              ]
+            },
+            {
+              type: "process",
+              title: "US App Store",
+              processSteps: [
+                {
+                  title: "Challenge",
+                  copy: "The US market was completely new, with no previous store visuals or established direction to build from."
+                },
+                {
+                  title: "Approach",
+                  copy: "Built the visual direction from scratch by exploring different content styles, messaging, layouts, and screenshot sequences through multiple iterations."
+                },
+                {
+                  title: "Outcome",
+                  copy: "Created a clear and cohesive US store listing that introduced the product and its content offering to a new audience."
                 }
               ]
             },
