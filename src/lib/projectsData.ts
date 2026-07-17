@@ -149,7 +149,7 @@ export const projectsData: ProjectDetails[] = [
           sections: [
             {
               contentHeading: "Play Store",
-              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).png",
+              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).jpeg",
               contentBlocks: [
                 {
                   type: "process",
