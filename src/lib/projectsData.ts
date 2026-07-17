@@ -140,6 +140,10 @@ export const projectsData: ProjectDetails[] = [
       {
         title: "Key Features",
         images: ["/images/fitparty/eb69578b-2334-4198-9433-406f2284a46c.png"]
+      },
+      {
+        title: "Typography & Visual System",
+        images: ["/images/fitparty/FitParty Visual System (2).png"]
       }
     ]
   },
