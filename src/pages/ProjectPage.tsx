@@ -159,11 +159,11 @@ export const ProjectPage = () => {
                   <video 
                     ref={skillsVideoRef}
                     src={project.skillsVideo} 
-                    className="w-full max-h-[80vh] object-contain rounded-[20px] sm:rounded-[40px]" 
+                    className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" 
                     playsInline 
                   />
                 ) : project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="w-full max-h-[80vh] object-contain rounded-[20px] sm:rounded-[40px]" />
+                  <img src={project.skillsImage} alt="Skills Overview" className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
                     Add image or video path in projectsData.ts
