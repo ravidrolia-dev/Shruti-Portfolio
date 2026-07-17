@@ -138,8 +138,8 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
-        title: "Badges & UI Assets",
-        images: ["/images/page-14.jpg"]
+        title: "Key Features",
+        images: ["/images/fitparty/eb69578b-2334-4198-9433-406f2284a46c.png"]
       }
     ]
   },
