@@ -138,11 +138,11 @@ export const projectsData: ProjectDetails[] = [
         type: "zigzag",
         title: "App Store & ASO",
         copy: "Store-listing visuals created for Indian and US markets, designed to communicate the product, improve feature clarity and support organic discovery.",
-        images: ["/images/page-10.jpg"],
+        images: ["/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png"],
         subPageSlug: "app-store-aso",
         subPageData: {
           title: "App Store & ASO",
-          description: "A deep dive into App Store optimization strategies.",
+          description: "App store creatives designed for India and the US, focused on presenting key features clearly and making the product easier to understand at first glance.",
           deliverables: "App Store Screenshot Creatives and Feature Graphic",
           servicesUsed: "App Store & ASO Visuals",
           skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
@@ -243,6 +243,11 @@ export const projectsData: ProjectDetails[] = [
                   ]
                 }
               ]
+            },
+            {
+              contentHeading: "Different markets. Different approaches",
+              skillimage:"/images/pratilipi/faa54f95-2ae3-47d5-9cc3-6558e24a72e3 copy.png",
+              contentBlocks: []
             }
           ]
         }

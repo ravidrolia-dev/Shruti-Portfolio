@@ -29,6 +29,17 @@ export const ProjectPage = () => {
     };
   }, [showIntro]);
 
+  useEffect(() => {
+    if (!project) return;
+    const savedPos = sessionStorage.getItem(`projectScroll_${project.slug}`);
+    if (savedPos) {
+      setTimeout(() => {
+        window.scrollTo({ top: parseInt(savedPos, 10), behavior: 'instant' });
+        sessionStorage.removeItem(`projectScroll_${project.slug}`);
+      }, 50);
+    }
+  }, [project]);
+
   if (!project) {
     return <Navigate to="/" replace />;
   }
@@ -238,18 +249,41 @@ export const ProjectPage = () => {
                   <div key={idx} className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center w-full ${idx % 2 === 0 ? '' : 'lg:flex-row-reverse'} my-8 sm:my-16`}>
                     <div className="w-full lg:w-1/2">
                        {block.images && block.images[0] && (
-                          <div className="w-full rounded-[20px] sm:rounded-[30px] overflow-hidden bg-[#0C0C0C] border border-white/10 relative group cursor-zoom-in shadow-2xl hover:border-white/20 transition-all duration-300" onClick={() => setSelectedImage(block.images![0])}>
-                            <img src={block.images[0]} alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
-                          </div>
+                          block.subPageSlug ? (
+                            <Link 
+                              to={`/project/${project.slug}/${block.subPageSlug}`} 
+                              onClick={() => sessionStorage.setItem(`projectScroll_${project.slug}`, window.scrollY.toString())}
+                              className="block w-full rounded-[20px] sm:rounded-[30px] overflow-hidden bg-[#0C0C0C] border border-white/10 relative group shadow-2xl hover:border-white/20 transition-all duration-300 cursor-pointer"
+                            >
+                              <img src={block.images[0]} alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                            </Link>
+                          ) : (
+                            <div className="w-full rounded-[20px] sm:rounded-[30px] overflow-hidden bg-[#0C0C0C] border border-white/10 relative group cursor-zoom-in shadow-2xl hover:border-white/20 transition-all duration-300" onClick={() => setSelectedImage(block.images![0])}>
+                              <img src={block.images[0]} alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                            </div>
+                          )
                        )}
                     </div>
                     <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                       {block.title && <h3 className="font-serif italic font-medium text-3xl sm:text-4xl text-white mb-6 tracking-wide">{block.title}</h3>}
+                       {block.title && (
+                         block.subPageSlug ? (
+                           <Link 
+                             to={`/project/${project.slug}/${block.subPageSlug}`} 
+                             onClick={() => sessionStorage.setItem(`projectScroll_${project.slug}`, window.scrollY.toString())}
+                             className="block w-fit group mb-6"
+                           >
+                             <h3 className="font-serif italic font-medium text-3xl sm:text-4xl text-white tracking-wide group-hover:text-[#FFD600] transition-colors">{block.title}</h3>
+                           </Link>
+                         ) : (
+                           <h3 className="font-serif italic font-medium text-3xl sm:text-4xl text-white mb-6 tracking-wide">{block.title}</h3>
+                         )
+                       )}
                        {block.copy && <p className="text-[#D7E2EA]/80 font-light text-base sm:text-lg leading-relaxed max-w-xl mb-8">{block.copy}</p>}
                        {block.subPageSlug && (
                          <div>
                            <Link 
                              to={`/project/${project.slug}/${block.subPageSlug}`}
+                             onClick={() => sessionStorage.setItem(`projectScroll_${project.slug}`, window.scrollY.toString())}
                              className="inline-flex items-center gap-2 text-[#FFD600] font-mono text-sm uppercase tracking-widest hover:text-white transition-colors group"
                            >
                              View Details
