@@ -144,6 +144,19 @@ export const projectsData: ProjectDetails[] = [
       {
         title: "Typography & Visual System",
         images: ["/images/fitparty/FitParty Visual System (2).png"]
+      },
+      {
+        title: "Final Screens",
+        copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
+        images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
+      },
+      {
+        title: "From App Store to Real Life",
+        images: ["/images/fitparty/b8507b65-2355-4fe2-abce-52e60be8d861.png","/images/fitparty/f47dc1bc-93af-42ed-986c-2c5a3f3c77ac.png"]
+      },
+      {
+        type: "quote",
+        copy: "Move Together. Stay Motivated."
       }
     ]
   },

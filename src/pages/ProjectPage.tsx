@@ -281,7 +281,7 @@ export const ProjectPage = () => {
                                 transition={{ duration: 0.4 }}
                                 src={imgUrl} 
                                 alt={`${project.name} context image ${idx}-${imgIdx}`} 
-                                className="w-full h-auto block cursor-zoom-in" 
+                                className="w-full h-full object-cover block cursor-zoom-in" 
                                 onClick={() => setSelectedImage(imgUrl)}
                               />
                             </motion.div>
