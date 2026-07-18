@@ -439,7 +439,7 @@ export const projectsData: ProjectDetails[] = [
     slug: "textile-brand-identity",
     num: "04",
     client: "Brand Identity",
-    name: "Textile Brand Identity",
+    name: "Textile\nBrand Identity",
     shortDescription: "A compact identity system designed for consistent business communication.",
     role: "Visual Designer",
     roleDetails: "Visual Designer",
