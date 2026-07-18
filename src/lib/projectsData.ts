@@ -400,33 +400,38 @@ export const projectsData: ProjectDetails[] = [
     slug: "f5-refreshment",
     num: "03",
     client: "Brand Identity",
-    name: "F5 Refreshment",
-    shortDescription: "Brand launch for a tea & snack delivery service — identity, packaging, and print collateral.",
-    role: "Freelance Graphic Designer",
-    roleDetails: "F5 Refreshment",
-    servicesUsed: "Brand Identity · Packaging Design · Print Collateral",
-    skillsUsed: "Logo Design · Visual Identity · Layout Design",
-    skillsImage: "/images/page-15.jpg",
+    name: "F5 Refreshments — Brand Communication Across Touchpoints",
+    shortDescription: "A multi-format design system created across print, digital and physical brand applications.",
+    role: "Visual Designer",
+    roleDetails: "Visual Designer",
+    deliverables: "Pamphlets · Digital Menu · Coupon · Sticker · Instagram Post · Water Dispenser Cover · App Landing Page",
+    servicesUsed: "Brand & Marketing Collateral",
+    skillsUsed: "Layout Design · Visual Design · Typography · Image Editing · Print Design · Product Communication · Digital Design",
+    skillsImage: "/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85",
-    col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85",
+    col2img: "/images/f5/59a4e965-e677-458d-bcd3-b5d1e2ed60ec.png",
     contentBlocks: [
+      {
+        align: 'center',
+        copy: "F5 Refreshments required communication materials for different customer touchpoints—from printed pamphlets and coupons to digital menus, social media, product branding and an app landing page.The goal was to keep each format clear, accessible and visually connected while adapting the design to its specific purpose.",
+      },
       {
         type: "process",
         title: "The Project Journey",
         processSteps: [
           {
             title: "Challenge",
-            copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
+            copy: "This was my first real-world design project after graduation, so the challenge was to apply what I had learned to practical brand requirements across print, digital and physical touchpoints."
           },
           {
             title: "Approach",
-            copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
+            copy: "I focused on understanding how each format would be used, then adapted the visual language, layout and information hierarchy to keep every asset clear, functional and recognisably connected to the brand."
           },
           {
             title: "Outcome",
-            copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+            copy: "The project resulted in a versatile set of customer-facing materials across pamphlets, menus, coupons, stickers, social media, product branding and the app landing page, while giving me valuable experience in designing for real business needs."
           }
         ]
       },
