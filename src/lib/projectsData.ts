@@ -482,9 +482,9 @@ export const projectsData: ProjectDetails[] = [
       {
         images: [          
           "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509.png",
-          "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
-          "/images/textile/42d4c863-ffad-4f71-88af-1d9edf613133.png",
           "/images/textile/58a04e87-6fc6-43fa-be7d-0d15fa2dc335.png",
+          "/images/textile/42d4c863-ffad-4f71-88af-1d9edf613133.png",
+          "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
           "/images/textile/letter head ...jpg.jpeg",
           "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
         ]
