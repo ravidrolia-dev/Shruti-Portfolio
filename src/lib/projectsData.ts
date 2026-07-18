@@ -33,6 +33,7 @@ export interface ContentBlock {
   type?: 'default' | 'process' | 'quote' | 'stats' | 'zigzag';
   align?: 'left' | 'center';
   imageLayout?: 'grid' | 'stacked';
+  fullWidthImages?: number[];
   title?: string;
   copy?: string;
   list?: string[];
@@ -94,7 +95,7 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         type: "zigzag",
-        title: "Performance & Paid Advertising",
+        title: "Campaigns, Stories & Performance Creatives",
         copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
         images: ["/images/page-07.jpg"],
         subPageSlug: "performance-advertising",
@@ -250,84 +251,6 @@ export const projectsData: ProjectDetails[] = [
               contentHeading: "Different markets. Different approaches",
               skillimage:"/images/pratilipi/faa54f95-2ae3-47d5-9cc3-6558e24a72e3 copy.png",
               contentBlocks: []
-            }
-          ]
-        }
-      },
-      {
-        type: "zigzag",
-        title: "Stories, Covers & Content Promotion",
-        copy: "Covers and promotional systems developed to translate stories, genres and characters into visually compelling content experiences.",
-        images: ["/images/page-10.jpg"],
-        subPageSlug: "stories-covers",
-        subPageData: {
-          title: "Stories, Covers & Content Promotion",
-          description: "A deep dive into content promotion and cover designs.",
-          deliverables: "App Store Screenshot Creatives",
-          servicesUsed: "App Store & ASO Visuals",
-          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-          contentBlocks: [
-            {
-              type: "process",
-              title: "The Project Journey",
-              processSteps: [
-                {
-                  title: "Challenge",
-                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
-                },
-                {
-                  title: "Approach",
-                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
-                },
-                {
-                  title: "Outcome",
-                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
-                }
-              ]
-            },
-            {
-              type: "default",
-              title: "Overview",
-              copy: "Detailed placeholder content for Stories, Covers & Content Promotion."
-            }
-          ]
-        }
-      },
-      {
-        type: "zigzag",
-        title: "Video ads & Engagement Creatives",
-        copy: "Paid video ads, GIFs, notifications and in-app creatives created to support user acquisition, content discovery and recurring reader communication.",
-        images: ["/images/page-10.jpg"],
-        subPageSlug: "video-ads",
-        subPageData: {
-          title: "Video ads & Engagement Creatives",
-          description: "A deep dive into video ads and engagement.",
-          deliverables: "App Store Screenshot Creatives",
-          servicesUsed: "App Store & ASO Visuals",
-          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-          contentBlocks: [
-            {
-              type: "process",
-              title: "The Project Journey",
-              processSteps: [
-                {
-                  title: "Challenge",
-                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
-                },
-                {
-                  title: "Approach",
-                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
-                },
-                {
-                  title: "Outcome",
-                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
-                }
-              ]
-            },
-            {
-              type: "default",
-              title: "Overview",
-              copy: "Detailed placeholder content for Video ads & Engagement Creatives."
             }
           ]
         }
@@ -503,23 +426,16 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
+        fullWidthImages: [0, 1, 4, 7],
         images: [
           "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509 copy.png",
-        ]
-      },
-      {
-        images: [          
           "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509.png",
           "/images/textile/58a04e87-6fc6-43fa-be7d-0d15fa2dc335.png",
           "/images/textile/42d4c863-ffad-4f71-88af-1d9edf613133.png",
           "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
           "/images/textile/letter head ...jpg.jpeg",
           "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
-        ]
-      },
-      {
-        images: [
-          "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg",
+          "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg"
         ]
       }
     ]

@@ -356,7 +356,7 @@ export const ProjectPage = () => {
                               transition={{ duration: 0.6 }}
                               key={imgIdx} 
                               className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group flex items-center justify-center ${
-                                block.imageLayout === 'stacked' || block.images!.length === 1 || (block.images!.length % 2 !== 0 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                                (block.fullWidthImages && block.fullWidthImages.includes(imgIdx)) || block.imageLayout === 'stacked' || block.images!.length === 1 || (!block.fullWidthImages && block.images!.length % 2 !== 0 && imgIdx === 0) ? 'sm:col-span-2' : ''
                               }`}
                             >
                               <motion.img 
