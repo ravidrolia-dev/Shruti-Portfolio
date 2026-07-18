@@ -44,7 +44,7 @@ export const ProjectPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  const titleWords = project.name.split(" ");
+  const titleLines = project.name.split("\n");
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
@@ -69,11 +69,12 @@ export const ProjectPage = () => {
               className="w-full h-full object-cover" 
               autoPlay 
               playsInline
+              muted 
               onEnded={() => setShowIntro(false)}
             />
             <button 
               onClick={() => setShowIntro(false)}
-              className="absolute bottom-10 right-5 sm:right-10 z-[210] text-white/50 hover:text-white uppercase tracking-widest text-xs font-mono px-6 py-3 lg:px-4 lg:py-2 border border-white/20 rounded-full hover:bg-white/10 transition-all active:scale-95"
+              className="absolute top-6 right-6 lg:top-10 lg:right-10 text-white/50 hover:text-white transition-colors"
             >
               Skip Intro
             </button>
@@ -100,16 +101,28 @@ export const ProjectPage = () => {
       </button>
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden mb-16 lg:mb-24">
-        {/* Background Image with Parallax */}
-        <motion.div className="absolute inset-0 w-full h-[120%]" style={{ y: yParallax }}>
-          <img src={project.col2img} alt={project.name} className="w-full h-full object-cover" />
+      <section className="relative w-full h-screen min-h-[600px] bg-[#0C0C0C] overflow-hidden">
+        {/* Background Image/Video with Parallax */}
+        <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
+          {project.heroVideo ? (
+            <video 
+              src={project.heroVideo}
+              className="w-full h-full object-cover opacity-60"
+              autoPlay 
+              playsInline 
+              muted 
+              loop
+            />
+          ) : (
+            <img 
+              src={project.col2img || project.skillsImage} 
+              alt={project.name}
+              className="w-full h-full object-cover opacity-60"
+            />
+          )}
         </motion.div>
-        
-        {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 pointer-events-none" />
 
-        {/* Content */}
         {/* Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 max-w-7xl mx-auto flex flex-col justify-center h-full">
           <FadeIn delay={0.1} y={30} className="w-full max-w-4xl flex flex-col items-start text-left">
@@ -117,8 +130,14 @@ export const ProjectPage = () => {
               {project.client}
             </span>
             <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="font-serif italic font-medium text-white text-[clamp(2rem,7vw,90px)] leading-[1.25] sm:leading-[1.2] lg:leading-[1.1] tracking-tight mb-8 sm:mb-12">
-              {titleWords.map((word, i) => (
-                <motion.span key={i} variants={wordVariants} className="inline-block mr-[0.25em] mb-1 sm:mb-2">{word}</motion.span>
+              {titleLines.map((line, lineIdx) => (
+                <div key={lineIdx} className="block">
+                  {line.split(" ").map((word, i) => (
+                    <motion.span key={`${lineIdx}-${i}`} variants={wordVariants} className="inline-block mr-[0.25em] mb-1 sm:mb-2">
+                      {word}
+                    </motion.span>
+                  ))}
+                </div>
               ))}
             </motion.h1>
             <div className="font-mono text-xs sm:text-sm text-white/50 tracking-[0.2em] uppercase">
