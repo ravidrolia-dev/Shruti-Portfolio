@@ -22,7 +22,7 @@ export const ProjectsSection = () => {
   return (
     <section className="bg-transparent rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] relative z-20 -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       <div id="projects" className="absolute top-10 sm:top-12 md:top-14" />
-      <FadeIn delay={0} y={30} className="mb-16 sm:mb-20 md:mb-28">
+      <FadeIn delay={0} y={30} className="mb-8 sm:mb-10 md:mb-12">
         <h2 className="hero-heading font-black uppercase text-center text-[clamp(3rem,12vw,160px)] leading-none">
           Project
         </h2>
@@ -71,9 +71,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards, p
   const cardProgress = useTransform(progress, [index / totalCards, 1], [1, targetScale]);
 
   return (
-    <div ref={containerRef} className="h-[85vh] flex items-center justify-center sticky top-24 md:top-32" style={{ marginTop: index === 0 ? 0 : '10vh' }}>
+    <div ref={containerRef} className="h-[85vh] flex items-start justify-center sticky top-16 md:top-20" style={{ marginTop: index === 0 ? 0 : '10vh' }}>
       <motion.div 
-        style={{ scale: cardProgress, top: `calc(10vh + ${index * 28}px)` }}
+        style={{ scale: cardProgress, top: `${index * 28}px` }}
         className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col relative transform-origin-top cursor-pointer group"
         onClick={onClick}
       >
