@@ -487,39 +487,50 @@ export const projectsData: ProjectDetails[] = [
     slug: "magazine-design",
     num: "05",
     client: "Editorial Design",
-    name: "Magazine Design",
-    shortDescription: "Layout and art direction for Womanifest, a 90+ page digital lifestyle magazine for women.",
+    name: "Womaniya — Editorial & Magazine Layout",
+    shortDescription: "A 90+ page digital magazine created as a college project, exploring editorial design across fashion, lifestyle, food and travel.",
     role: "Freelance Editorial Designer",
-    roleDetails: "Visual Designer",
-    servicesUsed: "Editorial Design · Art Direction · Layout",
-    skillsUsed: "Typography · Editorial Layout · Composition",
-    skillsImage: "/images/page-25.jpg",
+    roleDetails: "Editorial & Layout Designer",
+    deliverables: "90+ Page Digital Magazine",
+    skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
+    skillsImage: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
-    col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85",
+    col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
     contentBlocks: [
+      {
+        align: 'center',
+        copy: "Womaniya was a collaborative college project to create a complete digital lifestyle magazine from the ground up. My responsibility was to develop its visual language and design the editorial layouts across more than 90 pages.The magazine combined fashion, beauty, food, travel, music and event-based content within one consistent publication.",
+      },
       {
         type: "process",
         title: "The Project Journey",
         processSteps: [
           {
             title: "Challenge",
-            copy: "Needed a clean, engaging layout for a massive 90+ page lifestyle magazine focusing on women's topics."
+            copy: "Organise multiple content formats while giving every section its own visual identity."
           },
           {
             title: "Approach",
-            copy: "Spearheaded the editorial layout and typography selection. The layouts prioritize readability while maintaining striking, art-directed visual compositions across food, travel, and fashion sections."
+            copy: "Developed flexible grids, clear typographic hierarchy and image-led compositions that could adapt across different stories."
           },
           {
             title: "Outcome",
-            copy: "Successfully delivered a cohesive and highly readable digital magazine experience."
+            copy: "Created a cohesive 90+ page magazine that maintained consistency while supporting varied editorial content."
           }
         ]
       },
       {
-        title: "Editorial Spreads",
-        images: ["/images/page-26.jpg", "/images/page-27.jpg", "/images/page-28.jpg"]
+        images: [
+          "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
+          "/images/magazine/dd741845-3301-4f2b-b202-18ff5816a2b0.png",
+          "/images/magazine/ad107cd1-b22e-4738-87ca-3e147b399617.png"
+        ]
+      },
+      {
+        type: "quote",
+        copy: "One magazine. Multiple stories. A consistent editorial system."
       }
     ]
   },

@@ -1,7 +1,37 @@
+import { useState } from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { Mail } from 'lucide-react';
 
 export const ContactSection = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    
+    setStatus('submitting');
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xjgnyowr', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="min-h-screen relative flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 bg-transparent">
       <FadeIn delay={0} y={40} className="mb-16 sm:mb-20 md:mb-28 w-full max-w-5xl">
@@ -32,30 +62,53 @@ export const ContactSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.4} y={20} className="flex flex-col gap-4 justify-center">
-          <form 
-            action="https://formspree.io/f/xjgnyowr" 
-            method="POST"
-            className="flex flex-col gap-5 w-full bg-white/5 p-6 sm:p-8 rounded-[24px] border border-white/10 shadow-xl"
-          >
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="name" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Name</label>
-              <input type="text" name="name" id="name" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="Your name" required />
+          {status === 'success' ? (
+            <div className="flex flex-col gap-4 w-full bg-white/5 p-8 rounded-[24px] border border-[#FFD600]/30 shadow-xl items-center justify-center text-center">
+              <div className="w-16 h-16 rounded-full bg-[#FFD600]/20 flex items-center justify-center mb-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FFD600" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <h4 className="text-[#FFD600] font-bold text-xl uppercase tracking-widest">Message Sent!</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+              <button 
+                onClick={() => setStatus('idle')} 
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 text-white/70 font-medium tracking-wide px-6 py-2.5 text-xs hover:bg-white/10 hover:text-white transition-colors"
+              >
+                Send Another Message
+              </button>
             </div>
-            
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="email" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Email</label>
-              <input type="email" name="email" id="email" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="your@email.com" required />
-            </div>
+          ) : (
+            <form 
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-5 w-full bg-white/5 p-6 sm:p-8 rounded-[24px] border border-white/10 shadow-xl"
+            >
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="name" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Name</label>
+                <input type="text" name="name" id="name" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="Your name" required />
+              </div>
+              
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="email" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Email</label>
+                <input type="email" name="email" id="email" className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all placeholder-white/20" placeholder="your@email.com" required />
+              </div>
 
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="message" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Message</label>
-              <textarea name="message" id="message" rows={4} className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all resize-none placeholder-white/20" placeholder="Tell me about your project..." required></textarea>
-            </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="message" className="text-[#D7E2EA]/70 text-sm font-medium tracking-wide">Message</label>
+                <textarea name="message" id="message" rows={4} className="bg-[#0C0C0C] border border-white/10 rounded-xl px-4 py-3.5 text-[#D7E2EA] focus:outline-none focus:border-[#FFD600]/50 focus:ring-1 focus:ring-[#FFD600]/50 transition-all resize-none placeholder-white/20" placeholder="Tell me about your project..." required></textarea>
+              </div>
 
-            <button type="submit" className="mt-2 w-full inline-flex justify-center items-center gap-2 rounded-full border-2 border-[#FFD600] bg-[#FFD600] text-black font-bold uppercase tracking-widest px-8 py-4 text-sm hover:bg-transparent hover:text-[#FFD600] transition-colors">
-              Send Message
-            </button>
-          </form>
+              {status === 'error' && (
+                <p className="text-red-400 text-sm mt-1">Oops! There was a problem submitting your form.</p>
+              )}
+
+              <button 
+                type="submit" 
+                disabled={status === 'submitting'}
+                className="mt-2 w-full inline-flex justify-center items-center gap-2 rounded-full border-2 border-[#FFD600] bg-[#FFD600] text-black font-bold uppercase tracking-widest px-8 py-4 text-sm hover:bg-transparent hover:text-[#FFD600] disabled:opacity-50 disabled:hover:bg-[#FFD600] disabled:hover:text-black transition-colors"
+              >
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          )}
 
           {/* Contact Links */}
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6 mt-2 px-2">

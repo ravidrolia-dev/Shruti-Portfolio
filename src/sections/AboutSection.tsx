@@ -86,9 +86,9 @@ export const AboutSection = () => {
       <div ref={containerRef} className="w-full min-h-[400vh] relative pt-20">
         
         {/* Sticky Container */}
-        <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
+        <div className="sticky top-0 h-screen flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
           
-          <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">
+          <FadeIn delay={0} y={0} className="mb-12 sm:mb-16 md:mb-20 text-[#D7E2EA]">
             <TrueFocus
               sentence="About Me"
               manualMode={false}
