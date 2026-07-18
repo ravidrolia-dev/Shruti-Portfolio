@@ -407,11 +407,11 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Pamphlets · Digital Menu · Coupon · Sticker · Instagram Post · Water Dispenser Cover · App Landing Page",
     servicesUsed: "Brand & Marketing Collateral",
     skillsUsed: "Layout Design · Visual Design · Typography · Image Editing · Print Design · Product Communication · Digital Design",
-    skillsImage: "/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png",
+    skillsImage: "/images/f5/f5-refreshments-logo-white-background-1900x980.png",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85",
-    col2img: "/images/f5/59a4e965-e677-458d-bcd3-b5d1e2ed60ec.png",
+    col2img: "/images/f5/2359e120-b2a8-4f01-9f40-fd85827bdf37.png",
     contentBlocks: [
       {
         align: 'center',
@@ -436,8 +436,32 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
-        title: "Brand Applications",
-        images: ["/images/page-16.jpg", "/images/page-17.jpg", "/images/page-18.jpg"]
+        title: "Landing Page",
+        images: ["/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png",""]
+      },
+      {
+        title: "Digital Menu",
+        images: ["/images/f5/9d7bab33-28d7-4e25-a383-e3de499cf894.png","/images/f5/1b89897a230d25f101d77a7cc3021f71.jpeg","/images/f5/7287386fbdbc9a20efdc05ea0eb29f81.jpeg"]
+      },
+      {
+        title: "Pamphlets",
+        images: ["/images/f5/6b939894-4f5f-448c-a4c1-857d5d1ceb34.png","/images/f5/fd0cb5b6-34d3-48a1-a5ac-ae4852db3409.png"]
+      },
+      {
+        title: "Coupon",
+        images: ["/images/f5/6b939894-4f5f-448c-a4c1-857d5d1ceb34.png"]
+      },
+      {
+        title: "Sticker",
+        images: ["/images/f5/59a4e965-e677-458d-bcd3-b5d1e2ed60ec.png"]
+      },
+      {
+        title: "Instagram Post",
+        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/F5 CAMPAIGNArtboard 1 copy 3.jpg.jpeg","/images/f5/","/images/f5/"]
+      },
+      {
+        title: "Water dispenser cover",
+        images: ["/images/f5/94ebd988-0ef5-4b68-93ff-fc120bd24901.png"]
       }
     ]
   },
