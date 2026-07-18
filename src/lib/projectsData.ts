@@ -454,7 +454,7 @@ export const projectsData: ProjectDetails[] = [
     contentBlocks: [
       {
         align: 'center',
-        copy: "The invite was created for a private fragrance showcase under the “Experiences with <strong>The House of Angadi</strong>” umbrella, featuring <strong>Maison de Fouzdar</strong>. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
+        copy: "Bhavya Fabrics required a professional visual identity that could represent the business consistently across stationery and everyday brand communication.",
       },
       {
         type: "process",
