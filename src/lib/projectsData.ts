@@ -436,15 +436,16 @@ export const projectsData: ProjectDetails[] = [
     ]
   },
   {
-    slug: "feronia-fashion-night",
+    slug: "textile-brand-identity",
     num: "04",
-    client: "Event Branding",
-    name: "Feronia Fashion Night",
-    shortDescription: "India's first androgynous fashion show — full brand system across print, digital, and event.",
-    role: "Branding, Print & Social",
-    roleDetails: "Redo Times Pvt. Ltd.",
-    servicesUsed: "Event Branding · Social Media Design · Print Collateral",
-    skillsUsed: "Logo Design · Typography · Environmental Graphics",
+    client: "Brand Identity",
+    name: "Textile Brand Identity",
+    shortDescription: "A compact identity system designed for consistent business communication.",
+    role: "Visual Designer",
+    roleDetails: "Visual Designer",
+    deliverables: "Logo Identity · Business Card · Letterhead",
+    servicesUsed: "Brand Identity · Brand & Marketing Collateral",
+    skillsUsed: "Logo Design · Typography · Layout Design · Visual Design",
     skillsImage: "/images/page-20.jpg",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
@@ -452,20 +453,24 @@ export const projectsData: ProjectDetails[] = [
     col2img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85",
     contentBlocks: [
       {
+        align: 'center',
+        copy: "The invite was created for a private fragrance showcase under the “Experiences with <strong>The House of Angadi</strong>” umbrella, featuring <strong>Maison de Fouzdar</strong>. The goal was to create a visual direction that felt premium, intimate, and brand-aligned while keeping the fragrance experience at the center.",
+      },
+      {
         type: "process",
         title: "The Project Journey",
         processSteps: [
           {
             title: "Challenge",
-            copy: "A landmark event raising awareness on gender equality and LGBTQ inclusivity needed a visual identity strong enough to carry a sensitive message — and flexible enough to work across two cities, multiple sponsors, and press coverage."
+            copy: "Create a distinctive and professional identity suitable for a textile business."
           },
           {
             title: "Approach",
-            copy: "Designed the full identity from the ground up: a logo built from two symbolic shapes — a figure representing the goddess of freedom, wings representing the freedom of life — then extended it into a website, Instagram campaign, print invitations, banners, entry passes, and on-site backdrops for both the Jaipur and Goa editions."
+            copy: "Developed a refined logo system supported by consistent typography, colour and practical brand applications."
           },
           {
             title: "Outcome",
-            copy: "A cohesive brand across 6+ formats for a first-of-its-kind event, with coverage from Postman News and multiple media partners, and sponsor placements including Radisson Blu."
+            copy: "A cohesive identity that works across stationery, textile labels and business-facing communication."
           }
         ]
       },
@@ -492,7 +497,7 @@ export const projectsData: ProjectDetails[] = [
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
     skillsImage: "/images/luxury/Untitled-1Artboard 1 copy.jpg",
-    role: "Freelance Editorial Designer",
+    role: "Visual Designer",
     roleDetails: "Visual Designer",
     deliverables: "Digital invite",
     // We will clear problem/approach/result because we are using contentBlocks
@@ -559,7 +564,7 @@ export const projectsData: ProjectDetails[] = [
     client: "Editorial Design",
     name: "Womaniya — Editorial & Magazine Layout",
     shortDescription: "A 90+ page digital magazine created as a college project, exploring editorial design across fashion, lifestyle, food and travel.",
-    role: "Freelance Editorial Designer",
+    role: "Editorial & Layout Designer",
     roleDetails: "Editorial & Layout Designer",
     deliverables: "90+ Page Digital Magazine",
     skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
