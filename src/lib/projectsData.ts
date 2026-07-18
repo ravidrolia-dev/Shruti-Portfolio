@@ -450,7 +450,7 @@ export const projectsData: ProjectDetails[] = [
     skillsImage: "/images/textile/Business Card-1.jpg.jpeg",
     gallery: [],
     col1img1: "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg",
-    col1img2: "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
+    col1img2: "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
     col2img: "/images/textile/0d660913-d621-43a8-addc-e7049016e369.png",
     contentBlocks: [
       {
