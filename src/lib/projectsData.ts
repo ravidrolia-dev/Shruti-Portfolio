@@ -446,7 +446,7 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Logo Identity · Business Card · Letterhead",
     servicesUsed: "Brand Identity · Brand & Marketing Collateral",
     skillsUsed: "Logo Design · Typography · Layout Design · Visual Design",
-    skillsImage: "/images/page-20.jpg",
+    skillsImage: "/images/textile/88ee8863-4ed4-4b28-a7a2-2850e62efd9d.png",
     gallery: [],
     col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
     col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85",
@@ -475,16 +475,15 @@ export const projectsData: ProjectDetails[] = [
         ]
       },
       {
-        title: "Brand Applications",
-        images: ["/images/page-21.jpg", "/images/page-30.jpg"]
-      },
-      {
-        title: "Event Collateral",
-        images: ["/images/page-31.jpg", "/images/page-32.jpg", "/images/page-33.jpg", "/images/page-34.jpg"]
-      },
-      {
-        title: "Digital & Social",
-        images: ["/images/page-35.jpg", "/images/page-36.jpg"]
+        images: [
+          "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509 copy.png",
+          "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509.png",
+          "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
+          "/images/textile/42d4c863-ffad-4f71-88af-1d9edf613133.png",
+          "/images/textile/58a04e87-6fc6-43fa-be7d-0d15fa2dc335.png",
+          "/images/textile/letter head ...jpg.jpeg",
+          "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
+        ]
       }
     ]
   },
