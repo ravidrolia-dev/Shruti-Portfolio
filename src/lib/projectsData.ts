@@ -53,6 +53,7 @@ export interface ProjectDetails {
   skillsImage?: string;
   skillsVideo?: string;
   introVideo?: string;
+  heroVideo?: string;
   role: string;
   roleDetails?: string;
   deliverables?: string;
