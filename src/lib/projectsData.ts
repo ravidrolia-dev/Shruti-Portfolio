@@ -457,7 +457,7 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Instagram Post",
-        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/F5 CAMPAIGNArtboard 1 copy 3.jpg.jpeg","/images/f5/","/images/f5/"]
+        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/F5 CAMPAIGNArtboard 1 copy 3.jpg.jpeg","/images/f5/FM CAMPAIGN 2Artboard 1 copy 7.jpg.jpeg","/images/f5/"]
       },
       {
         title: "Water dispenser cover",
