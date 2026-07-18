@@ -446,10 +446,10 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Logo Identity · Business Card · Letterhead",
     servicesUsed: "Brand Identity · Brand & Marketing Collateral",
     skillsUsed: "Logo Design · Typography · Layout Design · Visual Design",
-    skillsImage: "/images/textile/88ee8863-4ed4-4b28-a7a2-2850e62efd9d.png",
+    skillsImage: "/images/textile/Business Card-1.jpg.jpeg",
     gallery: [],
-    col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
-    col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85",
+    col1img1: "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg",
+    col1img2: "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
     col2img: "/images/textile/0d660913-d621-43a8-addc-e7049016e369.png",
     contentBlocks: [
       {
