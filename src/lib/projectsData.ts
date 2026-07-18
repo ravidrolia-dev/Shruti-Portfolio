@@ -484,59 +484,8 @@ export const projectsData: ProjectDetails[] = [
     ]
   },
   {
-    slug: "magazine-design",
-    num: "05",
-    client: "Editorial Design",
-    name: "Womaniya — Editorial & Magazine Layout",
-    shortDescription: "A 90+ page digital magazine created as a college project, exploring editorial design across fashion, lifestyle, food and travel.",
-    role: "Freelance Editorial Designer",
-    roleDetails: "Editorial & Layout Designer",
-    deliverables: "90+ Page Digital Magazine",
-    skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
-    skillsImage: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
-    gallery: [],
-    col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
-    col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
-    col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
-    contentBlocks: [
-      {
-        align: 'center',
-        copy: "Womaniya was a collaborative college project to create a complete digital lifestyle magazine from the ground up. My responsibility was to develop its visual language and design the editorial layouts across more than 90 pages.The magazine combined fashion, beauty, food, travel, music and event-based content within one consistent publication.",
-      },
-      {
-        type: "process",
-        title: "The Project Journey",
-        processSteps: [
-          {
-            title: "Challenge",
-            copy: "Organise multiple content formats while giving every section its own visual identity."
-          },
-          {
-            title: "Approach",
-            copy: "Developed flexible grids, clear typographic hierarchy and image-led compositions that could adapt across different stories."
-          },
-          {
-            title: "Outcome",
-            copy: "Created a cohesive 90+ page magazine that maintained consistency while supporting varied editorial content."
-          }
-        ]
-      },
-      {
-        images: [
-          "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
-          "/images/magazine/dd741845-3301-4f2b-b202-18ff5816a2b0.png",
-          "/images/magazine/ad107cd1-b22e-4738-87ca-3e147b399617.png"
-        ]
-      },
-      {
-        type: "quote",
-        copy: "One magazine. Multiple stories. A consistent editorial system."
-      }
-    ]
-  },
-  {
     slug: "Luxury-design",
-    num: "06",
+    num: "05",
     client: "LUxury product",
     name: "Luxury Fragrance Showcase Invite",
     shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
@@ -601,6 +550,57 @@ export const projectsData: ProjectDetails[] = [
       {
         type: "quote",
         copy: "Where scent becomes story."
+      }
+    ]
+  },
+  {
+    slug: "magazine-design",
+    num: "06",
+    client: "Editorial Design",
+    name: "Womaniya — Editorial & Magazine Layout",
+    shortDescription: "A 90+ page digital magazine created as a college project, exploring editorial design across fashion, lifestyle, food and travel.",
+    role: "Freelance Editorial Designer",
+    roleDetails: "Editorial & Layout Designer",
+    deliverables: "90+ Page Digital Magazine",
+    skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
+    skillsImage: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
+    gallery: [],
+    col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
+    col1img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
+    col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
+    contentBlocks: [
+      {
+        align: 'center',
+        copy: "Womaniya was a collaborative college project to create a complete digital lifestyle magazine from the ground up. My responsibility was to develop its visual language and design the editorial layouts across more than 90 pages.The magazine combined fashion, beauty, food, travel, music and event-based content within one consistent publication.",
+      },
+      {
+        type: "process",
+        title: "The Project Journey",
+        processSteps: [
+          {
+            title: "Challenge",
+            copy: "Organise multiple content formats while giving every section its own visual identity."
+          },
+          {
+            title: "Approach",
+            copy: "Developed flexible grids, clear typographic hierarchy and image-led compositions that could adapt across different stories."
+          },
+          {
+            title: "Outcome",
+            copy: "Created a cohesive 90+ page magazine that maintained consistency while supporting varied editorial content."
+          }
+        ]
+      },
+      {
+        images: [
+          "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
+          "/images/magazine/dd741845-3301-4f2b-b202-18ff5816a2b0.png",
+          "/images/magazine/ad107cd1-b22e-4738-87ca-3e147b399617.png"
+        ]
+      },
+      {
+        type: "quote",
+        copy: "One magazine. Multiple stories. A consistent editorial system."
       }
     ]
   }
