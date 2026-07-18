@@ -347,7 +347,7 @@ export const ProjectPage = () => {
                     {/* Block Images with Hover Zoom */}
                     {block.images && block.images.length > 0 && (
                       <div className="w-full mt-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div className={`grid gap-4 sm:gap-6 ${block.imageLayout === 'stacked' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
                           {block.images.map((imgUrl, imgIdx) => (
                             <motion.div 
                               initial={{ opacity: 0, scale: 0.95 }}
@@ -355,7 +355,9 @@ export const ProjectPage = () => {
                               viewport={{ once: true, margin: "-10%" }}
                               transition={{ duration: 0.6 }}
                               key={imgIdx} 
-                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group flex items-center justify-center ${block.images!.length === 1 || (block.images!.length > 2 && imgIdx % 3 === 0) ? 'sm:col-span-2' : ''}`}
+                              className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group flex items-center justify-center ${
+                                block.imageLayout === 'stacked' || block.images!.length === 1 || (block.images!.length > 2 && imgIdx % 3 === 0) ? 'sm:col-span-2' : ''
+                              }`}
                             >
                               <motion.img 
                                 whileHover={{ scale: 1.05 }}

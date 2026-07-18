@@ -32,6 +32,7 @@ export interface SubPageData {
 export interface ContentBlock {
   type?: 'default' | 'process' | 'quote' | 'stats' | 'zigzag';
   align?: 'left' | 'center';
+  imageLayout?: 'grid' | 'stacked';
   title?: string;
   copy?: string;
   list?: string[];
@@ -437,7 +438,7 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Landing Page",
-        images: ["/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png",""]
+        images: ["/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png","/images/f5/Screenshot 2026-07-18 at 5.44.37 PM.png"]
       },
       {
         title: "Digital Menu",
@@ -445,7 +446,8 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Pamphlets",
-        images: ["/images/f5/6b939894-4f5f-448c-a4c1-857d5d1ceb34.png","/images/f5/fd0cb5b6-34d3-48a1-a5ac-ae4852db3409.png"]
+        imageLayout: 'stacked',
+        images: ["/images/f5/3ebdbc37-1a99-4040-a5a2-dc694f373791.png","/images/f5/fd0cb5b6-34d3-48a1-a5ac-ae4852db3409.png"]
       },
       {
         title: "Coupon",
@@ -457,11 +459,11 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Instagram Post",
-        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/F5 CAMPAIGNArtboard 1 copy 3.jpg.jpeg","/images/f5/FM CAMPAIGN 2Artboard 1 copy 7.jpg.jpeg","/images/f5/"]
+        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/f5 franchise.jpg.jpeg","/images/f5/f5 franchise1.jpg.jpeg","/images/f5/FM CAMPAIGN 2Artboard 1 copy 7.jpg.jpeg"]
       },
       {
         title: "Water dispenser cover",
-        images: ["/images/f5/94ebd988-0ef5-4b68-93ff-fc120bd24901.png"]
+        images: ["/images/f5/94ebd988-0ef5-4b68-93ff-fc120bd24901.png","/images/f5/FINAL WATER BOTTEL COVER DESIGN.jpg.jpeg"]
       }
     ]
   },
