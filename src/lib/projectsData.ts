@@ -98,7 +98,7 @@ export const projectsData: ProjectDetails[] = [
         type: "zigzag",
         title: "Campaigns, Stories & Performance Creatives",
         copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
-        images: ["/images/page-07.jpg"],
+        images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"],
         subPageSlug: "performance-advertising",
         subPageData: {
           title: "Performance & Paid Advertising",
