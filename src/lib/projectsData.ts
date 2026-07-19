@@ -13,6 +13,7 @@ export interface SubPageSection {
   contentSubHeading?: string;
   contentCopy?: string;
   skillimage?: string;
+  skillvideo?: string;
   contentBlocks: ContentBlock[];
 }
 
@@ -107,7 +108,7 @@ export const projectsData: ProjectDetails[] = [
           servicesUsed: "Performance Marketing Creatives · Social Media & Campaign Design · Video & Motion Creatives · AI-Assisted Visual Exploration",
           skillsUsed: "Visual Design · Layout Design · Typography · Image Editing · Product Communication · Creative Adaptation · A/B Testing · AI-Assisted Visual Exploration",
           sections: [
-            {
+            { 
               contentBlocks: [
                 {
                   type: "process",
@@ -158,9 +159,13 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title:"Always-On Performance Creatives",
                   copy:"High-volume ad creatives produced regularly for Pratilipi’s ongoing campaigns, story promotions and audience acquisition across digital platforms.",
-                  images: ["/images/pratilipi/"]
+                  images: ["/images/pratilipi/48927328-0718-49d3-bc17-ec53fa0cbcbb.png"]
                 }
-              ]
+              ],
+            },
+            {
+              skillvideo:"/videos/fitparty/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
+              contentBlocks:[]
             },
             {
               contentHeading: "US Market",

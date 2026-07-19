@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, X, Compass, Lightbulb, Sparkles } from 'lucide-react';
 import { projectsData } from '../lib/projectsData';
 import type { SubPageSection, ContentBlock } from '../lib/projectsData';
+import { useVideoIntersection } from '../hooks/useVideoIntersection';
 
 const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => {
   return (
@@ -16,6 +17,20 @@ const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: Rea
     >
       {children}
     </motion.div>
+  );
+};
+
+const SkillVideo = ({ src }: { src: string }) => {
+  const { containerRef, videoRef } = useVideoIntersection(0.4);
+  return (
+    <div ref={containerRef} className="w-full flex justify-center">
+      <video 
+        ref={videoRef}
+        src={src} 
+        playsInline 
+        className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px] shadow-2xl border border-white/10"
+      />
+    </div>
   );
 };
 
@@ -167,6 +182,15 @@ export const ProjectSubPage = () => {
                 <div className="w-full flex justify-center">
                   <img src={section.skillimage} alt="Skills Overview" className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" />
                 </div>
+              </FadeIn>
+            </section>
+          )}
+
+          {/* Skill Video */}
+          {section.skillvideo && (
+            <section className="px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto w-full relative z-10">
+              <FadeIn delay={0.4} y={20} className="w-full mb-16 lg:mb-24 flex justify-center">
+                <SkillVideo src={section.skillvideo} />
               </FadeIn>
             </section>
           )}
