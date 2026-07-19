@@ -86,7 +86,7 @@ export const projectsData: ProjectDetails[] = [
     contract: "4.5 years",
     contribution: "Created high-volume marketing and product creatives across app-store visuals, performance advertising, story promotions, video campaigns, notifications and in-app placements for Indian and US markets.",
     gallery: [],
-    col1img1: "/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png",
+    col1img1: "/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png",
     col1img2: "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
     col2img: "/images/pratilipi/1bc65d71-691c-4577-94a6-c60bb92632f8.jpg.jpeg",
     contentBlocks: [
