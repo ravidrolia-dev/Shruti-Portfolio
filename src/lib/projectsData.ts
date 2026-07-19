@@ -168,13 +168,9 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title:"Experimental Ad Creatives",
                   copy:"Experimental ad creatives created to test new visual directions, messaging styles and content treatments for future performance campaigns.",
-                  images:["/images/pratilipi/7606e340-961e-438e-b046-7edf896f5173.png"]
+                  images:["/images/pratilipi/7606e340-961e-438e-b046-7edf896f5173.png","/images/pratilipi/f105aa77-1de7-4ba7-bca4-bdbe8898104c.png"]
                 }
               ],
-            },
-            {
-              skillvideo:"/videos/fitparty/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
-              contentBlocks:[]
             },
             {
               contentHeading: "US Market",
