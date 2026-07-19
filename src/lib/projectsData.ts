@@ -101,11 +101,11 @@ export const projectsData: ProjectDetails[] = [
         images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"],
         subPageSlug: "performance-advertising",
         subPageData: {
-          title: "Performance & Paid Advertising",
-          description: "A deep dive into acquisition-focused campaigns.",
-          deliverables: "App Store Screenshot Creatives",
-          servicesUsed: "App Store & ASO Visuals",
-          skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
+          title: "Campaigns, Stories & Performance Creatives",
+          description: "Performance-led advertising and story-promotion creatives developed for Pratilipi’s Indian and US markets across paid acquisition channels. The work combined platform-specific design, content-led storytelling, creative experimentation and multi-format adaptation.",
+          deliverables: "Meta, Google and app-install ads · Static, video and story-led creatives · India and US market adaptations · A/B testing and multi-format variations · AI-assisted campaign visuals · Agency-collaborated performance creatives",
+          servicesUsed: "Performance Marketing Creatives · Social Media & Campaign Design · Video & Motion Creatives · AI-Assisted Visual Exploration",
+          skillsUsed: "Visual Design · Layout Design · Typography · Image Editing · Product Communication · Creative Adaptation · A/B Testing · AI-Assisted Visual Exploration",
           sections: [
             {
               contentBlocks: [
@@ -114,15 +114,15 @@ export const projectsData: ProjectDetails[] = [
                   processSteps: [
                     {
                       title: "Challenge",
-                      copy: "Pratilipi already had a strong Play Store presence, so the new screenshots needed to outperform the existing set. Multiple revisions were required to reach the right direction."
+                      copy: "Create performance creatives for two different markets while keeping Pratilipi’s identity consistent. Indian campaigns needed culturally relevant, story-led communication, while US campaigns required genre-focused visuals that could introduce the platform to a newer audience."
                     },
                     {
                       title: "Approach",
-                      copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
+                      copy: "Developed separate visual directions for India and the US based on audience interests, genres and campaign objectives. Created A/B variations using different imagery, story snippets, layouts and visual styles, then adapted the selected directions across Meta, Google and multiple ad formats."
                     },
                     {
                       title: "Outcome",
-                      copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                      copy: "Built a flexible collection of market-specific creatives that clearly communicated Pratilipi’s stories across platforms. The system supported paid acquisition, faster format adaptation and ongoing creative experimentation without making the campaigns feel repetitive."
                     }
                   ]
                 }
@@ -131,10 +131,7 @@ export const projectsData: ProjectDetails[] = [
             {
               contentHeading: "India Market",
               contentBlocks: [
-                {
-                  title: "Push Notification Creatives",
-                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
-                },
+                
                 {
                   title: "In-App Story Cover Designs",
                   copy: "In-app story covers created for the Pratilipi reading experience, designed to communicate genre, tone and narrative cues within seconds.",
@@ -153,6 +150,15 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title: "AI-Assisted Ads & Visual Exploration",
                   images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png","/images/pratilipi/bec4d018-a7a1-4a02-b842-cd6c8fe1a6ed.png"]
+                },
+                {
+                  title: "Push Notification Creatives",
+                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
+                },
+                {
+                  title:"Always-On Performance Creatives",
+                  copy:"High-volume ad creatives produced regularly for Pratilipi’s ongoing campaigns, story promotions and audience acquisition across digital platforms.",
+                  images: ["/images/pratilipi/"]
                 }
               ]
             },
