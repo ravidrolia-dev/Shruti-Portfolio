@@ -150,6 +150,12 @@ export const ProjectSubPage = () => {
                     {section.contentSubHeading}
                   </h3>
                 )}
+                {section.contentCopy && (
+                  <div 
+                    className="mt-6 text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: section.contentCopy }}
+                  />
+                )}
               </FadeIn>
             </section>
           )}
@@ -244,9 +250,10 @@ export const ProjectSubPage = () => {
                   {(cblock.copy || cblock.list) && (
                     <div className={`w-full ${cblock.align === 'center' ? 'max-w-3xl' : 'max-w-4xl'}`}>
                       {cblock.copy && (
-                        <p className="text-[#D7E2EA]/80 font-light text-lg sm:text-xl leading-[1.8] mb-6">
-                          {cblock.copy}
-                        </p>
+                        <p 
+                          className="text-[#D7E2EA]/80 font-light text-lg sm:text-xl leading-[1.8] mb-6 whitespace-pre-wrap"
+                          dangerouslySetInnerHTML={{ __html: cblock.copy }}
+                        />
                       )}
                       {cblock.list && cblock.list.length > 0 && (
                         <ul className="list-disc pl-5 text-[#D7E2EA]/90 font-light text-base sm:text-lg space-y-3 lg:space-y-2">

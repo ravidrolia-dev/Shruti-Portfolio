@@ -11,6 +11,7 @@ export interface ProcessStep {
 export interface SubPageSection {
   contentHeading?: string;
   contentSubHeading?: string;
+  contentCopy?: string;
   skillimage?: string;
   contentBlocks: ContentBlock[];
 }
@@ -139,13 +140,31 @@ export const projectsData: ProjectDetails[] = [
             },
             {
               contentHeading: "US Market",
-              skillimage:"/images/pratilipi/Screenshot 2026-04-15 141629.png",
+              contentSubHeading: "Designed for a New Market",
+              contentCopy: "A mix of A/B testing creatives, awareness ads, premium promotions and story covers created to introduce Pratilipi and its content to US audiences.",
               contentBlocks: [
                 {
                   title: "Awarness Ad Creatives",
                   copy: "Story-led social media ads created to showcase popular titles and increase awareness of the Pratilipi app.",
                   images: ["/images/pratilipi/ea76a9f5-e67d-433c-9982-0926996a2b48.png"]
-                }
+                },
+                {
+                  title: "Premium Story Covers",
+                  copy: "Story covers created for Pratilipi Premium, designed to communicate the genre and mood while showing how the artwork appears inside the app.",
+                  images: ["/images/pratilipi/40cebfb7-2150-4196-a990-2a5baf4e6d78.png"]
+                },
+                {
+                  title: "A/B Testing Creative Exploration",
+                  copy: "Six ad variations were created to test how different story hooks, images, layouts and text placements could influence attention and engagement.\n\n<strong>What was tested</strong>\n\n<strong>Snippet A — Emotional Hook</strong>\nA personal, emotion-led line designed to create an immediate connection.\n\n<strong>Snippet B — Plot-Led Teaser</strong>\nA story-focused line designed to build curiosity around the plot.\n\n<strong>Design variations</strong>\n\nThe same two snippets were applied across three different visual directions to compare:",
+                  list: [
+                    "image choice",
+                    "layout style",
+                    "typography and hierarchy",
+                    "placement of the story line",
+                    "overall visual mood"
+                  ],
+                  images: ["/images/pratilipi/08e4e73c-3d42-4209-b303-53f19cb4b050.png"]
+                },
               ]
             },
 
