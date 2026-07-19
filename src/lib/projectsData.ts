@@ -132,7 +132,7 @@ export const projectsData: ProjectDetails[] = [
               skillimage:"/images/pratilipi/Screenshot 2026-04-15 141347.png",
               contentBlocks: [
                 {
-                  title: "push notification creatives",
+                  title: "Push Notification Creatives",
                   images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
                 }
               ]
@@ -141,7 +141,11 @@ export const projectsData: ProjectDetails[] = [
               contentHeading: "US Market",
               skillimage:"/images/pratilipi/Screenshot 2026-04-15 141629.png",
               contentBlocks: [
-                
+                {
+                  title: "Awarness Ad Creatives",
+                  copy: "Story-led social media ads created to showcase popular titles and increase awareness of the Pratilipi app.",
+                  images: ["/images/pratilipi/ea76a9f5-e67d-433c-9982-0926996a2b48.png"]
+                }
               ]
             },
 
