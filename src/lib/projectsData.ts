@@ -78,9 +78,9 @@ export const projectsData: ProjectDetails[] = [
     num: "01",
     client: "App Marketing & ASO",
     name: "Pratilipi — Marketing Design Across Platforms",
-    shortDescription: "Pratilipi is a digital storytelling platform that connects readers and writers across multiple languages and content formats.",
+    shortDescription: "Pratilipi is a digital storytelling platform that connects readers and writers across multiple languages, genres and content formats.",
     role: "Marketing Designer",
-    roleDetails: "Pratilipi (FULL-TIME · 4.5 YEARS)",
+    roleDetails: "Marketing Designer",
     skillsImage: "/images/page-06.jpg",
     gallery: [],
     col1img1: "/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png",
@@ -90,9 +90,10 @@ export const projectsData: ProjectDetails[] = [
       {
         type: "stats",
         stats: [
-          { value: "12%", label: "increase in organic app installs" },
-          { value: "2,000+", label: "high-scale creatives delivered" },
-          { value: "12", label: "Indian languages supported" }
+          { value: "12%", label: "Increase in organic app installs through ASO visual redesign" },
+          { value: "2,000+", label: "Marketing creatives delivered across campaigns and content formats" },
+          { value: "₹2L/Month", label: "Saved in marketing expenditure through in-house creative production" },
+          { value: "India+US", label: "Creative adaptations developed for two distinct markets" }
         ]
       },
       {
