@@ -4,7 +4,7 @@ export default function MacbookScrollDemo() {
   return (
     <div className="w-full bg-transparent flex justify-center">
       <MacbookScroll
-        src={[`/macbook.jpeg`, `/macbook1.jpg`]}
+        src={[`/macbook.png`, `/macbook1.png`]}
         showGradient={false}
       />
     </div>
