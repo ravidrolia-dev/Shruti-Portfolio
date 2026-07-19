@@ -82,7 +82,7 @@ export const projectsData: ProjectDetails[] = [
     roleDetails: "Pratilipi (FULL-TIME · 4.5 YEARS)",
     skillsImage: "/images/page-06.jpg",
     gallery: [],
-    col1img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
+    col1img1: "/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png",
     col1img2: "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
     col2img: "/images/pratilipi/1bc65d71-691c-4577-94a6-c60bb92632f8.jpg.jpeg",
     contentBlocks: [
