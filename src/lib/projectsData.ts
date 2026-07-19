@@ -140,6 +140,11 @@ export const projectsData: ProjectDetails[] = [
                   title: "In-App Story Cover Designs",
                   copy: "In-app story covers created for the Pratilipi reading experience, designed to communicate genre, tone and narrative cues within seconds.",
                   images: ["/images/pratilipi/pratilipi-multilingual-covers-editorial-layout-1280x980 (1).png"]
+                },
+                {
+                  title: "Agency-Led Google Ads",
+                  copy: "Google Display creatives developed from agency-provided campaign directions and adapted into multiple sizes for placements across websites, mobile pages and apps.",
+                  images: ["/images/pratilipi/b528c587-6c2a-433a-953a-e42fc422e08b.png","/images/pratilipi/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2.png"]
                 }
               ]
             },
