@@ -91,7 +91,7 @@ export const projectsData: ProjectDetails[] = [
         type: "stats",
         stats: [
           { value: "12%", label: "Increase in organic app installs through ASO visual redesign" },
-          { value: "2,000+", label: "Marketing creatives delivered across campaigns and content formats" },
+          { value: "500+", label: "Marketing creatives delivered across campaigns and content formats" },
           { value: "₹2L/Month", label: "Saved in marketing expenditure through in-house creative production" },
           { value: "India+US", label: "Creative adaptations developed for two distinct markets" }
         ]
@@ -100,7 +100,7 @@ export const projectsData: ProjectDetails[] = [
         type: "zigzag",
         title: "Campaigns, Stories & Performance Creatives",
         copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
-        images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"],
+        images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png"],
         subPageSlug: "performance-advertising",
         subPageData: {
           title: "Campaigns, Stories & Performance Creatives",
@@ -131,7 +131,7 @@ export const projectsData: ProjectDetails[] = [
               ]
             },
             {
-              contentHeading: "India Market",
+              contentHeading: "Indian Market",
               contentBlocks: [
                 
                 {
@@ -140,27 +140,32 @@ export const projectsData: ProjectDetails[] = [
                   images: ["/images/pratilipi/pratilipi-multilingual-covers-editorial-layout-1280x980 (1).png"]
                 },
                 {
-                  title: "Agency-Led Google Ads",
-                  copy: "Google Display creatives developed from agency-provided campaign directions and adapted into multiple sizes for placements across websites, mobile pages and apps.",
-                  images: ["/images/pratilipi/b528c587-6c2a-433a-953a-e42fc422e08b.png","/images/pratilipi/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2.png"]
-                },
-                {
                   title: "A/B Testing & Creative Variations",
                   copy: "Created multiple ad variations for the same stories across Meta and Google Ads. Each version explored different imagery, visual styles, story snippets, layouts and placements to identify the most suitable creative direction for each platform.",
                   images: ["/images/pratilipi/83a57aaf-1307-4f00-9016-29bbe09727a2.png"]
                 },
                 {
-                  title: "AI-Assisted Ads & Visual Exploration",
+                  title: "AI-Assisted Visuals",
                   images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png","/images/pratilipi/bec4d018-a7a1-4a02-b842-cd6c8fe1a6ed.png"]
-                },
-                {
-                  title: "Push Notification Creatives",
-                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
                 },
                 {
                   title:"Always-On Performance Creatives",
                   copy:"High-volume ad creatives produced regularly for Pratilipi’s ongoing campaigns, story promotions and audience acquisition across digital platforms.",
                   images: ["/images/pratilipi/48927328-0718-49d3-bc17-ec53fa0cbcbb.png"]
+                },
+                {
+                  title: "Agency-Led Google Ads",
+                  copy: "Google Display creatives developed from agency-provided campaign directions and adapted into multiple sizes for placements across websites, mobile pages and apps.",
+                  images: ["/images/pratilipi/b528c587-6c2a-433a-953a-e42fc422e08b.png","/images/pratilipi/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2.png"]
+                },
+                {
+                  title: "Push Notification Creatives",
+                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png","/images/pratilipi/3RD Oct.jpg.jpeg"]
+                },
+                {
+                  title:"Experimental Ad Creatives",
+                  copy:"Experimental ad creatives created to test new visual directions, messaging styles and content treatments for future performance campaigns.",
+                  images:["/images/pratilipi/7606e340-961e-438e-b046-7edf896f5173.png"]
                 }
               ],
             },
