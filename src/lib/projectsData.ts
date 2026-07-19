@@ -85,7 +85,6 @@ export const projectsData: ProjectDetails[] = [
     roleDetails: "Marketing Designer",
     contract: "4.5 years",
     contribution: "Created high-volume marketing and product creatives across app-store visuals, performance advertising, story promotions, video campaigns, notifications and in-app placements for Indian and US markets.",
-    skillsImage: "/images/page-06.jpg",
     gallery: [],
     col1img1: "/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png",
     col1img2: "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
