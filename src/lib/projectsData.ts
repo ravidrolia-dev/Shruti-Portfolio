@@ -125,14 +125,8 @@ export const projectsData: ProjectDetails[] = [
               ]
             },
             {
-              title: "Final Screens",
-              copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
-              images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
-            },
-            {
-              title: "Final Screens",
-              copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
-              images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
+              title: "Push Notification Creatives",
+              images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
             }
           ]
         } 
