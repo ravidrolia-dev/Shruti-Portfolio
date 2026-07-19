@@ -60,6 +60,8 @@ export interface ProjectDetails {
   heroVideo?: string;
   role: string;
   roleDetails?: string;
+  contract?: string;
+  contribution?: string;
   deliverables?: string;
   problem?: string;
   approach?: string;
@@ -81,6 +83,8 @@ export const projectsData: ProjectDetails[] = [
     shortDescription: "Pratilipi is a digital storytelling platform that connects readers and writers across multiple languages, genres and content formats.",
     role: "Marketing Designer",
     roleDetails: "Marketing Designer",
+    contract: "4.5 years",
+    contribution: "Created high-volume marketing and product creatives across app-store visuals, performance advertising, story promotions, video campaigns, notifications and in-app placements for Indian and US markets.",
     skillsImage: "/images/page-06.jpg",
     gallery: [],
     col1img1: "/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png",
@@ -91,9 +95,9 @@ export const projectsData: ProjectDetails[] = [
         type: "stats",
         stats: [
           { value: "12%", label: "Increase in organic app installs through ASO visual redesign" },
-          { value: "500+", label: "Marketing creatives delivered across campaigns and content formats" },
-          { value: "₹2L/Month", label: "Saved in marketing expenditure through in-house creative production" },
-          { value: "India+US", label: "Creative adaptations developed for two distinct markets" }
+          { value: "500+", label: "Creatives delivered monthly across campaigns and content formats" },
+          { value: "₹2L / Month", label: "Saved in marketing expenditure through in-house creative production" },
+          { value: "India + US", label: "Creative adaptations developed for two distinct markets" }
         ]
       },
       {

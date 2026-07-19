@@ -159,6 +159,13 @@ export const ProjectPage = () => {
               <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.roleDetails}</p>
             </div>
           )}
+          
+          {project.contract && (
+            <div className="mb-4">
+              <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Contract:</h4>
+              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.contract}</p>
+            </div>
+          )}
 
           {project.deliverables && (
             <div className="mb-4">
@@ -174,9 +181,20 @@ export const ProjectPage = () => {
           )}
 
           {project.skillsUsed && (
-            <div className="mb-16">
+            <div className="mb-12">
               <h4 className="font-mono text-[#FFD600] uppercase tracking-widest text-xs sm:text-sm mb-1">Skills Used:</h4>
               <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base">{project.skillsUsed}</p>
+            </div>
+          )}
+
+          {project.contribution && (
+            <div className="mb-16 flex flex-col items-center text-center">
+              <h3 className="font-serif italic font-medium text-2xl sm:text-3xl text-white mb-4 tracking-wide">
+                Contribution
+              </h3>
+              <p className="text-[#D7E2EA]/90 font-light text-base sm:text-lg leading-relaxed max-w-4xl mx-auto">
+                {project.contribution}
+              </p>
             </div>
           )}
 
@@ -259,7 +277,11 @@ export const ProjectPage = () => {
                   <div key={idx} className="flex flex-wrap gap-8 md:gap-16 py-12 border-y border-white/10 my-8">
                     {block.stats.map((stat, i) => (
                       <div key={i} className="flex-1 min-w-[140px] sm:min-w-[200px]">
-                        <div className="font-black text-4xl sm:text-5xl md:text-6xl text-white mb-2">{stat.value}</div>
+                        <div className={`font-black text-white mb-2 break-words ${
+                          stat.value.length > 8 ? 'text-3xl sm:text-4xl lg:text-5xl' : 
+                          stat.value.length > 5 ? 'text-4xl sm:text-5xl lg:text-5xl' : 
+                          'text-4xl sm:text-5xl md:text-6xl'
+                        }`}>{stat.value}</div>
                         <div className="font-mono text-sm text-[#D7E2EA]/60 uppercase tracking-widest leading-relaxed">{stat.label}</div>
                       </div>
                     ))}
