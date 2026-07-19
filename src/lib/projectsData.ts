@@ -155,7 +155,7 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title: "A/B Testing Creative Exploration",
-                  copy: "Six ad variations were created to test how different story hooks, images, layouts and text placements could influence attention and engagement.\n\n<strong>What was tested</strong>\n\n<strong>Snippet A — Emotional Hook</strong>\nA personal, emotion-led line designed to create an immediate connection.\n\n<strong>Snippet B — Plot-Led Teaser</strong>\nA story-focused line designed to build curiosity around the plot.\n\n<strong>Design variations</strong>\n\nThe same two snippets were applied across three different visual directions to compare:",
+                  copy: "Six ad variations were created to test how different story hooks, images, layouts and text placements could influence attention and engagement.\n\n<span class=\"text-white font-medium text-xl sm:text-2xl block\">What was tested</span>\n<strong>Snippet A — Emotional Hook</strong>\nA personal, emotion-led line designed to create an immediate connection.\n\n<strong>Snippet B — Plot-Led Teaser</strong>\nA story-focused line designed to build curiosity around the plot.\n\n<span class=\"text-white font-medium text-xl sm:text-2xl block\">Design variations</span>\nThe same two snippets were applied across three different visual directions to compare:",
                   list: [
                     "image choice",
                     "layout style",
