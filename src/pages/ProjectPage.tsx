@@ -265,7 +265,7 @@ export const ProjectPage = () => {
                     ))}
                   </div>
                 ) : block.type === 'zigzag' ? (
-                  <div key={idx} className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center w-full ${idx % 2 === 0 ? '' : 'lg:flex-row-reverse'} my-8 sm:my-16`}>
+                  <div key={idx} className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center w-full ${idx % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
                     <div className="w-full lg:w-1/2">
                        {block.images && block.images[0] && (
                           block.subPageSlug ? (
