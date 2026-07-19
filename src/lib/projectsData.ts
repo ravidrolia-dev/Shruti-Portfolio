@@ -163,7 +163,7 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title: "Push Notification Creatives",
-                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png","/images/pratilipi/3RD Oct.jpg.jpeg"]
+                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
                 },
                 {
                   title:"Experimental Ad Creatives",
