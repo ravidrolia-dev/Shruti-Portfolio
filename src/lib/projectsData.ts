@@ -135,6 +135,11 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title: "Push Notification Creatives",
                   images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
+                },
+                {
+                  title: "In-App Story Cover Designs",
+                  copy: "In-app story covers created for the Pratilipi reading experience, designed to communicate genre, tone and narrative cues within seconds.",
+                  images: ["/images/pratilipi/pratilipi-multilingual-covers-editorial-layout-1280x980 (1).png"]
                 }
               ]
             },
