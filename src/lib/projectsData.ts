@@ -130,7 +130,6 @@ export const projectsData: ProjectDetails[] = [
             },
             {
               contentHeading: "India Market",
-              skillimage:"/images/pratilipi/Screenshot 2026-04-15 141347.png",
               contentBlocks: [
                 {
                   title: "Push Notification Creatives",
@@ -145,6 +144,15 @@ export const projectsData: ProjectDetails[] = [
                   title: "Agency-Led Google Ads",
                   copy: "Google Display creatives developed from agency-provided campaign directions and adapted into multiple sizes for placements across websites, mobile pages and apps.",
                   images: ["/images/pratilipi/b528c587-6c2a-433a-953a-e42fc422e08b.png","/images/pratilipi/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2.png"]
+                },
+                {
+                  title: "A/B Testing & Creative Variations",
+                  copy: "Created multiple ad variations for the same stories across Meta and Google Ads. Each version explored different imagery, visual styles, story snippets, layouts and placements to identify the most suitable creative direction for each platform.",
+                  images: ["/images/pratilipi/83a57aaf-1307-4f00-9016-29bbe09727a2.png"]
+                },
+                {
+                  title: "AI-Assisted Ads & Visual Exploration",
+                  images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png","/images/pratilipi/bec4d018-a7a1-4a02-b842-cd6c8fe1a6ed.png"]
                 }
               ]
             },
