@@ -105,29 +105,46 @@ export const projectsData: ProjectDetails[] = [
           deliverables: "App Store Screenshot Creatives",
           servicesUsed: "App Store & ASO Visuals",
           skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-          contentBlocks: [
+          sections: [
             {
-              type: "process",
-              title: "The Project Journey",
-              processSteps: [
+              contentBlocks: [
                 {
-                  title: "Challenge",
-                  copy: "A new delivery service needed a market-ready identity and launch assets, with COVID-era trust signals — contactless delivery, safety protocols — built directly into the messaging."
-                },
-                {
-                  title: "Approach",
-                  copy: "Built the full visual system from scratch: logo, landing page, pamphlets, and packaging, maintaining 100% brand consistency across every deliverable in a fast, resource-constrained freelance setting."
-                },
-                {
-                  title: "Outcome",
-                  copy: "A complete, launch-ready brand package spanning digital and physical touchpoints — translating business goals into user-facing design without an internal design team."
+                  type: "process",
+                  processSteps: [
+                    {
+                      title: "Challenge",
+                      copy: "Pratilipi already had a strong Play Store presence, so the new screenshots needed to outperform the existing set. Multiple revisions were required to reach the right direction."
+                    },
+                    {
+                      title: "Approach",
+                      copy: "Refined the messaging, hierarchy, visuals, and screen sequence through repeated iterations, with one clear feature highlighted per screen."
+                    },
+                    {
+                      title: "Outcome",
+                      copy: "The final redesign created a clearer store presence and contributed to a 12% increase in organic installs."
+                    }
+                  ]
                 }
               ]
             },
             {
-              title: "Push Notification Creatives",
-              images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
-            }
+              contentHeading: "India Market",
+              skillimage:"/images/pratilipi/Screenshot 2026-04-15 141347.png",
+              contentBlocks: [
+                {
+                  title: "push notification creatives",
+                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
+                }
+              ]
+            },
+            {
+              contentHeading: "US Market",
+              skillimage:"/images/pratilipi/Screenshot 2026-04-15 141629.png",
+              contentBlocks: [
+                
+              ]
+            },
+
           ]
         } 
       },
