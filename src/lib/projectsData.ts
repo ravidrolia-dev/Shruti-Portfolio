@@ -172,7 +172,7 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title:"Experimental Video Ads",
-                  images:["/videos/pratilipi/Untitled design (1).mp4","/videos/pratilipi/Untitled design (2).mp4","/videos/pratilipi/Untitled design.mp4"]
+                  images:["/videos/pratilipi/Untitled design.mp4","/videos/pratilipi/Untitled design (2).mp4","/videos/pratilipi/Untitled design (1).mp4"]
                 }
               ],
             },
@@ -651,39 +651,8 @@ export const projectsData: ProjectDetails[] = [
     col1img2: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
     col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
     contentBlocks: [
-      {
-        align: 'center',
-        copy: "Womaniya was a collaborative college project to create a complete digital lifestyle magazine from the ground up. My responsibility was to develop its visual language and design the editorial layouts across more than 90 pages.The magazine combined fashion, beauty, food, travel, music and event-based content within one consistent publication.",
-      },
-      {
-        type: "process",
-        title: "The Project Journey",
-        processSteps: [
-          {
-            title: "Challenge",
-            copy: "Organise multiple content formats while giving every section its own visual identity."
-          },
-          {
-            title: "Approach",
-            copy: "Developed flexible grids, clear typographic hierarchy and image-led compositions that could adapt across different stories."
-          },
-          {
-            title: "Outcome",
-            copy: "Created a cohesive 90+ page magazine that maintained consistency while supporting varied editorial content."
-          }
-        ]
-      },
-      {
-        images: [
-          "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
-          "/images/magazine/dd741845-3301-4f2b-b202-18ff5816a2b0.png",
-          "/images/magazine/ad107cd1-b22e-4738-87ca-3e147b399617.png"
-        ]
-      },
-      {
-        type: "quote",
-        copy: "One magazine. Multiple stories. A consistent editorial system."
-      }
+      
+      
     ]
   }
 ];
