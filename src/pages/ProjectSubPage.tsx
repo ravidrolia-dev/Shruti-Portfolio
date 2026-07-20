@@ -20,6 +20,8 @@ const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: Rea
   );
 };
 
+const isVideo = (url: string) => /\.(mp4|webm|mov)$/i.test(url);
+
 const SkillVideo = ({ src }: { src: string }) => {
   const { containerRef, videoRef } = useVideoIntersection(0.4);
   return (
@@ -28,6 +30,8 @@ const SkillVideo = ({ src }: { src: string }) => {
         ref={videoRef}
         src={src} 
         playsInline 
+        loop
+        muted
         className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px] shadow-2xl border border-white/10"
       />
     </div>
@@ -303,12 +307,29 @@ export const ProjectSubPage = () => {
                             (cblock.images?.length && cblock.images.length % 2 !== 0 && imgIdx === 0) ? 'sm:col-span-2' : ''
                           }`}
                         >
-                          <img 
-                            src={imgUrl} 
-                            alt={`${subData.title} image ${idx}-${imgIdx}`} 
-                            className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
-                            onClick={() => setSelectedImage(imgUrl)}
-                          />
+                          {isVideo(imgUrl) ? (
+                            <video 
+                              src={imgUrl} 
+                              className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700 object-cover" 
+                              onClick={() => setSelectedImage(imgUrl)}
+                              loop
+                              playsInline
+                              onMouseEnter={(e) => {
+                                const playPromise = e.currentTarget.play();
+                                if (playPromise !== undefined) {
+                                  playPromise.catch(() => {});
+                                }
+                              }}
+                              onMouseLeave={(e) => e.currentTarget.pause()}
+                            />
+                          ) : (
+                            <img 
+                              src={imgUrl} 
+                              alt={`${subData.title} image ${idx}-${imgIdx}`} 
+                              className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
+                              onClick={() => setSelectedImage(imgUrl)}
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -329,11 +350,22 @@ export const ProjectSubPage = () => {
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative w-full h-full flex items-center justify-center max-w-7xl mx-auto">
-            <img 
-              src={selectedImage} 
-              alt="Fullscreen view" 
-              className="w-full h-full object-contain pointer-events-none"
-            />
+            {isVideo(selectedImage) ? (
+              <video 
+                src={selectedImage} 
+                className="w-full h-full object-contain pointer-events-auto"
+                autoPlay
+                controls
+                loop
+                playsInline
+              />
+            ) : (
+              <img 
+                src={selectedImage} 
+                alt="Fullscreen view" 
+                className="w-full h-full object-contain pointer-events-none"
+              />
+            )}
             
             <button 
               className="absolute top-4 right-4 lg:top-6 lg:right-6 text-white/50 hover:text-white transition-colors p-4 lg:p-2 bg-white/5 lg:bg-transparent rounded-full backdrop-blur-sm lg:backdrop-blur-none"
