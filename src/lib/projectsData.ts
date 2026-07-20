@@ -637,11 +637,11 @@ export const projectsData: ProjectDetails[] = [
   {
     slug: "AI-Assisted-Video-Creatives",
     num: "07",
-    client: "AI-Assisted-Video-Creatives",
+    client: "Video Creatives",
     name: "AI-Assisted Video Creatives",
     shortDescription: "",
-    role: "Editorial & Layout Designer",
-    roleDetails: "Editorial & Layout Designer",
+    role: "Marketing Designer — AI & Motion Creatives",
+    roleDetails: "Marketing Designer — AI & Motion Creatives",
     deliverables: "Social Media reels and ads",
 
     skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
