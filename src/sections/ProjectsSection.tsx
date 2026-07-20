@@ -97,17 +97,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards, p
         </div>
 
         {/* Bottom Row - Images Grid */}
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 relative pointer-events-none">
-          <div className="w-full md:w-[40%] flex flex-col gap-4 sm:gap-6">
-            <div className="w-full h-[200px] md:h-[240px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
+        <div className="flex flex-row gap-2 sm:gap-4 md:gap-6 relative pointer-events-none">
+          <div className="w-[40%] flex flex-col gap-2 sm:gap-4 md:gap-6">
+            <div className="w-full h-[120px] sm:h-[180px] md:h-[240px] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] overflow-hidden shrink-0">
               <img src={project.col1img1} alt={`${project.name} preview 1`} className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-[250px] md:h-[320px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
+            <div className="w-full h-[160px] sm:h-[240px] md:h-[320px] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] overflow-hidden shrink-0">
               <img src={project.col1img2} alt={`${project.name} preview 2`} className="w-full h-full object-cover" />
             </div>
           </div>
 
-          <div className="w-full md:w-[60%] h-[300px] md:h-[584px] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] overflow-hidden shrink-0">
+          <div className="w-[60%] h-[288px] sm:h-[436px] md:h-[584px] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] overflow-hidden shrink-0">
             <img src={project.col2img} alt={`${project.name} main view`} className="w-full h-full object-cover" />
           </div>
         </div>
