@@ -647,7 +647,7 @@ export const projectsData: ProjectDetails[] = [
     skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
     gallery: [],
     col1img1: "/images/AI/25e5d82c-86f7-481e-8ff2-9a5096103ba1.png",
-    col1img2: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
+    col1img2: "/images/AI/e6c5415c-459c-4214-8f4c-9037de6c6976.png",
     col2img: "/images/AI/6c559249-2fa3-4bb1-b177-4cc30ed631cc.png",
     
     contentBlocks: [
