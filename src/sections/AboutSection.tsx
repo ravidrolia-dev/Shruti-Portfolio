@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { FadeIn } from '../components/FadeIn';
 import TrueFocus from '../components/TrueFocus';
 
