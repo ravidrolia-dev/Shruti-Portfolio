@@ -27,14 +27,14 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({
   // The Framer component uses Gochi Hand font for the text
   return (
     <div 
-      className="relative flex flex-col items-center justify-center px-4 py-2 cursor-pointer"
+      className="relative flex flex-col items-center justify-center px-1 sm:px-4 py-2 cursor-pointer"
       onMouseEnter={() => onHover(id)}
       onMouseLeave={onLeave}
     >
       <a 
         href={href}
         onClick={onClick}
-        className="relative z-10 text-[20px] text-[#F2E3CF] hover:text-[#FFD600] transition-colors font-['Gochi_Hand',_sans-serif] tracking-wider outline-none"
+        className="relative z-10 text-[16px] sm:text-[20px] text-[#F2E3CF] hover:text-[#FFD600] transition-colors font-['Gochi_Hand',_sans-serif] tracking-wider outline-none"
         style={{ fontFamily: '"Gochi Hand", sans-serif' }}
       >
         {label}

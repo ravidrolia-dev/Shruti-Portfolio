@@ -24,15 +24,15 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 w-full py-4 px-6 md:px-10 flex justify-between items-center z-50 bg-transparent">
+    <nav className="absolute top-0 left-0 w-full py-4 px-3 sm:px-6 md:px-10 flex justify-between items-center z-50 bg-transparent">
       <div 
-        className="text-[#FFD600] font-black tracking-widest uppercase cursor-pointer"
+        className="text-sm sm:text-base text-[#FFD600] font-black tracking-widest uppercase cursor-pointer"
         onClick={() => navigate('/')}
       >
         Portfolio
       </div>
       
-      <div className="relative flex items-center gap-6 sm:gap-16 md:gap-24 z-20">
+      <div className="relative flex items-center gap-1 sm:gap-16 md:gap-24 z-20">
         <HeaderButton 
           id="about" 
           label="About" 
