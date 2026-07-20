@@ -393,7 +393,7 @@ export const ProjectPage = () => {
                                 (block.fullWidthImages && block.fullWidthImages.includes(imgIdx)) || 
                                 block.imageLayout === 'stacked' || 
                                 block.images!.length === 1 || 
-                                (!block.fullWidthImages && block.images!.length % 2 !== 0 && block.images!.length !== 3 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                                (!block.fullWidthImages && block.images!.length % 2 !== 0 && block.images!.length < 4 && imgIdx === 0) ? 'sm:col-span-2' : ''
                               }`}
                             >
                               {isVideo(imgUrl) ? (

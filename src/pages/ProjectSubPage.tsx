@@ -310,7 +310,7 @@ export const ProjectSubPage = () => {
                         <div 
                           key={imgIdx} 
                           className={`w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl ${
-                            (!cblock.fullWidthImages && cblock.images?.length && cblock.images.length % 2 !== 0 && cblock.images.length !== 3 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                            (!cblock.fullWidthImages && cblock.images?.length && cblock.images.length % 2 !== 0 && cblock.images.length < 4 && imgIdx === 0) ? 'sm:col-span-2' : ''
                           }`}
                         >
                           {isVideo(imgUrl) ? (
