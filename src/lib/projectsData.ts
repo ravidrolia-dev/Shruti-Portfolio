@@ -645,14 +645,26 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Social Media reels and ads",
 
     skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
-    skillsImage: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
     gallery: [],
     col1img1: "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
     col1img2: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
-    col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
+    col2img: "/images/AI/6c559249-2fa3-4bb1-b177-4cc30ed631cc.png",
+    
     contentBlocks: [
-      
-      
+      {
+        title: "Videos",
+        align: "center",
+        images: [
+          "/videos/AI/IMG_5402.MP4",
+          "/videos/AI/IMG_5409.MP4",
+          "/videos/AI/IMG_5478.MP4",
+          "/videos/AI/IMG_5497.MP4",
+          "/videos/AI/IMG_5723.MP4",
+          "/videos/AI/IMG_5735.MP4",
+          "/videos/AI/IMG_5736.MP4",
+          "/videos/AI/IMG_5771.MP4"
+        ]
+      }
     ]
   }
 ];

@@ -7,6 +7,8 @@ import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles, ArrowRight } from 'lucide-react';
 import { useVideoIntersection } from '../hooks/useVideoIntersection';
 
+const isVideo = (url: string) => /\.(mp4|webm|mov)$/i.test(url);
+
 export const ProjectPage = () => {
   const { id } = useParams();
   const project = projectsData.find(p => p.slug === id);
@@ -336,8 +338,8 @@ export const ProjectPage = () => {
                   </div>
                 ) : (
                   <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full">
-                  {/* Sticky Title Column */}
-                  {block.title && (
+                  {/* Sticky Title Column / Centered Title */}
+                  {block.title && block.align !== 'center' && (
                     <div className="lg:w-1/4 lg:sticky lg:top-32 shrink-0">
                       <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-lg sm:text-xl mb-4">
                         {block.title}
@@ -346,7 +348,12 @@ export const ProjectPage = () => {
                   )}
 
                   {/* Content Column */}
-                  <div className={`flex flex-col gap-8 w-full ${block.title ? 'lg:w-3/4' : ''} ${block.align === 'center' ? 'items-center text-center' : ''}`}>
+                  <div className={`flex flex-col gap-8 w-full ${block.title && block.align !== 'center' ? 'lg:w-3/4' : ''} ${block.align === 'center' ? 'items-center text-center' : ''}`}>
+                    {block.title && block.align === 'center' && (
+                      <h2 className="font-serif italic font-medium text-4xl sm:text-5xl md:text-6xl text-white tracking-wide mb-8">
+                        {block.title}
+                      </h2>
+                    )}
                     {/* Block Text Content */}
                     {(block.copy || block.list) && (
                       <div className="w-full">
@@ -369,7 +376,12 @@ export const ProjectPage = () => {
                     {/* Block Images with Hover Zoom */}
                     {block.images && block.images.length > 0 && (
                       <div className="w-full mt-4">
-                        <div className={`grid gap-4 sm:gap-6 ${block.imageLayout === 'stacked' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+                        <div className={`grid gap-4 sm:gap-6 ${
+                          block.imageLayout === 'stacked' ? 'grid-cols-1' : 
+                          block.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
+                          block.images.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 
+                          'grid-cols-1 sm:grid-cols-2'
+                        }`}>
                           {block.images.map((imgUrl, imgIdx) => (
                             <motion.div 
                               initial={{ opacity: 0, scale: 0.95 }}
@@ -378,18 +390,41 @@ export const ProjectPage = () => {
                               transition={{ duration: 0.6 }}
                               key={imgIdx} 
                               className={`bg-white/5 border border-white/10 rounded-[20px] sm:rounded-[30px] overflow-hidden group flex items-center justify-center ${
-                                (block.fullWidthImages && block.fullWidthImages.includes(imgIdx)) || block.imageLayout === 'stacked' || block.images!.length === 1 || (!block.fullWidthImages && block.images!.length % 2 !== 0 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                                (block.fullWidthImages && block.fullWidthImages.includes(imgIdx)) || 
+                                block.imageLayout === 'stacked' || 
+                                block.images!.length === 1 || 
+                                (!block.fullWidthImages && block.images!.length % 2 !== 0 && block.images!.length !== 3 && imgIdx === 0) ? 'sm:col-span-2' : ''
                               }`}
                             >
-                              <motion.img 
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ duration: 0.4 }}
-                                src={imgUrl} 
-                                alt={`${project.name} context image ${idx}-${imgIdx}`} 
-                                className="w-full h-full object-cover block cursor-zoom-in" 
-                                onClick={() => setSelectedImage(imgUrl)}
-                              />
+                              {isVideo(imgUrl) ? (
+                                <motion.video 
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  transition={{ duration: 0.4 }}
+                                  src={imgUrl} 
+                                  className="w-full h-full object-cover block cursor-zoom-in" 
+                                  onClick={() => setSelectedImage(imgUrl)}
+                                  loop
+                                  playsInline
+                                  onMouseEnter={(e: React.MouseEvent<HTMLVideoElement>) => {
+                                    const playPromise = e.currentTarget.play();
+                                    if (playPromise !== undefined) {
+                                      playPromise.catch(() => {});
+                                    }
+                                  }}
+                                  onMouseLeave={(e: React.MouseEvent<HTMLVideoElement>) => e.currentTarget.pause()}
+                                />
+                              ) : (
+                                <motion.img 
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  transition={{ duration: 0.4 }}
+                                  src={imgUrl} 
+                                  alt={`${project.name} context image ${idx}-${imgIdx}`} 
+                                  className="w-full h-full object-cover block cursor-zoom-in" 
+                                  onClick={() => setSelectedImage(imgUrl)}
+                                />
+                              )}
                             </motion.div>
                           ))}
                         </div>
@@ -414,15 +449,30 @@ export const ProjectPage = () => {
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8 cursor-zoom-out"
             onClick={() => setSelectedImage(null)}
           >
-            <motion.img 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              src={selectedImage} 
-              alt="Fullscreen view" 
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl" 
-            />
+            {isVideo(selectedImage) ? (
+              <motion.video 
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={selectedImage} 
+                className="w-full h-full object-contain pointer-events-auto max-w-7xl mx-auto"
+                autoPlay
+                controls
+                loop
+                playsInline
+              />
+            ) : (
+              <motion.img 
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={selectedImage} 
+                alt="Fullscreen view" 
+                className="w-full h-full object-contain pointer-events-none max-w-7xl mx-auto"
+              />
+            )}
             
             <button 
               className="absolute top-4 right-4 lg:top-6 lg:right-6 text-white/50 hover:text-white transition-colors p-4 lg:p-2 bg-white/5 lg:bg-transparent rounded-full backdrop-blur-sm lg:backdrop-blur-none"

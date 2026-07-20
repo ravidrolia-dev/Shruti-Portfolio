@@ -263,8 +263,8 @@ export const ProjectSubPage = () => {
               </div>
             ) : (
               <div key={idx} className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full">
-                {/* Sticky Title Column */}
-                {cblock.title && (
+                {/* Sticky Title Column / Centered Title */}
+                {cblock.title && cblock.align !== 'center' && (
                   <div className="lg:w-1/4 lg:sticky lg:top-32 shrink-0">
                     <h3 className="font-mono text-[#FFD600] uppercase tracking-widest text-lg sm:text-xl mb-4">
                       {cblock.title}
@@ -273,7 +273,12 @@ export const ProjectSubPage = () => {
                 )}
 
                 {/* Content Column */}
-                <div className={`flex flex-col gap-8 w-full ${cblock.title ? 'lg:w-3/4' : ''} ${cblock.align === 'center' ? 'items-center text-center' : ''}`}>
+                <div className={`flex flex-col gap-8 w-full ${cblock.title && cblock.align !== 'center' ? 'lg:w-3/4' : ''} ${cblock.align === 'center' ? 'items-center text-center' : ''}`}>
+                  {cblock.title && cblock.align === 'center' && (
+                    <h2 className="font-serif italic font-medium text-4xl sm:text-5xl md:text-6xl text-white tracking-wide mb-8">
+                      {cblock.title}
+                    </h2>
+                  )}
                   {/* Block Text Content */}
                   {(cblock.copy || cblock.list) && (
                     <div className={`w-full ${cblock.align === 'center' ? 'max-w-3xl' : 'max-w-4xl'}`}>
@@ -297,14 +302,15 @@ export const ProjectSubPage = () => {
                   {cblock.images && cblock.images.length > 0 && (
                     <div className={`w-full grid gap-4 sm:gap-6 ${
                       cblock.imageLayout === 'stacked' || cblock.images.length === 1 ? 'grid-cols-1' :
-                      (cblock.images.length === 2 || cblock.images.length === 3) ? 'grid-cols-1 sm:grid-cols-2' :
-                      'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                      cblock.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
+                      cblock.images.length === 3 ? 'grid-cols-1 md:grid-cols-3' :
+                      'grid-cols-1 sm:grid-cols-2'
                     }`}>
                       {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
                           className={`w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl ${
-                            (cblock.images?.length && cblock.images.length % 2 !== 0 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                            (!cblock.fullWidthImages && cblock.images?.length && cblock.images.length % 2 !== 0 && cblock.images.length !== 3 && imgIdx === 0) ? 'sm:col-span-2' : ''
                           }`}
                         >
                           {isVideo(imgUrl) ? (
