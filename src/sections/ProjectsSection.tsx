@@ -46,7 +46,7 @@ export const ProjectsSection = () => {
         })}
       </div>
 
-      <div className="h-[15vh] sm:h-[20vh] md:h-[25vh] w-full pointer-events-none" aria-hidden="true" />
+      <div className="h-[5vh] sm:h-[15vh] md:h-[25vh] w-full pointer-events-none" aria-hidden="true" />
     </section>
   );
 };
@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards, p
   const cardProgress = useTransform(progress, [index / totalCards, 1], [1, targetScale]);
 
   return (
-    <div ref={containerRef} className="h-[85vh] flex items-start justify-center sticky top-16 md:top-20" style={{ marginTop: index === 0 ? 0 : '10vh' }}>
+    <div ref={containerRef} className="h-[55vh] sm:h-[75vh] md:h-[85vh] flex items-start justify-center sticky top-16 md:top-20" style={{ marginTop: index === 0 ? 0 : '10vh' }}>
       <motion.div 
         style={{ scale: cardProgress, top: `${index * 28}px` }}
         className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col relative transform-origin-top cursor-pointer group"
