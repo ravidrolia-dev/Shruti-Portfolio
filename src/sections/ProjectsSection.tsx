@@ -28,7 +28,7 @@ export const ProjectsSection = () => {
         </h2>
       </FadeIn>
 
-      <div ref={containerRef} className="relative pb-[10vh]">
+      <div ref={containerRef} className="relative pb-0 md:pb-[10vh]">
         {projects.map((project, index) => {
           const targetScale = 1 - (projects.length - 1 - index) * 0.03;
           
@@ -46,7 +46,7 @@ export const ProjectsSection = () => {
         })}
       </div>
 
-      <div className="h-[5vh] sm:h-[15vh] md:h-[25vh] w-full pointer-events-none" aria-hidden="true" />
+      <div className="hidden sm:block sm:h-[15vh] md:h-[25vh] w-full pointer-events-none" aria-hidden="true" />
     </section>
   );
 };
