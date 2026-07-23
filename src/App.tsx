@@ -6,10 +6,12 @@ import { SparklesCore } from './components/Sparkles';
 import { ScrollToTop } from './components/ScrollToTop';
 import { MouseEffects } from './components/MouseEffects';
 import { FloatingContactButton } from './components/FloatingContactButton';
+import { AnalyticsTracker } from './components/AnalyticsTracker';
 
 function App() {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <ScrollToTop />
       <MouseEffects
         color='#FFD600'
