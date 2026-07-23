@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { Mail } from 'lucide-react';
+import ReactGA from 'react-ga4';
 
 export const ContactSection = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -24,6 +25,13 @@ export const ContactSection = () => {
       if (response.ok) {
         setStatus('success');
         form.reset();
+        
+        // Track successful form submission in Google Analytics
+        ReactGA.event({
+          category: 'Contact',
+          action: 'Form Submitted',
+          label: 'Contact Section Form'
+        });
       } else {
         setStatus('error');
       }
