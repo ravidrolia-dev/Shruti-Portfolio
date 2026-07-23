@@ -6,7 +6,7 @@ import ReactGA from 'react-ga4';
 const TRACKING_ID = "G-RSJL2BPFRD"; 
 
 // Initialize GA4 only once outside the component
-if (TRACKING_ID && TRACKING_ID !== "G-XXXXXXXXXX") {
+if (TRACKING_ID) {
   ReactGA.initialize(TRACKING_ID);
 }
 
@@ -15,7 +15,7 @@ export const AnalyticsTracker = () => {
 
   useEffect(() => {
     // Send a pageview on route change if a tracking ID is configured
-    if (TRACKING_ID && TRACKING_ID !== "G-XXXXXXXXXX") {
+    if (TRACKING_ID) {
       ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
     }
   }, [location]);
