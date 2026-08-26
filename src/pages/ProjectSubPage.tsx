@@ -5,6 +5,8 @@ import { ArrowLeft, ChevronRight, X, Compass, Lightbulb, Sparkles } from 'lucide
 import { projectsData } from '../lib/projectsData';
 import type { SubPageSection, ContentBlock } from '../lib/projectsData';
 import { useVideoIntersection } from '../hooks/useVideoIntersection';
+import { getOptimizedCloudinaryUrl, getSrcSet } from '../lib/cloudinary';
+import { isVideo } from '../lib/utils';
 
 const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => {
   return (
@@ -19,8 +21,6 @@ const FadeIn = ({ children, delay = 0, y = 20, className = "" }: { children: Rea
     </motion.div>
   );
 };
-
-const isVideo = (url: string) => /\.(mp4|webm|mov)$/i.test(url);
 
 const SkillVideo = ({ src }: { src: string }) => {
   const { containerRef, videoRef } = useVideoIntersection(0.4);
@@ -144,7 +144,10 @@ export const ProjectSubPage = () => {
           <FadeIn delay={0.4} y={30} className="w-full">
             <div className="w-full aspect-[21/9] sm:aspect-[2.5/1] rounded-[20px] sm:rounded-[40px] overflow-hidden shadow-2xl border border-white/10 relative group">
               <img 
-                src={subData.heroImage} 
+                src={getOptimizedCloudinaryUrl(subData.heroImage, 1600)} 
+                srcSet={getSrcSet(subData.heroImage)}
+                sizes="100vw"
+                loading="eager"
                 alt={subData.title} 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
               />
@@ -319,6 +322,7 @@ export const ProjectSubPage = () => {
                               className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700 object-cover" 
                               onClick={() => setSelectedImage(imgUrl)}
                               loop
+                              muted
                               playsInline
                               onMouseEnter={(e) => {
                                 const playPromise = e.currentTarget.play();
@@ -330,7 +334,10 @@ export const ProjectSubPage = () => {
                             />
                           ) : (
                             <img 
-                              src={imgUrl} 
+                              src={getOptimizedCloudinaryUrl(imgUrl, 1200)} 
+                              srcSet={getSrcSet(imgUrl)}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              loading="lazy"
                               alt={`${subData.title} image ${idx}-${imgIdx}`} 
                               className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700" 
                               onClick={() => setSelectedImage(imgUrl)}
@@ -366,10 +373,17 @@ export const ProjectSubPage = () => {
                 playsInline
               />
             ) : (
-              <img 
-                src={selectedImage} 
+              <motion.img 
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={getOptimizedCloudinaryUrl(selectedImage, 1600)} 
+                srcSet={getSrcSet(selectedImage)}
+                sizes="100vw"
+                loading="eager"
                 alt="Fullscreen view" 
-                className="w-full h-full object-contain pointer-events-none"
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
               />
             )}
             

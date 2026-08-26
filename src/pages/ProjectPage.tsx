@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import type { Variants } from 'framer-motion';
 import { Compass, Lightbulb, Sparkles, ArrowRight } from 'lucide-react';
 import { useVideoIntersection } from '../hooks/useVideoIntersection';
-
-const isVideo = (url: string) => /\.(mp4|webm|mov)$/i.test(url);
+import { isVideo } from '../lib/utils';
+import { getOptimizedCloudinaryUrl, getSrcSet } from '../lib/cloudinary';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -117,8 +117,11 @@ export const ProjectPage = () => {
             />
           ) : (
             <img 
-              src={project.col2img || project.skillsImage} 
+              src={getOptimizedCloudinaryUrl(project.col2img || project.skillsImage || '', 1600)} 
+              srcSet={getSrcSet(project.col2img || project.skillsImage || '')}
+              sizes="100vw"
               alt={project.name}
+              loading="eager"
               className="w-full h-full object-cover opacity-60"
             />
           )}
@@ -213,7 +216,7 @@ export const ProjectPage = () => {
                     playsInline 
                   />
                 ) : project.skillsImage ? (
-                  <img src={project.skillsImage} alt="Skills Overview" className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" />
+                  <img src={getOptimizedCloudinaryUrl(project.skillsImage, 1200)} srcSet={getSrcSet(project.skillsImage)} sizes="100vw" loading="lazy" alt="Skills Overview" className="max-w-full max-h-[80vh] w-auto h-auto rounded-[20px] sm:rounded-[40px]" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-mono text-sm uppercase tracking-widest text-center px-4">
                     Add image or video path in projectsData.ts
@@ -298,11 +301,11 @@ export const ProjectPage = () => {
                               onClick={() => sessionStorage.setItem(`projectScroll_${project.slug}`, window.scrollY.toString())}
                               className="block w-full rounded-[20px] sm:rounded-[30px] overflow-hidden bg-[#0C0C0C] border border-white/10 relative group shadow-2xl hover:border-white/20 transition-all duration-300 cursor-pointer"
                             >
-                              <img src={block.images[0]} alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                              <img src={getOptimizedCloudinaryUrl(block.images[0], 800)} srcSet={getSrcSet(block.images[0])} sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
                             </Link>
                           ) : (
                             <div className="w-full rounded-[20px] sm:rounded-[30px] overflow-hidden bg-[#0C0C0C] border border-white/10 relative group cursor-zoom-in shadow-2xl hover:border-white/20 transition-all duration-300" onClick={() => setSelectedImage(block.images![0])}>
-                              <img src={block.images[0]} alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                              <img src={getOptimizedCloudinaryUrl(block.images[0], 800)} srcSet={getSrcSet(block.images[0])} sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" alt={block.title} className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" />
                             </div>
                           )
                        )}
@@ -419,7 +422,10 @@ export const ProjectPage = () => {
                                   whileHover={{ scale: 1.05 }}
                                   whileTap={{ scale: 0.95 }}
                                   transition={{ duration: 0.4 }}
-                                  src={imgUrl} 
+                                  src={getOptimizedCloudinaryUrl(imgUrl, 800)} 
+                                  srcSet={getSrcSet(imgUrl)}
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                  loading="lazy"
                                   alt={`${project.name} context image ${idx}-${imgIdx}`} 
                                   className="w-full h-full object-cover block cursor-zoom-in" 
                                   onClick={() => setSelectedImage(imgUrl)}
@@ -468,9 +474,13 @@ export const ProjectPage = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                src={selectedImage} 
+                src={getOptimizedCloudinaryUrl(selectedImage, 1600)} 
+                srcSet={getSrcSet(selectedImage)}
+                sizes="100vw"
+                loading="eager"
                 alt="Fullscreen view" 
-                className="w-full h-full object-contain pointer-events-none max-w-7xl mx-auto"
+                className="max-w-full max-h-full object-contain rounded-lg"
+                onClick={(e) => e.stopPropagation()} 
               />
             )}
             

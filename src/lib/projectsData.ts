@@ -86,9 +86,9 @@ export const projectsData: ProjectDetails[] = [
     contract: "4.5 years",
     contribution: "Created high-volume marketing and product creatives across app-store visuals, performance advertising, story promotions, video campaigns, notifications and in-app placements for Indian and US markets.",
     gallery: [],
-    col1img1: "/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png",
-    col1img2: "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
-    col2img: "/images/pratilipi/1bc65d71-691c-4577-94a6-c60bb92632f8.jpg.jpeg",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729667/a075ed2f-a5b7-479b-821c-e7390c6c7d73_imu2xv.png",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729671/2029e253-9e3b-407c-ad8c-37797373be9a_htvbqb.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729688/1bc65d71-691c-4577-94a6-c60bb92632f8.jpg_vaetox.jpg",
     contentBlocks: [
       {
         type: "stats",
@@ -103,7 +103,7 @@ export const projectsData: ProjectDetails[] = [
         type: "zigzag",
         title: "Campaigns, Stories & Performance Creatives",
         copy: "Acquisition-focused campaigns created across Meta, Google and paid media, including static ads, video creatives, market adaptations, A/B tests and AI-assisted visual development.",
-        images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png"],
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729667/a075ed2f-a5b7-479b-821c-e7390c6c7d73_imu2xv.png"],
         subPageSlug: "performance-advertising",
         subPageData: {
           title: "Campaigns, Stories & Performance Creatives",
@@ -140,39 +140,39 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title: "In-App Story Cover Designs",
                   copy: "In-app story covers created for the Pratilipi reading experience, designed to communicate genre, tone and narrative cues within seconds.",
-                  images: ["/images/pratilipi/pratilipi-multilingual-covers-editorial-layout-1280x980 (1).png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729690/pratilipi-multilingual-covers-editorial-layout-1280x980_1_wpqusg.png"]
                 },
                 {
                   title: "A/B Testing & Creative Variations",
                   copy: "Created multiple ad variations for the same stories across Meta and Google Ads. Each version explored different imagery, visual styles, story snippets, layouts and placements to identify the most suitable creative direction for each platform.",
-                  images: ["/images/pratilipi/83a57aaf-1307-4f00-9016-29bbe09727a2.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729652/83a57aaf-1307-4f00-9016-29bbe09727a2_fs9xua.png"]
                 },
                 {
                   title: "AI-Assisted Visuals",
-                  images: ["/images/pratilipi/a075ed2f-a5b7-479b-821c-e7390c6c7d73.png","/images/pratilipi/bec4d018-a7a1-4a02-b842-cd6c8fe1a6ed.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729667/a075ed2f-a5b7-479b-821c-e7390c6c7d73_imu2xv.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729681/bec4d018-a7a1-4a02-b842-cd6c8fe1a6ed_llzxdg.png"]
                 },
                 {
                   title:"Always-On Performance Creatives",
                   copy:"High-volume ad creatives produced regularly for Pratilipi’s ongoing campaigns, story promotions and audience acquisition across digital platforms.",
-                  images: ["/images/pratilipi/48927328-0718-49d3-bc17-ec53fa0cbcbb.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729657/48927328-0718-49d3-bc17-ec53fa0cbcbb_ts0zfd.png"]
                 },
                 {
                   title: "Agency-Led Google Ads",
                   copy: "Google Display creatives developed from agency-provided campaign directions and adapted into multiple sizes for placements across websites, mobile pages and apps.",
-                  images: ["/images/pratilipi/b528c587-6c2a-433a-953a-e42fc422e08b.png","/images/pratilipi/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729682/b528c587-6c2a-433a-953a-e42fc422e08b_edh9n0.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729676/cd187918-3ea0-4c0f-a42f-3e40d8a2daf2_a7ssl4.png"]
                 },
                 {
                   title: "Push Notification Creatives",
-                  images: ["/images/pratilipi/ac17f789-3d62-4c9e-a2ec-a377cf9da84c.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729663/ac17f789-3d62-4c9e-a2ec-a377cf9da84c_mxes2e.png"]
                 },
                 {
                   title:"Experimental Ad Creatives",
                   copy:"Experimental ad creatives created to test new visual directions, messaging styles and content treatments for future performance campaigns.",
-                  images:["/images/pratilipi/7606e340-961e-438e-b046-7edf896f5173.png","/images/pratilipi/f105aa77-1de7-4ba7-bca4-bdbe8898104c.png"]
+                  images:["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729655/7606e340-961e-438e-b046-7edf896f5173_b9w7o2.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729682/f105aa77-1de7-4ba7-bca4-bdbe8898104c_mssmge.png"]
                 },
                 {
                   title:"Experimental Video Ads",
-                  images:["/videos/pratilipi/Untitled design.mp4","/videos/pratilipi/Untitled design (2).mp4","/videos/pratilipi/Untitled design (1).mp4"]
+                  images:["https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4"]
                 }
               ],
             },
@@ -184,12 +184,12 @@ export const projectsData: ProjectDetails[] = [
                 {
                   title: "Awarness Ad Creatives",
                   copy: "Story-led social media ads created to showcase popular titles and increase awareness of the Pratilipi app.",
-                  images: ["/images/pratilipi/ea76a9f5-e67d-433c-9982-0926996a2b48.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729685/ea76a9f5-e67d-433c-9982-0926996a2b48_ttqcvc.png"]
                 },
                 {
                   title: "Premium Story Covers",
                   copy: "Story covers created for Pratilipi Premium, designed to communicate the genre and mood while showing how the artwork appears inside the app.",
-                  images: ["/images/pratilipi/40cebfb7-2150-4196-a990-2a5baf4e6d78.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729667/40cebfb7-2150-4196-a990-2a5baf4e6d78_atqkip.png"]
                 },
                 {
                   title: "A/B Testing Creative Exploration",
@@ -201,7 +201,7 @@ export const projectsData: ProjectDetails[] = [
                     "placement of the story line",
                     "overall visual mood"
                   ],
-                  images: ["/images/pratilipi/08e4e73c-3d42-4209-b303-53f19cb4b050.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729697/08e4e73c-3d42-4209-b303-53f19cb4b050_isbbmy.png"]
                 },
               ]
             },
@@ -213,7 +213,7 @@ export const projectsData: ProjectDetails[] = [
         type: "zigzag",
         title: "App Store & ASO",
         copy: "Store-listing visuals created for Indian and US markets, designed to communicate the product, improve feature clarity and support organic discovery.",
-        images: ["/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png"],
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729671/2029e253-9e3b-407c-ad8c-37797373be9a_htvbqb.png"],
         subPageSlug: "app-store-aso",
         subPageData: {
           title: "App Store & ASO",
@@ -224,7 +224,7 @@ export const projectsData: ProjectDetails[] = [
           sections: [
             {
               contentHeading: "Play Store - India",
-              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1).jpeg",
+              skillimage:"https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729703/8cf33b2b-097f-40e9-a2e3-9be32a5408e0_1_vfs66n.jpg",
               contentBlocks: [
                 {
                   type: "process",
@@ -245,11 +245,11 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title: "Typography & Visual System",
-                  images: ["/images/pratilipi/f56928a3-b2b8-4e1f-98b6-ebe5bc9d7e85.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729682/f56928a3-b2b8-4e1f-98b6-ebe5bc9d7e85_nteug9.png"]
                 },
                 {
                   title: "Feature Graphic ",
-                  images: ["/images/pratilipi/fg 12.jpg.jpeg"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729684/fg_12.jpg_gnpjye.jpg"]
                 }
               ]
             },
@@ -258,16 +258,16 @@ export const projectsData: ProjectDetails[] = [
               contentBlocks: [
                 {
                   images: [
-                    "/images/pratilipi/2029e253-9e3b-407c-ad8c-37797373be9a.png",
-                    "/images/pratilipi/9eaadb63-ce70-4dc7-b465-b3ced70098eb.png",
-                    "/images/pratilipi/034cb516-ae23-4184-a9d1-5973eb731554.png"
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729671/2029e253-9e3b-407c-ad8c-37797373be9a_htvbqb.png",
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729701/9eaadb63-ce70-4dc7-b465-b3ced70098eb_hz7w4r.png",
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729653/034cb516-ae23-4184-a9d1-5973eb731554_zkg7oh.png"
                   ]
                 }
               ]
             },
             {
               contentHeading: "Play Store & App Store - US",
-              skillimage:"/images/pratilipi/8cf33b2b-097f-40e9-a2e3-9be32a5408e0 (1) (1).jpg.jpeg",
+              skillimage:"https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729706/8cf33b2b-097f-40e9-a2e3-9be32a5408e0_1_1.jpg_pcfjah.jpg",
               contentBlocks: [
                 {
                   type: "process",
@@ -288,11 +288,11 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title: "Typography & Visual System",
-                  images: ["/images/pratilipi/22e6718d-0fca-41e5-94c1-9a36fd9f1356.png"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729626/22e6718d-0fca-41e5-94c1-9a36fd9f1356_stnxpx.png"]
                 },
                 {
                   title: "Feature Graphic ",
-                  images: ["/images/pratilipi/fg usArtboard 1 copy 2.jpg.jpeg"]
+                  images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729685/fg_usArtboard_1_copy_2.jpg_jirwmk.jpg"]
                 }
               ]
             },
@@ -301,9 +301,9 @@ export const projectsData: ProjectDetails[] = [
               contentBlocks: [
                 {
                   images: [
-                    "/images/pratilipi/7e43dd71-0af1-44ff-9748-15178c7d1bce.jpg.jpeg",
-                    "/images/pratilipi/72124508-b360-4f4c-afb2-5985170f6639.jpg.jpeg",
-                    "/images/pratilipi/11dfd6ee-125b-4105-b62b-dc6bb03a8d90.png"
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729698/7e43dd71-0af1-44ff-9748-15178c7d1bce.jpg_cerp2o.jpg",
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729669/72124508-b360-4f4c-afb2-5985170f6639.jpg_mzc2qu.jpg",
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729704/11dfd6ee-125b-4105-b62b-dc6bb03a8d90_ecqjeb.png"
                   ]
                 }
               ]
@@ -313,15 +313,15 @@ export const projectsData: ProjectDetails[] = [
               contentBlocks: [
                 {
                   images: [
-                    "/images/pratilipi/82a8eab8-c6ca-40c3-a00e-ed48124b7b65.png",
-                    "/images/pratilipi/b3f13313-59f0-44d3-a595-8be58bd80cc6.png"
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729676/82a8eab8-c6ca-40c3-a00e-ed48124b7b65_ltptvu.png",
+                    "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729669/b3f13313-59f0-44d3-a595-8be58bd80cc6_sztmsu.png"
                   ]
                 }
               ]
             },
             {
               contentHeading: "Different markets. Different approaches",
-              skillimage:"/images/pratilipi/faa54f95-2ae3-47d5-9cc3-6558e24a72e3 copy.png",
+              skillimage:"https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729686/faa54f95-2ae3-47d5-9cc3-6558e24a72e3_copy_b51nqq.png",
               contentBlocks: []
             }
           ]
@@ -340,12 +340,12 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "App Store Screenshot Creatives",
     servicesUsed: "App Store & ASO Visuals",
     skillsUsed: "Layout Design · Visual Design · Typography · ASO Visual Design · Product Communication",
-    skillsVideo: "/videos/fitparty/WhatsApp Video 2026-07-16 at 1.00.58 PM.mp4",
+    skillsVideo: "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787729032/WhatsApp_Video_2026-07-16_at_1.00.58_PM_ywj3ex.mp4",
     introVideo: "",
     gallery: [],
-    col1img1: "/images/fitparty/7dc1bc-93af-42ed-986c-2c5a3f3c77ac1.png",
-    col1img2: "/images/fitparty/857ffe14-35a3-4c57-9472-61970c1ec560.png",
-    col2img: "/images/fitparty/b92379f1-a5d1-46e3-9ed4-48726dfec11c.png",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728898/7dc1bc-93af-42ed-986c-2c5a3f3c77ac1_txayfu.png",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728898/857ffe14-35a3-4c57-9472-61970c1ec560_a3y88i.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728901/b92379f1-a5d1-46e3-9ed4-48726dfec11c_umsqfj.png",
     contentBlocks: [
       {
         align: 'center',
@@ -371,20 +371,20 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Key Features",
-        images: ["/images/fitparty/eb69578b-2334-4198-9433-406f2284a46c.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728902/eb69578b-2334-4198-9433-406f2284a46c_tzaa5x.png"]
       },
       {
         title: "Typography & Visual System",
-        images: ["/images/fitparty/FitParty Visual System (2).png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728895/FitParty_Visual_System_2_rwxzuk.png"]
       },
       {
         title: "Final Screens",
         copy: "The final set was designed as a cohesive app store presentation, with each screenshot focused on one key product feature. Clear headlines, UI previews, bright gradients, and active compositions helped make the app feel simple, motivating, and easy to understand.Together, the creatives gave FitParty a polished first store presence and helped translate the product experience into clear, user-facing communication.",
-        images: ["/images/fitparty/82ced003-0301-4c3b-922a-912bb14a692b.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728897/82ced003-0301-4c3b-922a-912bb14a692b_bzfyiu.png"]
       },
       {
         title: "From App Store to Real Life",
-        images: ["/images/fitparty/b8507b65-2355-4fe2-abce-52e60be8d861.png","/images/fitparty/f47dc1bc-93af-42ed-986c-2c5a3f3c77ac.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728882/b8507b65-2355-4fe2-abce-52e60be8d861_ylhxzp.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787728894/f47dc1bc-93af-42ed-986c-2c5a3f3c77ac_jdndqg.png"]
       },
       {
         type: "quote",
@@ -403,11 +403,11 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Pamphlets · Digital Menu · Coupon · Sticker · Instagram Post · Water Dispenser Cover · App Landing Page",
     servicesUsed: "Brand & Marketing Collateral",
     skillsUsed: "Layout Design · Visual Design · Typography · Image Editing · Print Design · Product Communication · Digital Design",
-    skillsImage: "/images/f5/f5-refreshments-logo-white-background-1900x980.png",
+    skillsImage: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727921/f5-refreshments-logo-white-background-1900x980_hof7lj.png",
     gallery: [],
-    col1img1: "/images/f5/9d7bab33-28d7-4e25-a383-e3de499cf894.png",
-    col1img2: "/images/f5/3ebdbc37-1a99-4040-a5a2-dc694f373791.png",
-    col2img: "/images/f5/2359e120-b2a8-4f01-9f40-fd85827bdf37.png",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727701/9d7bab33-28d7-4e25-a383-e3de499cf894_vyzpmk.png",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727916/3ebdbc37-1a99-4040-a5a2-dc694f373791_ptkv3z.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727710/2359e120-b2a8-4f01-9f40-fd85827bdf37_oqjhwl.png",
     contentBlocks: [
       {
         align: 'center',
@@ -433,28 +433,28 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         title: "Landing Page",
-        images: ["/images/f5/b4958c01-3b36-4563-a04b-a8537b771ab8.png","/images/f5/Screenshot 2026-07-18 at 5.44.37 PM.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727722/b4958c01-3b36-4563-a04b-a8537b771ab8_kbybsw.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727955/Screenshot_2026-07-18_at_5.44.37_PM_i6df4p.png"]
       },
       {
         title: "Digital Menu",
-        images: ["/images/f5/9d7bab33-28d7-4e25-a383-e3de499cf894.png","/images/f5/1b89897a230d25f101d77a7cc3021f71.jpeg","/images/f5/7287386fbdbc9a20efdc05ea0eb29f81.jpeg"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727701/9d7bab33-28d7-4e25-a383-e3de499cf894_vyzpmk.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727887/1b89897a230d25f101d77a7cc3021f71_r0jwyw.jpg","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727728/7287386fbdbc9a20efdc05ea0eb29f81_zpjloz.jpg"]
       },
       {
         title: "Pamphlets",
         imageLayout: 'stacked',
-        images: ["/images/f5/3ebdbc37-1a99-4040-a5a2-dc694f373791.png","/images/f5/fd0cb5b6-34d3-48a1-a5ac-ae4852db3409.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727916/3ebdbc37-1a99-4040-a5a2-dc694f373791_ptkv3z.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727980/fd0cb5b6-34d3-48a1-a5ac-ae4852db3409_zuxfmj.png"]
       },
       {
         title: "Coupon & Sticker",
-        images: ["/images/f5/6b939894-4f5f-448c-a4c1-857d5d1ceb34.png","/images/f5/59a4e965-e677-458d-bcd3-b5d1e2ed60ec.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727700/6b939894-4f5f-448c-a4c1-857d5d1ceb34_hhx8jx.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727701/59a4e965-e677-458d-bcd3-b5d1e2ed60ec_yzmriw.png"]
       },
       {
         title: "Instagram Post",
-        images: ["/images/f5/f5-franchise-instagram-mobile-mockup-realistic-1280x980.png","/images/f5/F5 CAMPAIGNArtboard 1 copy 3.jpg.jpeg","/images/f5/FM CAMPAIGN 2Artboard 1 copy 7.jpg.jpeg","/images/f5/f5 franchise.jpg.jpeg","/images/f5/f5 franchise1.jpg.jpeg"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727882/f5-franchise-instagram-mobile-mockup-realistic-1280x980_xud4z7.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727722/F5_CAMPAIGNArtboard_1_copy_3.jpg_ylgx5b.jpg","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727921/FM_CAMPAIGN_2Artboard_1_copy_7.jpg_krtr7u.jpg","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727726/f5_franchise.jpg_ikxdsa.jpg","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727750/f5_franchise1.jpg_lyosdt.jpg"]
       },
       {
         title: "Water dispenser cover",
-        images: ["/images/f5/94ebd988-0ef5-4b68-93ff-fc120bd24901.png","/images/f5/FINAL WATER BOTTEL COVER DESIGN.jpg.jpeg"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727730/94ebd988-0ef5-4b68-93ff-fc120bd24901_zc4k5t.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727935/FINAL_WATER_BOTTEL_COVER_DESIGN.jpg_dgtipp.jpg"]
       }
     ]
   },
@@ -469,11 +469,11 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "Logo Identity · Business Card · Letterhead",
     servicesUsed: "Brand Identity · Brand & Marketing Collateral",
     skillsUsed: "Logo Design · Typography · Layout Design · Visual Design",
-    skillsImage: "/images/textile/Business Card-1.jpg.jpeg",
+    skillsImage: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729442/Business_Card-1.jpg_cscacw.jpg",
     gallery: [],
-    col1img1: "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg",
-    col1img2: "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
-    col2img: "/images/textile/0d660913-d621-43a8-addc-e7049016e369.png",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729473/7090638f-cc13-4fa8-bc57-18650f995d70.jpg_qlw2zy.jpg",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729461/c2471529-1ca2-49f2-841e-5d462b845b8b_tzxcju.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729462/0d660913-d621-43a8-addc-e7049016e369_tjqme5.png",
     contentBlocks: [
       {
         align: 'center',
@@ -500,14 +500,14 @@ export const projectsData: ProjectDetails[] = [
       {
         fullWidthImages: [0, 1, 4, 7],
         images: [
-          "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509 copy.png",
-          "/images/textile/900e55fd-862f-4edd-963e-64b47bbaf509.png",
-          "/images/textile/58a04e87-6fc6-43fa-be7d-0d15fa2dc335.png",
-          "/images/textile/42d4c863-ffad-4f71-88af-1d9edf613133.png",
-          "/images/textile/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb.png",
-          "/images/textile/letter head ...jpg.jpeg",
-          "/images/textile/c2471529-1ca2-49f2-841e-5d462b845b8b.png",
-          "/images/textile/7090638f-cc13-4fa8-bc57-18650f995d70.jpg.jpeg"
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729470/900e55fd-862f-4edd-963e-64b47bbaf509_copy_mvnomc.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729468/900e55fd-862f-4edd-963e-64b47bbaf509_wk3xnh.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729470/58a04e87-6fc6-43fa-be7d-0d15fa2dc335_bemgyv.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729472/42d4c863-ffad-4f71-88af-1d9edf613133_w1unrb.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729475/9bd8e037-bb99-4c87-b9f4-7e6c560e5dfb_ypk50i.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729447/letter_head_...jpg_q0bv07.jpg",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729461/c2471529-1ca2-49f2-841e-5d462b845b8b_tzxcju.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729473/7090638f-cc13-4fa8-bc57-18650f995d70.jpg_qlw2zy.jpg"
         ]
       }
     ]
@@ -520,15 +520,15 @@ export const projectsData: ProjectDetails[] = [
     shortDescription: "A premium event invite designed for a private fragrance showcase, combining soft Indian heritage cues, refined typography, product-focused composition, and warm luxury styling.",
     servicesUsed: "Brand & Marketing Collateral · Social Media & Campaign Design · AI-assisted Visual Exploration",
     skillsUsed: "Art Direction · Layout Design · Typography · Visual Design · Image Editing",
-    skillsImage: "/images/luxury/Untitled-1Artboard 1 copy.jpg",
+    skillsImage: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729149/Untitled-1Artboard_1_copy_o2rgqs.jpg",
     role: "Visual Designer",
     roleDetails: "Visual Designer",
     deliverables: "Digital invite",
     // We will clear problem/approach/result because we are using contentBlocks
     gallery: [], // Handled in contentBlocks
-    col1img1: "/images/luxury/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png", 
-    col1img2: "/images/luxury/Untitled-1Artboard 1 copy.jpg",
-    col2img: "/images/luxury/Untitled-1Artboard 1.png", // Hero image
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729152/ChatGPT_Image_Jul_13_2026_12_26_35_PM_zfzk4a.png", 
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729149/Untitled-1Artboard_1_copy_o2rgqs.jpg",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729154/Untitled-1Artboard_1_vnaywr.png", // Hero image
     contentBlocks: [
       {
         align: 'center',
@@ -555,11 +555,11 @@ export const projectsData: ProjectDetails[] = [
       {
         title: "Visual Direction",
         copy: "The moodboard focused on quiet Indian luxury — ivory silk, soft florals, heritage details, warm gold accents, editorial typography, and tactile textures. These references helped shape the invite’s calm, premium, and intimate mood.",
-        images: ["/images/luxury/5c17d31f-4e9e-47ae-b9c5-a35a64c59de6 (1).jpeg"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729142/5c17d31f-4e9e-47ae-b9c5-a35a64c59de6_1_kezigf.jpg"]
       },
       {
         title: "Typography & Visual System",
-        images: ["/images/luxury/df60c48c-abb0-4600-87d7-d51a8561395c.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729150/df60c48c-abb0-4600-87d7-d51a8561395c_odjccm.png"]
       },
       {
         title: "Final Invite",
@@ -570,11 +570,11 @@ export const projectsData: ProjectDetails[] = [
           "Hero: Perfume bottle with floral styling",
           "Bottom: Partners, date, time, and venue"
         ],
-        images: ["/images/luxury/Fragrance_Final_2 (1).jpg"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729158/Fragrance_Final_2_1_bf7cpe.jpg"]
       },
       {
         title: "Digital & Print Application",
-        images: ["/images/luxury/1f6940be-8aea-488e-8183-28f6eb7e56b1.png","/images/luxury/ChatGPT Image Jul 13, 2026, 12_26_35 PM.png"]
+        images: ["https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729146/1f6940be-8aea-488e-8183-28f6eb7e56b1_aejy6y.png","https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729152/ChatGPT_Image_Jul_13_2026_12_26_35_PM_zfzk4a.png"]
       },
       {
         type: "quote",
@@ -593,11 +593,11 @@ export const projectsData: ProjectDetails[] = [
     deliverables: "90+ Page Digital Magazine",
     servicesUsed: "Performance Marketing Creatives · Video & Motion Creatives · AI-Assisted Visual Exploration",
     skillsUsed: "Creative Direction · AI Visual Generation · Video Editing · Motion Design · Storytelling · Typography · Sound Selection",
-    skillsImage: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
+    skillsImage: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729306/81a40287-6ae9-444c-a54d-4cec6fcdaf26_xmtzxg.png",
     gallery: [],
-    col1img1: "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
-    col1img2: "/images/magazine/81a40287-6ae9-444c-a54d-4cec6fcdaf26.png",
-    col2img: "/images/magazine/6111df38-e934-44da-9c65-60e16d0cb461.png",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729299/d118bae9-1d30-4285-8411-0af5fcf64301_zerpbh.png",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729306/81a40287-6ae9-444c-a54d-4cec6fcdaf26_xmtzxg.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729305/6111df38-e934-44da-9c65-60e16d0cb461_ryqrba.png",
     contentBlocks: [
       {
         align: 'center',
@@ -623,9 +623,9 @@ export const projectsData: ProjectDetails[] = [
       },
       {
         images: [
-          "/images/magazine/d118bae9-1d30-4285-8411-0af5fcf64301.png",
-          "/images/magazine/dd741845-3301-4f2b-b202-18ff5816a2b0.png",
-          "/images/magazine/ad107cd1-b22e-4738-87ca-3e147b399617.png"
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729299/d118bae9-1d30-4285-8411-0af5fcf64301_zerpbh.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729305/dd741845-3301-4f2b-b202-18ff5816a2b0_kvz01g.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729317/ad107cd1-b22e-4738-87ca-3e147b399617_whrr1e.png"
         ]
       },
       {
@@ -646,22 +646,22 @@ export const projectsData: ProjectDetails[] = [
     servicesUsed: "Performance Marketing Creatives · Video & Motion Creatives · AI-Assisted Visual Exploration",
     skillsUsed: "Layout Design · Typography · Visual Hierarchy · Editorial Design",
     gallery: [],
-    col1img1: "/images/AI/25e5d82c-86f7-481e-8ff2-9a5096103ba1.png",
-    col1img2: "/images/AI/e6c5415c-459c-4214-8f4c-9037de6c6976.png",
-    col2img: "/images/AI/6c559249-2fa3-4bb1-b177-4cc30ed631cc.png",
+    col1img1: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727658/25e5d82c-86f7-481e-8ff2-9a5096103ba1_e9lfpg.png",
+    col1img2: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727656/e6c5415c-459c-4214-8f4c-9037de6c6976_ks5lns.png",
+    col2img: "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787727657/6c559249-2fa3-4bb1-b177-4cc30ed631cc_v9y6kq.png",
     
     contentBlocks: [
       {
         title: "Videos",
         align: "center",
         images: [
-          "/videos/AI/IMG_5402.MP4",
-          "/videos/AI/IMG_5409.MP4",
-          "/videos/AI/IMG_5478.MP4",
-          "/videos/AI/IMG_5497.MP4",
-          "/videos/AI/IMG_5723.MP4",
-          "/videos/AI/IMG_5736.MP4",
-          "/videos/AI/IMG_5771.MP4"
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728419/IMG_5402_g98jyd.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728431/IMG_5409_dzqqt4.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728671/IMG_5478_qtv2sw.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728301/IMG_5497_p9ywnu.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728462/IMG_5723_co1yvf.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728283/IMG_5736_cbnvvx.mp4",
+          "https://res.cloudinary.com/dycy3bsn4/video/upload/v1787728401/IMG_5771_xjwar1.mp4"
         ]
       }
     ]

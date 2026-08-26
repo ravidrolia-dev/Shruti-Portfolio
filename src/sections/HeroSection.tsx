@@ -3,6 +3,7 @@ import { Typewriter } from '../components/Typewriter';
 import { HoverPopText } from '../components/HoverPopText';
 import { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { getOptimizedCloudinaryUrl, getSrcSet } from '../lib/cloudinary';
 
 const AnimatedMetric = ({ value, suffix = "", isString = false, stringValue = "" }: { value?: number, suffix?: string, isString?: boolean, stringValue?: string }) => {
   const count = useMotionValue(0);
@@ -130,7 +131,10 @@ export const HeroSection = () => {
             {/* Subtle overlay effect */}
             <div className="absolute inset-0 bg-[#FFD600]/5 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
             <img
-              src="/shruti-new.jpg"
+              src={getOptimizedCloudinaryUrl("https://res.cloudinary.com/dycy3bsn4/image/upload/v1787726983/shruti-new_z0mrup.jpg", 800)}
+              srcSet={getSrcSet("https://res.cloudinary.com/dycy3bsn4/image/upload/v1787726983/shruti-new_z0mrup.jpg")}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager"
               alt="Shruti Drolia Portrait"
               className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
             />
