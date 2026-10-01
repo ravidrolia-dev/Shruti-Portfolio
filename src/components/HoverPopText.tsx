@@ -62,7 +62,7 @@ const PopChar = ({ char }: { char: string }) => {
         transformOrigin: "bottom center"
       }}
     >
-      {char}
+      {isPopped ? char.toLowerCase() : char}
     </motion.span>
   );
 };
