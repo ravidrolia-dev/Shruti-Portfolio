@@ -59,7 +59,8 @@ const PopChar = ({ char }: { char: string }) => {
       }}
       style={{
         fontFamily: isPopped ? '"Comic Sans MS", "Comic Sans", cursive' : 'inherit',
-        transformOrigin: "bottom center"
+        transformOrigin: "bottom center",
+        textTransform: isPopped ? 'lowercase' : 'inherit'
       }}
     >
       {isPopped ? char.toLowerCase() : char}
