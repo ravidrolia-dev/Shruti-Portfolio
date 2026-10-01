@@ -1,6 +1,7 @@
 import { FadeIn } from '../components/FadeIn';
 import { Typewriter } from '../components/Typewriter';
 import { HoverPopText } from '../components/HoverPopText';
+import TechText from '../components/TechText';
 import { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { getOptimizedCloudinaryUrl, getSrcSet } from '../lib/cloudinary';
@@ -30,14 +31,38 @@ export const HeroSection = () => {
     <section className="flex flex-col relative px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 pb-12 md:pb-16 bg-[#0C0C0C]/0">
       {/* Main Content Area */}
       <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1400px] mx-auto relative z-20 gap-12 lg:gap-8 xl:gap-20 pb-0 pt-24 md:pt-32">
-        
+
         {/* Left Column: Text */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
-          
+
           <FadeIn delay={0.3} y={30}>
-            <h1 className="font-bold text-[#D7E2EA] leading-[1.1] text-[clamp(2.5rem,8vw,5.5rem)] tracking-tight mb-6 sm:mb-8">
-              Hi, I'm <br className="hidden lg:block"/> Shruti Drolia
-            </h1>
+            <p className="font-bold text-[#D7E2EA] leading-[1.1] text-[clamp(2.5rem,8vw,5.5rem)] tracking-tight">Hi, I'm</p>
+          </FadeIn>
+          <FadeIn delay={0} y={30}>
+            <div style={{ width: '101%', height: 'clamp(80px, 11vw, 150px)', position: 'relative' }}>
+              <TechText
+                text="Shruti Drolia"
+                fontWeight={700}
+                fontSize={150}
+                reveal="letter"
+                dashLength={4}
+                dashGap={2}
+                specks={15}
+                fontFamily="comic sans ms"
+                color="#D7E2EA"
+                accentColor="#FFD600"
+                letterSpacing={0.05}
+                reach={200}
+                softness={0.7}
+                strokeWidth={1.5}
+                speed={1}
+                lineStyle="dashed"
+                selection
+                labels
+                draggable
+                sweep
+              />
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.2} y={30}>
@@ -103,7 +128,7 @@ export const HeroSection = () => {
           </FadeIn>
 
           <FadeIn delay={0.5} y={30} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full">
-            <a 
+            <a
               href="#projects"
               className="inline-flex items-center justify-center rounded-full text-[#0C0C0C] font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 text-[11px] sm:text-xs md:text-sm outline-none transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
               style={{
@@ -115,7 +140,7 @@ export const HeroSection = () => {
             >
               View Projects
             </a>
-            <a 
+            <a
               href="/Shruti_Drolia.pdf"
               target="_blank"
               className="inline-flex items-center justify-center rounded-full text-[#FFD600] font-black uppercase tracking-widest px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 text-[11px] sm:text-xs md:text-sm outline-none transition-all hover:bg-[#FFD600] hover:text-[#0C0C0C] active:scale-95 whitespace-nowrap border-2 border-[#FFD600]"
@@ -142,7 +167,7 @@ export const HeroSection = () => {
         </FadeIn>
 
       </div>
-      
+
     </section>
   );
 };
