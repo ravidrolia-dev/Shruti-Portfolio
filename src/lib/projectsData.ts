@@ -172,7 +172,7 @@ export const projectsData: ProjectDetails[] = [
                 },
                 {
                   title:"Experimental Video Ads",
-                  images:["https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4"]
+                  images:["https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730269/Untitled_design_opik2l.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730115/Untitled_design_1_w1drxn.mp4","https://res.cloudinary.com/dycy3bsn4/video/upload/v1787730094/Untitled_design_2_uiovoa.mp4"]
                 }
               ],
             },
@@ -624,7 +624,7 @@ export const projectsData: ProjectDetails[] = [
       {
         images: [
           "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729299/d118bae9-1d30-4285-8411-0af5fcf64301_zerpbh.png",
-          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729305/dd741845-3301-4f2b-b202-18ff5816a2b0_kvz01g.png",
+          "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729311/dd741845-3301-4f2b-b202-18ff5816a2b0_dbfsry.png",
           "https://res.cloudinary.com/dycy3bsn4/image/upload/v1787729317/ad107cd1-b22e-4738-87ca-3e147b399617_whrr1e.png"
         ]
       },

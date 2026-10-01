@@ -381,8 +381,9 @@ export const ProjectPage = () => {
                       <div className="w-full mt-4">
                         <div className={`grid gap-4 sm:gap-6 ${
                           block.imageLayout === 'stacked' ? 'grid-cols-1' : 
+                          block.fullWidthImages && block.fullWidthImages.length > 0 ? 'grid-cols-1 sm:grid-cols-2' :
+                          block.images.length === 5 || block.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' :
                           block.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
-                          block.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' : 
                           'grid-cols-1 sm:grid-cols-2'
                         }`}>
                           {block.images.map((imgUrl, imgIdx) => (
@@ -396,7 +397,7 @@ export const ProjectPage = () => {
                                 (block.fullWidthImages && block.fullWidthImages.includes(imgIdx)) || 
                                 block.imageLayout === 'stacked' || 
                                 block.images!.length === 1 || 
-                                (!block.fullWidthImages && block.images!.length % 2 !== 0 && block.images!.length < 4 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                                (!block.fullWidthImages && block.images!.length % 2 !== 0 && block.images!.length < 6 && imgIdx === 0) ? 'sm:col-span-2' : ''
                               }`}
                             >
                               {isVideo(imgUrl) ? (

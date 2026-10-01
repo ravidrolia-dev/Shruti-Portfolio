@@ -305,15 +305,16 @@ export const ProjectSubPage = () => {
                   {cblock.images && cblock.images.length > 0 && (
                     <div className={`w-full grid gap-4 sm:gap-6 ${
                       cblock.imageLayout === 'stacked' || cblock.images.length === 1 ? 'grid-cols-1' :
+                      cblock.fullWidthImages && cblock.fullWidthImages.length > 0 ? 'grid-cols-1 sm:grid-cols-2' :
+                      cblock.images.length === 5 || cblock.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' :
                       cblock.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
-                      cblock.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' :
                       'grid-cols-1 sm:grid-cols-2'
                     }`}>
                       {cblock.images.map((imgUrl, imgIdx) => (
                         <div 
                           key={imgIdx} 
                           className={`w-full rounded-[20px] lg:rounded-[30px] overflow-hidden relative group cursor-zoom-in shadow-xl ${
-                            (!cblock.fullWidthImages && cblock.images?.length && cblock.images.length % 2 !== 0 && cblock.images.length < 4 && imgIdx === 0) ? 'sm:col-span-2' : ''
+                            (!cblock.fullWidthImages && cblock.images?.length && cblock.images.length % 2 !== 0 && cblock.images.length < 6 && imgIdx === 0) ? 'sm:col-span-2' : ''
                           }`}
                         >
                           {isVideo(imgUrl) ? (
