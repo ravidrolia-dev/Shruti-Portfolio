@@ -58,7 +58,7 @@ const PopChar = ({ char }: { char: string }) => {
         damping: 10
       }}
       style={{
-        fontFamily: isPopped ? '"Gochi Hand", sans-serif' : 'inherit',
+        fontFamily: isPopped ? '"Comic Sans MS", "Comic Sans", cursive' : 'inherit',
         transformOrigin: "bottom center"
       }}
     >
