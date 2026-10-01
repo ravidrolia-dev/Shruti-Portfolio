@@ -306,7 +306,7 @@ export const ProjectSubPage = () => {
                     <div className={`w-full grid gap-4 sm:gap-6 ${
                       cblock.imageLayout === 'stacked' || cblock.images.length === 1 ? 'grid-cols-1' :
                       cblock.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
-                      cblock.images.length === 3 ? 'grid-cols-1 md:grid-cols-3' :
+                      cblock.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' :
                       'grid-cols-1 sm:grid-cols-2'
                     }`}>
                       {cblock.images.map((imgUrl, imgIdx) => (

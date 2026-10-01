@@ -382,7 +382,7 @@ export const ProjectPage = () => {
                         <div className={`grid gap-4 sm:gap-6 ${
                           block.imageLayout === 'stacked' ? 'grid-cols-1' : 
                           block.images.length >= 4 ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
-                          block.images.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 
+                          block.images.length === 3 ? 'grid-cols-1 sm:grid-cols-2' : 
                           'grid-cols-1 sm:grid-cols-2'
                         }`}>
                           {block.images.map((imgUrl, imgIdx) => (
